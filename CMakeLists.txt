@@ -11,3 +11,31 @@ add_executable(port-scanner ${SOURCES})
 include(GNUInstallDirs)
 install(TARGETS port-scanner RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
 install(FILES man/port-scanner.1 DESTINATION ${CMAKE_INSTALL_MANDIR}/man1)
+
+include(InstallRequiredSystemLibraries)
+
+set(CPACK_GENERATOR "DEB;RPM")
+
+set(CPACK_PACKAGE_NAME "port-scanner")
+set(CPACK_PACKAGE_DIRECTORY "${CMAKE_BINARY_DIR}")
+set(CPACK_PACKAGE_VERSION "1.0.1")
+set(CPACK_PACKAGE_CONTACT "artjomsfedosovs2@gmail.com")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Lightweight TCP port scanner for Linux, written in C++.")
+set(CPACK_PACKAGE_VENDOR "Artyom Fedosov")
+set(CPACK_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}-${CPACK_PACKAGE_VERSION}")
+
+set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE")
+set(CPACK_RESOURCE_FILE_README "${CMAKE_CURRENT_SOURCE_DIR}/README.md")
+
+set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Artyom Fedosov")
+set(CPACK_DEBIAN_PACKAGE_SECTION "net")
+set(CPACK_DEBIAN_PACKAGE_DEPENDS "libc6 (>= 2.27)")
+set(CPACK_DEBIAN_PACKAGE_ARCHITECTURE "amd64")
+
+set(CPACK_RPM_PACKAGE_LICENSE "MIT")
+set(CPACK_RPM_PACKAGE_GROUP "Applications/Internet")
+set(CPACK_RPM_PACKAGE_REQUIRES "glibc >= 2.27")
+set(CPACK_RPM_PACKAGE_DESCRIPTION "Lightweight TCP port scanner for Linux, written in C++.")
+set(CPACK_RPM_PACKAGE_ARCHITECTURE "x86_64")
+
+include(CPack)
