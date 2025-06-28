@@ -1,0 +1,22 @@
+.TH PORT-SCANNER 1 "2025-06-28" "version 1.0" "User Commands"
+.SH NAME
+port-scanner \- simple TCP port scanner
+.SH SYNOPSIS
+.B port-scanner
+.I IPv4_address
+.I port
+[\fIport\fR]...
+.SH DESCRIPTION
+Port-scanner is a simple command-line tool to check the accessibility
+of TCP ports on remote IPv4 hosts.
+.SH EXAMPLES
+.TP
+.B port-scanner 192.168.1.10 80
+Check if port 80 is accessible on the host 192.168.1.10.
+.TP
+.B port-scanner 192.168.1.10 80 443 8080
+Check if ports 80, 443, and 8080 are accessible on the host 192.168.1.10.
+.SH AUTHOR
+Artyom Fedosov
+.SH LICENSE
+MIT License.
