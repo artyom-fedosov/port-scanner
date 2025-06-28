@@ -13,6 +13,17 @@ A simple TCP port scanner written in C++ to check the accessibility of ports on 
 
 ---
 
+## Installation (Fedora / RHEL-based)
+
+This package is available via Fedora Copr:
+
+```bash
+sudo dnf copr enable artjom-fedosov/port-scanner
+sudo dnf install port-scanner
+```
+
+---
+
 ## Requirements
 
 - Linux operating system
