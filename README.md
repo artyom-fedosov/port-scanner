@@ -24,6 +24,16 @@ sudo dnf install port-scanner
 
 ---
 
+## Manual Build
+
+```bash
+git clone https://github.com/artyom-fedosov/port-scanner.git
+cd port-scanner
+./install.sh
+```
+
+---
+
 ## Requirements
 
 - Linux operating system
