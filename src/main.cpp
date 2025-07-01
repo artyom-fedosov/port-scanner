@@ -8,10 +8,11 @@
 
 #include <arpa/inet.h>
 #include <sys/socket.h>
+#include <sys/types.h>
+#include <netdb.h>
 #include <fcntl.h>
 
 using ipaddr_t = std::string;
-using ipaddrv4_t = std::string;
 using port_t = uint16_t;
 using ports_t = std::vector<port_t>;
 
@@ -24,6 +25,11 @@ bool isIPv4(const ipaddr_t &ip) {
         return inet_pton(AF_INET, ip.c_str(), &address) == 1;
 }
 
+bool isIPv6(const ipaddr_t &ip) {
+        in6_addr address6;
+        return inet_pton(AF_INET6, ip.c_str(), &address6) == 1;
+}
+
 bool isPort(const char *port) {
         int prt;
         const char *portEnd = port + std::strlen(port);
@@ -32,39 +38,29 @@ bool isPort(const char *port) {
                 prt <= MAX_PORT ? true : false;
 }
 
-bool isPortAccessible(const ipaddrv4_t &ip, const port_t port) {
-        int sockfd = socket(AF_INET, SOCK_STREAM, 0);
-        if (sockfd == -1)
+bool isPortAccessible(const ipaddr_t &ip, const port_t port) {
+        addrinfo hints {}, *res = nullptr;
+        hints.ai_family = AF_UNSPEC;
+        hints.ai_socktype = SOCK_STREAM;
+
+        std::string portStr = std::to_string(port);
+        if (getaddrinfo(ip.c_str(), portStr.c_str(), &hints, &res) != 0 || !res)
                 return false;
 
-        sockaddr_in addr {};
-        addr.sin_family = AF_INET;
-        addr.sin_port = htons(port);
-        addr.sin_addr.s_addr = inet_addr(ip.c_str());
-
-        fcntl(sockfd, F_SETFL, O_NONBLOCK);
-
-        int res = connect(sockfd, reinterpret_cast<sockaddr *>(&addr), sizeof(addr));
-        if (res == -1) {
-                fd_set fdset;
-                FD_ZERO(&fdset);
-                FD_SET(sockfd, &fdset);
-                timeval tv = {TIMEOUT_MS / 1000, (TIMEOUT_MS % 1000) * 1000};
-
-                if (select(sockfd + 1, NULL, &fdset, NULL, &tv) > 0) {
-                        int err;
-                        socklen_t len = sizeof(err);
-                        getsockopt(sockfd, SOL_SOCKET, SO_ERROR, &err, &len);
-                        close(sockfd);
-                        return err == 0;
-                } else {
-                        close(sockfd);
-                        return false;
-                }
+        int sockfd = socket(AF_INET, SOCK_STREAM, 0);
+        if (sockfd == -1) {
+                freeaddrinfo(res);
+                return false;
         }
 
+        constexpr timeval timeout = {TIMEOUT_MS / 1000, (TIMEOUT_MS % 1000) * 1000};
+        setsockopt(sockfd, SOL_SOCKET, SO_SNDTIMEO, &timeout, sizeof(timeout));
+
+        int result = connect(sockfd, res->ai_addr, res->ai_addrlen);
+        freeaddrinfo(res);
         close(sockfd);
-        return true;
+
+        return result == 0;
 }
 
 int main(int argc, char **argv) {
@@ -73,11 +69,11 @@ int main(int argc, char **argv) {
                 return 1;
         }
 
-        if (!isIPv4(argv[1])) {
-                std::cerr << "IPv4 address is not valid!" << std::endl;
+        if (!isIPv4(argv[1]) and !isIPv6(argv[1])) {
+                std::cerr << "IP address is not valid!" << std::endl;
                 return 2;
         }
-        ipaddrv4_t ipv4 {argv[1]};
+        ipaddr_t ip {argv[1]};
 
         ports_t ports {};
         for (int i {2}; i < argc; ++i) {
@@ -90,7 +86,7 @@ int main(int argc, char **argv) {
         }
 
         for (auto port : ports) {
-                if (isPortAccessible(ipv4, port))
+                if (isPortAccessible(ip, port))
                         std::cout << port << "\tis accessible" << std::endl;
                 else
                         std::cout << port << "\tis not accessible" << std::endl;
