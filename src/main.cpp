@@ -47,7 +47,7 @@ bool isPortAccessible(const ipaddr_t &ip, const port_t port) {
         if (getaddrinfo(ip.c_str(), portStr.c_str(), &hints, &res) != 0 || !res)
                 return false;
 
-        int sockfd = socket(AF_INET, SOCK_STREAM, 0);
+        int sockfd = socket(res->ai_family, SOCK_STREAM, 0);
         if (sockfd == -1) {
                 freeaddrinfo(res);
                 return false;
