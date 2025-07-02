@@ -7,8 +7,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_FLAGS_DEBUG "-Wall -Wextra -g")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 
-file(GLOB SOURCES src/*.cpp)
-add_executable(port-scanner ${SOURCES})
+add_executable(port-scanner
+        src/main.cpp
+        src/scanner.cpp
+)
 
 include(GNUInstallDirs)
 install(TARGETS port-scanner RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
