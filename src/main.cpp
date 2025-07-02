@@ -71,6 +71,14 @@ constexpr int TIMEOUT_MS = 200;
 
 std::mutex mtx;
 
+constexpr char RESET[] = "\033[0m";
+constexpr char RED[] = "\033[31m";
+constexpr char GREEN[] = "\033[32m";
+
+[[nodiscard]] bool isTerminal() {
+        return isatty(fileno(stdout));
+}
+
 int main(int argc, char **argv) {
         if (argc < 3) {
                 std::cerr << "Arguments count must be >= 3." << std::endl;
@@ -95,12 +103,18 @@ int main(int argc, char **argv) {
         }
 
         std::vector<std::thread> threads {};
+        bool isTerminalFlag {isTerminal()};
         for (const auto port : ports) {
-                threads.push_back(std::thread {[&ip, port]() {
+                threads.push_back(std::thread {[&ip, port, isTerminalFlag]() {
                         bool isAccessible {isPortAccessible(ip, port)};
                         std::lock_guard<std::mutex> lock {mtx};
-                        std::cout << port << "\tis" << (isAccessible ? " " : " not ") << "accessible"
-                                  << std::endl;
+
+                        if (isTerminalFlag)
+                                std::cout << (isAccessible ? GREEN : RED);
+                        std::cout << port << "\tis" << (isAccessible ? " " : " not ") << "accessible";
+                        if (isTerminalFlag)
+                                std::cout << RESET;
+                        std::cout << std::endl;
                 }});
         }
 
