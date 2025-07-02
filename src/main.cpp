@@ -22,17 +22,17 @@ constexpr port_t MIN_PORT = 0;
 constexpr port_t MAX_PORT = 65535;
 constexpr int TIMEOUT_MS = 200;
 
-bool isIPv4(const ipaddr_t &ip) {
+[[nodiscard]] bool isIPv4(const ipaddr_t &ip) {
         in_addr address;
         return inet_pton(AF_INET, ip.c_str(), &address) == 1;
 }
 
-bool isIPv6(const ipaddr_t &ip) {
+[[nodiscard]] bool isIPv6(const ipaddr_t &ip) {
         in6_addr address6;
         return inet_pton(AF_INET6, ip.c_str(), &address6) == 1;
 }
 
-bool isPort(const char *port) {
+[[nodiscard]] bool isPort(const char *port) {
         int prt;
         const char *portEnd = port + std::strlen(port);
         std::from_chars_result res = std::from_chars(port, portEnd, prt);
@@ -40,7 +40,7 @@ bool isPort(const char *port) {
                 prt <= MAX_PORT ? true : false;
 }
 
-bool isPortAccessible(const ipaddr_t &ip, const port_t port) {
+[[nodiscard]] bool isPortAccessible(const ipaddr_t &ip, const port_t port) {
         addrinfo hints {}, *res = nullptr;
         hints.ai_family = AF_UNSPEC;
         hints.ai_socktype = SOCK_STREAM;
