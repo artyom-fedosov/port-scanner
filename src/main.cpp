@@ -32,12 +32,16 @@ constexpr int TIMEOUT_MS = 200;
         return inet_pton(AF_INET6, ip.c_str(), &address6) == 1;
 }
 
-[[nodiscard]] bool isPort(const char *port) {
+[[nodiscard]] bool parsePort(const char *str, port_t &port) {
         int prt;
-        const char *portEnd = port + std::strlen(port);
-        std::from_chars_result res = std::from_chars(port, portEnd, prt);
-        return res.ec == std::errc {} and res.ptr == portEnd and prt >= MIN_PORT and
-                prt <= MAX_PORT ? true : false;
+        const char *strEnd = str + std::strlen(str);
+        std::from_chars_result res = std::from_chars(str, strEnd, prt);
+
+        if (res.ec != std::errc() or prt < MIN_PORT or prt > MAX_PORT or res.ptr != strEnd)
+                return false;
+
+        port = static_cast<port_t>(prt);
+        return true;
 }
 
 [[nodiscard]] bool isPortAccessible(const ipaddr_t &ip, const port_t port) {
@@ -80,9 +84,10 @@ int main(int argc, char **argv) {
         ipaddr_t ip {argv[1]};
 
         ports_t ports {};
+        port_t port {};
         for (int i {2}; i < argc; ++i) {
-                if (isPort(argv[i]))
-                        ports.push_back(std::stoi(argv[i]));
+                if (parsePort(argv[i], port))
+                        ports.push_back(port);
                 else {
                         std::cerr << "At least one of the inputted ports is not valid!" << std::endl;
                         return 3;
@@ -100,7 +105,6 @@ int main(int argc, char **argv) {
                 }});
         }
 
-        for (auto &thread : threads) {
+        for (auto &thread : threads)
                 thread.join();
-        }
 }
