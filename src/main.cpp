@@ -94,14 +94,13 @@ int main(int argc, char **argv) {
                 }
         }
 
-        std::vector<std::thread> threads;
+        std::vector<std::thread> threads {};
         for (const auto port : ports) {
                 threads.push_back(std::thread {[&ip, port]() {
+                        bool isAccessible {isPortAccessible(ip, port)};
                         std::lock_guard<std::mutex> lock {mtx};
-                        if (isPortAccessible(ip, port))
-                                std::cout << port << "\tis accessible" << std::endl;
-                        else
-                                std::cout << port << "\tis not accessible" << std::endl;
+                        std::cout << port << "\tis" << (isAccessible ? " " : " not ") << "accessible"
+                                  << std::endl;
                 }});
         }
 
