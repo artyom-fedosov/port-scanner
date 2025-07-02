@@ -2,6 +2,8 @@
 #include <string>
 #include <vector>
 #include <charconv>
+#include <thread>
+#include <mutex>
 
 #include <cstring>
 #include <unistd.h>
@@ -63,6 +65,8 @@ bool isPortAccessible(const ipaddr_t &ip, const port_t port) {
         return result == 0;
 }
 
+std::mutex mtx;
+
 int main(int argc, char **argv) {
         if (argc < 3) {
                 std::cerr << "Arguments count must be >= 3." << std::endl;
@@ -85,10 +89,18 @@ int main(int argc, char **argv) {
                 }
         }
 
-        for (auto port : ports) {
-                if (isPortAccessible(ip, port))
-                        std::cout << port << "\tis accessible" << std::endl;
-                else
-                        std::cout << port << "\tis not accessible" << std::endl;
+        std::vector<std::thread> threads;
+        for (const auto port : ports) {
+                threads.push_back(std::thread {[&ip, port]() {
+                        std::lock_guard<std::mutex> lock {mtx};
+                        if (isPortAccessible(ip, port))
+                                std::cout << port << "\tis accessible" << std::endl;
+                        else
+                                std::cout << port << "\tis not accessible" << std::endl;
+                }});
+        }
+
+        for (auto &thread : threads) {
+                thread.join();
         }
 }
