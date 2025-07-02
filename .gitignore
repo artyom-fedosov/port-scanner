@@ -1,2 +1,73 @@
+# ---- Compiled object files and binaries ----
+*.o
+*.obj
+*.lo
+*.slo
+*.la
+*.al
+*.libs
+*.so
+*.so.*
+*.dylib
+*.dll
+*.exe
+*.out
+*.app
+
+# ---- Precompiled Headers ----
+*.gch
+*.pch
+
+# ---- CMake ----
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+cmake_install.cmake
+install_manifest.txt
+Makefile
+CTestTestfile.cmake
+DartConfiguration.tcl
+Testing/
 build/
+cmake-build-*/
+
+# ---- Qt Creator ----
 CMakeLists.txt.user
+*.user
+*.autosave
+*.creator.*
+.qmake.stash
+
+# ---- CLion ----
+.idea/
+
+# ---- Code::Blocks ----
+*.depend
+*.layout
+*.cbp
+
+# ---- Visual Studio Code ----
+.vscode/
+
+# ---- Backup and temporary files ----
+*~
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# ---- Doxygen ----
+docs/html/
+docs/latex/
+
+# ---- Logs ----
+*.log
+
+# ---- Packages ----
+*.deb
+*.rpm
+
+# ---- Misc ----
+*.doxyfile
+*.tags
+
