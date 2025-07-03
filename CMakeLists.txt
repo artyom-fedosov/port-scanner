@@ -52,3 +52,14 @@ add_executable(tests
         src/scanner.cpp
 )
 add_test(NAME ScannerTests COMMAND tests)
+add_test(NAME Valgrind COMMAND valgrind
+                --tool=memcheck
+                --leak-check=full
+                --show-leak-kinds=all
+                --track-origins=yes
+                --errors-for-leak-kinds=definite
+                --error-exitcode=1
+                --undef-value-errors=yes
+                --read-var-info=yes
+                $<TARGET_FILE:port-scanner> 192.168.8.1 80 443 1 2 3 4 5
+)
