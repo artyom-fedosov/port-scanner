@@ -1,8 +1,0 @@
-Checks: >
-  -*,
-  bugprone-*,
-  clang-analyzer-*,
-  concurrency-*,
-  linuxkernel-*,
-  performance-*
-
