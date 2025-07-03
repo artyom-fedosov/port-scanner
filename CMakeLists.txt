@@ -43,3 +43,12 @@ set(CPACK_RPM_PACKAGE_DESCRIPTION "Lightweight TCP port scanner for Linux, writt
 set(CPACK_RPM_PACKAGE_ARCHITECTURE "x86_64")
 
 include(CPack)
+
+# ===== Tests =====
+enable_testing()
+
+add_executable(tests
+        tests/test_scanner.cpp
+        src/scanner.cpp
+)
+add_test(NAME ScannerTests COMMAND tests)
