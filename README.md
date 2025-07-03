@@ -78,6 +78,26 @@ $ port-scanner 192.168.8.1 {0..65535} | grep "is accessible"
 
 ---
 
+## Testing
+
+This project uses CTest for running unit tests and integrates Valgrind Memcheck to detect memory errors and leaks.
+
+To run the tests, use:
+
+```bash
+cd build
+ctest
+```
+
+To run the tests and see detailed output of any failures:
+
+```bash
+cd build
+ctest --output-on-failure
+```
+
+---
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
