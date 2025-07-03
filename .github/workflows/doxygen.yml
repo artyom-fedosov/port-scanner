@@ -18,6 +18,9 @@ jobs:
 
     - name: Generate Doxygen documentation
       run: doxygen Doxyfile
+      
+    - name: Check generated files
+      run: ls -lR ./docs/html
 
     - name: Setup Git
       run: |
