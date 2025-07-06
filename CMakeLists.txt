@@ -4,7 +4,16 @@ project(port-scanner LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_FLAGS_DEBUG "-Wall -Wextra -g")
+set(CMAKE_CXX_FLAGS_DEBUG "-Wall -Wextra -Wpedantic -Wshadow -Wconversion\
+ -Wsign-conversion -Wold-style-cast -Wuseless-cast\
+ -Wzero-as-null-pointer-constant -Wmisleading-indentation -Wredundant-decls\
+ -Wattributes -Wempty-body -Wmissing-field-initializers -Wmaybe-uninitialized\
+ -Wsuggest-attribute=const -Wsuggest-attribute=pure\
+ -Wsuggest-attribute=noreturn -Wswitch-default -Wfloat-equal -Wextra-semi\
+ -Wnull-dereference -Wduplicated-branches -Wlogical-op -Wparentheses\
+ -Wsequence-point -Wunused-result -Wconditionally-supported\
+ -Wignored-qualifiers -Wdisabled-optimization -Wunreachable-code\
+ -Wformat-overflow -Wformat-truncation -Wstrict-aliasing -Wcast-align -g")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 set(CMAKE_CXX_CLANG_TIDY "clang-tidy" CACHE STRING "Enable clang-tidy")
 
@@ -16,8 +25,6 @@ add_executable(port-scanner
 include(GNUInstallDirs)
 install(TARGETS port-scanner RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
 install(FILES man/port-scanner.1 DESTINATION ${CMAKE_INSTALL_MANDIR}/man1)
-
-include(InstallRequiredSystemLibraries)
 
 set(CPACK_GENERATOR "DEB;RPM")
 
