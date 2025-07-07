@@ -14,11 +14,11 @@ int main(int argc, char **argv) {
                 std::cerr << "IP address is not valid!\n";
                 return 2;
         }
-        ipaddr_t ip {argv[1]};
+        const ipaddr_t ip {argv[1]};
 
         ports_t ports {};
         for (int i {2}; i < argc; ++i) {
-                std::optional<port_t> port {parsePort(argv[i])};
+                const std::optional<port_t> port {parsePort(argv[i])};
                 if (port)
                         ports.push_back(port.value());
                 else {
@@ -31,7 +31,7 @@ int main(int argc, char **argv) {
         const bool isTerminalFlag {isTerminal()};
         for (const auto port : ports) {
                 threads.push_back(std::thread {[&ip, port, isTerminalFlag]() {
-                        bool isAccessible {isPortAccessible(ip, port)};
+                        const bool isAccessible {isPortAccessible(ip, port)};
                         std::stringstream ss {};
 
                         if (isTerminalFlag)

@@ -25,7 +25,7 @@ std::mutex mtx;
 [[nodiscard]] std::optional<port_t> parsePort(const char *str) {
         int prt;
         const char *strEnd = str + std::strlen(str);
-        std::from_chars_result res = std::from_chars(str, strEnd, prt);
+        const std::from_chars_result res = std::from_chars(str, strEnd, prt);
 
         if (res.ec != std::errc() or prt < MIN_PORT or prt > MAX_PORT or res.ptr != strEnd)
                 return {};
@@ -42,7 +42,7 @@ std::mutex mtx;
         if (getaddrinfo(ip.c_str(), portStr.c_str(), &hints, &res) != 0 || !res)
                 return false;
 
-        int sockfd = socket(res->ai_family, SOCK_STREAM, 0);
+        const int sockfd = socket(res->ai_family, SOCK_STREAM, 0);
         if (sockfd == -1) {
                 freeaddrinfo(res);
                 return false;
@@ -51,7 +51,7 @@ std::mutex mtx;
         constexpr timeval timeout = {TIMEOUT_MS / 1000, (TIMEOUT_MS % 1000) * 1000l};
         setsockopt(sockfd, SOL_SOCKET, SO_SNDTIMEO, &timeout, sizeof(timeout));
 
-        int result = connect(sockfd, res->ai_addr, res->ai_addrlen);
+        const int result = connect(sockfd, res->ai_addr, res->ai_addrlen);
         freeaddrinfo(res);
         close(sockfd);
 
