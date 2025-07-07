@@ -39,22 +39,20 @@ void test_isIPv6() {
 }
 
 void test_parsePort() {
-        port_t port;
+        assert(parsePort("0"));
+        assert(parsePort("1"));
+        assert(parsePort("80"));
+        assert(parsePort("443"));
+        assert(parsePort("65535"));
 
-        assert(parsePort("0", port) && port == 0);
-        assert(parsePort("1", port) && port == 1);
-        assert(parsePort("80", port) && port == 80);
-        assert(parsePort("443", port) && port == 443);
-        assert(parsePort("65535", port) && port == 65535);
-
-        assert(!parsePort("-1", port));
-        assert(!parsePort("65536", port));
-        assert(!parsePort("70000", port));
-        assert(!parsePort("abc", port));
-        assert(!parsePort("22abc", port));
-        assert(!parsePort("abc22", port));
-        assert(!parsePort("", port));
-        assert(!parsePort(" ", port));
+        assert(!parsePort("-1"));
+        assert(!parsePort("65536"));
+        assert(!parsePort("70000"));
+        assert(!parsePort("abc"));
+        assert(!parsePort("22abc"));
+        assert(!parsePort("abc22"));
+        assert(!parsePort(""));
+        assert(!parsePort(" "));
 
         std::cout << "test_parsePort passed\n";
 }
