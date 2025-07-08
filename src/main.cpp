@@ -1,8 +1,33 @@
 #include "../include/scanner.hpp"
 
 #include <iostream>
-#include <thread>
 #include <sstream>
+
+#include <unistd.h>
+
+/**
+ * @brief ANSI escape code for resetting terminal colors.
+ */
+constexpr char RESET[] = "\033[0m";
+
+/**
+ * @brief ANSI escape code for red text color.
+ */
+constexpr char RED[] = "\033[31m";
+
+/**
+ * @brief ANSI escape code for green text color.
+ */
+constexpr char GREEN[] = "\033[32m";
+
+/**
+ * @brief Checks if stdout is connected to a terminal.
+ *
+ * @return true if output is a terminal, false otherwise.
+ */
+[[nodiscard]] bool isTerminal() {
+        return isatty(fileno(stdout));
+}
 
 int main(int argc, char **argv) {
         if (argc < 3) {
@@ -10,42 +35,30 @@ int main(int argc, char **argv) {
                 return 1;
         }
 
-        if (!isIPv4(argv[1]) and !isIPv6(argv[1])) {
-                std::cerr << "IP address is not valid!\n";
-                return 2;
-        }
-        const ipaddr_t ip {argv[1]};
+        std::vector<const char *> ports {};
+        for (int i {2}; i < argc; ++i)
+                ports.push_back(argv[i]);
 
-        ports_t ports {};
-        for (int i {2}; i < argc; ++i) {
-                const std::optional<port_t> port {parsePort(argv[i])};
-                if (port)
-                        ports.push_back(port.value());
-                else {
-                        std::cerr << "At least one of the inputted ports is not valid!\n";
-                        return 3;
-                }
-        }
+        try {
+                Scanner scanner {argv[1], ports};
+                std::vector<std::pair<port_t, bool>> results {scanner.scan()};
+                const bool isTerminalFlag {isTerminal()};
 
-        std::vector<std::thread> threads {};
-        const bool isTerminalFlag {isTerminal()};
-        for (const auto port : ports) {
-                threads.push_back(std::thread {[&ip, port, isTerminalFlag]() {
-                        const bool isAccessible {isPortAccessible(ip, port)};
+                for (const auto &result : results) {
                         std::stringstream ss {};
 
                         if (isTerminalFlag)
-                                ss << (isAccessible ? GREEN : RED);
-                        ss << port << "\tis" << (isAccessible ? " " : " not ") << "accessible";
+                                ss << (result.second ? GREEN : RED);
+                        ss << result.first << "\tis" <<
+                                (result.second ? " " : " not ") << "accessible";
                         if (isTerminalFlag)
                                 ss << RESET;
                         ss << '\n';
 
-                        std::lock_guard<std::mutex> lock {mtx};
                         std::cout << ss.rdbuf();
-                }});
+                }
+        } catch(std::exception &e) {
+                std::cerr << e.what() << '\n';
+                return 2;
         }
-
-        for (auto &thread : threads)
-                thread.join();
 }

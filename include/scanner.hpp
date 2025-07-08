@@ -5,105 +5,91 @@
 #include <mutex>
 #include <optional>
 
-#include <unistd.h>
+using ipaddr_t = std::string; //!< \brief IP address type
+using port_t = uint16_t; //!< \brief Port number type
+using ports_t = std::vector<port_t>; //!< \brief Vector of ports type
 
-/**
- * @brief Alias for IP address represented as a string.
+constexpr port_t MIN_PORT = 0; //!< \brief Minimum valid port number
+constexpr port_t MAX_PORT = 65535; //!< \brief Maximum valid port number
+constexpr int TIMEOUT_MS = 200; //!< \brief Timeout in milliseconds for socket
+                                //!< connection attempts
+
+/*!
+ * \class Scanner
+ * The Scanner class is designed to perform port scanning operations on a
+ * specified IP address for a given set of ports.
  */
-using ipaddr_t = std::string;
+class Scanner {
+public:
+        /*!
+        * \brief Constructs a Scanner with a target IP address and a list of
+        * ports to scan.
+        *
+        * Validates the IP address and parses the port strings into numeric port
+        * values. Throws std::invalid_argument if the IP or any port is invalid.
+        *
+        * \param ip Target IP address to scan.
+        * \param ports Vector of C-string port representations to be scanned.
+        *
+        * \throws std::invalid_argument If the IP address or any port string is
+        * invalid.
+        */
+        Scanner(const ipaddr_t &ip, const std::vector<const char *> &ports);
 
-/**
- * @brief Alias for a TCP port number type.
- */
-using port_t = uint16_t;
+public:
+        /*!
+        * @brief Scans all specified ports on the target IP address.
+        *
+        * Each port is scanned concurrently in a separate thread.
+        *
+        * @return A vector of pairs: <port number, is port accessible
+        * (true/false)>.
+        */
+        [[nodiscard]] std::vector<std::pair<port_t, bool>> scan() noexcept;
 
-/**
- * @brief Alias for a vector of TCP ports.
- */
-using ports_t = std::vector<port_t>;
+private:
+        ipaddr_t ip_;
+        ports_t ports_;
+        std::mutex mtx_;
 
+private:
+        /*!
+        * \brief Checks if the given IP address string is a syntactically valid
+        * IPv4 address.
+        *
+        * \param ip The IP address string to validate.
+        * \return true if the IP is а valid IPv4, false otherwise.
+        */
+        [[nodiscard]] bool isIPv4(const ipaddr_t &ip) const noexcept;
 
-/**
- * @brief Minimum valid TCP port number.
- */
-constexpr port_t MIN_PORT = 0;
+        /*!
+        * \brief Checks if the given IP address string is a syntactically valid
+        * IPv6 address.
+        *
+        * \param ip The IP address string to validate.
+        * \return true if the IP is а valid IPv6, false otherwise.
+        */
+        [[nodiscard]] bool isIPv6(const ipaddr_t &ip) const noexcept;
 
-/**
- * @brief Maximum valid TCP port number.
- */
-constexpr port_t MAX_PORT = 65535;
+        /*!
+        * \brief Attempts to parse a C-string into a port_t. It also validates
+        * if the parsed number falls within the [MIN_PORT, MAX_PORT] range.
+        *
+        * \param str The C-string containing the potential port number.
+        * \return An std::optional<port_t> containing the valid port number if
+        * parsing is successful and the number is in range; otherwise, an empty
+        * std::optional.
+        */
+        [[nodiscard]] std::optional<port_t>
+        parsePort(const char *str) const noexcept;
 
-/**
- * @brief Timeout in milliseconds for socket connection attempts.
- */
-constexpr int TIMEOUT_MS = 200;
-
-
-/**
- * @brief Checks if the IP address is a valid IPv4.
- *
- * @param ip IP address in string format.
- * @return true if the IP is valid IPv4, false otherwise.
- */
-[[nodiscard]] bool isIPv4(const ipaddr_t &ip);
-
-/**
- * @brief Checks if the IP address is a valid IPv6.
- *
- * @param ip IP address in string format.
- * @return true if the IP is valid IPv6, false otherwise.
- */
-[[nodiscard]] bool isIPv6(const ipaddr_t &ip);
-
-/**
- * @brief Parses a string into an optional port number.
- *
- * This function attempts to parse the input C-string as an integer.
- * If successful, it checks if the parsed number falls within the
- * valid port range [MIN_PORT, MAX_PORT].
- *
- * @param str The C-string to parse, representing the port number.
- * @return An `std::optional<port_t>` containing the valid port number
- * if parsing succeeds and the number is within range;
- * otherwise, an empty `std::optional`.
- */
-[[nodiscard]] std::optional<port_t> parsePort(const char *str);
-
-/**
- * @brief Checks if a TCP port is accessible on the given IP.
- *
- * Attempts to connect to the specified port on the given IP address
- * with a timeout. Works for both IPv4 and IPv6.
- *
- * @param ip IP address as string.
- * @param port TCP port number.
- * @return true if the port is accessible, false otherwise.
- */
-[[nodiscard]] bool isPortAccessible(const ipaddr_t &ip, const port_t port);
-
-/**
- * @brief Mutex used for synchronizing output.
- */
-extern std::mutex mtx;
-
-/**
- * @brief ANSI escape code for resetting terminal colors.
- */
-constexpr char RESET[] = "\033[0m";
-
-/**
- * @brief ANSI escape code for red text color.
- */
-constexpr char RED[] = "\033[31m";
-
-/**
- * @brief ANSI escape code for green text color.
- */
-constexpr char GREEN[] = "\033[32m";
-
-/**
- * @brief Checks if stdout is connected to a terminal.
- *
- * @return true if output is a terminal, false otherwise.
- */
-[[nodiscard]] bool isTerminal();
+        /*!
+        * \brief Attempts to establish a TCP connection to the specified port.
+        * This function incorporates a timeout (TIMEOUT_MS).
+        *
+        * \param port The TCP port number to check for accessibility.
+        * \return true if a connection can be established (port is accessible),
+        * false otherwise.
+        */
+        [[nodiscard]] bool isPortAccessible(const port_t port) const noexcept;
+};
