@@ -95,155 +95,20 @@ $(document).ready(function(){initNavTree('scanner_8cpp.html',''); initResizable(
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">scanner.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;../include/scanner.hpp&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="scanner_8hpp_source.html">../include/scanner.hpp</a>&quot;</code><br />
 <code>#include &lt;charconv&gt;</code><br />
+<code>#include &lt;stdexcept&gt;</code><br />
+<code>#include &lt;thread&gt;</code><br />
 <code>#include &lt;cstring&gt;</code><br />
 <code>#include &lt;arpa/inet.h&gt;</code><br />
 <code>#include &lt;sys/socket.h&gt;</code><br />
 <code>#include &lt;sys/types.h&gt;</code><br />
 <code>#include &lt;netdb.h&gt;</code><br />
 <code>#include &lt;fcntl.h&gt;</code><br />
-</div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a67bbfbecb9ed90c2a092df4b2d309f2e" id="r_a67bbfbecb9ed90c2a092df4b2d309f2e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scanner_8cpp.html#a67bbfbecb9ed90c2a092df4b2d309f2e">isIPv4</a> (const ipaddr_t &amp;ip)</td></tr>
-<tr class="separator:a67bbfbecb9ed90c2a092df4b2d309f2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a927fe8308ecae42e995405f3693f6093" id="r_a927fe8308ecae42e995405f3693f6093"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scanner_8cpp.html#a927fe8308ecae42e995405f3693f6093">isIPv6</a> (const ipaddr_t &amp;ip)</td></tr>
-<tr class="separator:a927fe8308ecae42e995405f3693f6093"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af49a43259f76128d6672a870955d8492" id="r_af49a43259f76128d6672a870955d8492"><td class="memItemLeft" align="right" valign="top">std::optional&lt; port_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scanner_8cpp.html#af49a43259f76128d6672a870955d8492">parsePort</a> (const char *str)</td></tr>
-<tr class="separator:af49a43259f76128d6672a870955d8492"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af34999a9926cdc0fc3223c3a9333843b" id="r_af34999a9926cdc0fc3223c3a9333843b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scanner_8cpp.html#af34999a9926cdc0fc3223c3a9333843b">isPortAccessible</a> (const ipaddr_t &amp;ip, const port_t port)</td></tr>
-<tr class="separator:af34999a9926cdc0fc3223c3a9333843b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9fc2bd9fd25bc0a9eb2b31b1b7506204" id="r_a9fc2bd9fd25bc0a9eb2b31b1b7506204"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scanner_8cpp.html#a9fc2bd9fd25bc0a9eb2b31b1b7506204">isTerminal</a> ()</td></tr>
-<tr class="separator:a9fc2bd9fd25bc0a9eb2b31b1b7506204"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:ad5e0dbd36f0d71fce9b00b7f991b2f38" id="r_ad5e0dbd36f0d71fce9b00b7f991b2f38"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scanner_8cpp.html#ad5e0dbd36f0d71fce9b00b7f991b2f38">mtx</a></td></tr>
-<tr class="separator:ad5e0dbd36f0d71fce9b00b7f991b2f38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a67bbfbecb9ed90c2a092df4b2d309f2e" name="a67bbfbecb9ed90c2a092df4b2d309f2e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a67bbfbecb9ed90c2a092df4b2d309f2e">&#9670;&#160;</a></span>isIPv4()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool isIPv4 </td>
-          <td>(</td>
-          <td class="paramtype">const ipaddr_t &amp;&#160;</td>
-          <td class="paramname"><em>ip</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a927fe8308ecae42e995405f3693f6093" name="a927fe8308ecae42e995405f3693f6093"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a927fe8308ecae42e995405f3693f6093">&#9670;&#160;</a></span>isIPv6()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool isIPv6 </td>
-          <td>(</td>
-          <td class="paramtype">const ipaddr_t &amp;&#160;</td>
-          <td class="paramname"><em>ip</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="af34999a9926cdc0fc3223c3a9333843b" name="af34999a9926cdc0fc3223c3a9333843b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af34999a9926cdc0fc3223c3a9333843b">&#9670;&#160;</a></span>isPortAccessible()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool isPortAccessible </td>
-          <td>(</td>
-          <td class="paramtype">const ipaddr_t &amp;&#160;</td>
-          <td class="paramname"><em>ip</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const port_t&#160;</td>
-          <td class="paramname"><em>port</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a9fc2bd9fd25bc0a9eb2b31b1b7506204" name="a9fc2bd9fd25bc0a9eb2b31b1b7506204"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9fc2bd9fd25bc0a9eb2b31b1b7506204">&#9670;&#160;</a></span>isTerminal()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool isTerminal </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="af49a43259f76128d6672a870955d8492" name="af49a43259f76128d6672a870955d8492"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af49a43259f76128d6672a870955d8492">&#9670;&#160;</a></span>parsePort()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::optional&lt; port_t &gt; parsePort </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>str</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="ad5e0dbd36f0d71fce9b00b7f991b2f38" name="ad5e0dbd36f0d71fce9b00b7f991b2f38"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5e0dbd36f0d71fce9b00b7f991b2f38">&#9670;&#160;</a></span>mtx</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::mutex mtx</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

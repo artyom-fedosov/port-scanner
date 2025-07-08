@@ -96,21 +96,57 @@ $(document).ready(function(){initNavTree('main_8cpp.html',''); initResizable(); 
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">main.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;../include/scanner.hpp&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="scanner_8hpp_source.html">../include/scanner.hpp</a>&quot;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
-<code>#include &lt;thread&gt;</code><br />
 <code>#include &lt;sstream&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a9fc2bd9fd25bc0a9eb2b31b1b7506204" id="r_a9fc2bd9fd25bc0a9eb2b31b1b7506204"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a9fc2bd9fd25bc0a9eb2b31b1b7506204">isTerminal</a> ()</td></tr>
+<tr class="memdesc:a9fc2bd9fd25bc0a9eb2b31b1b7506204"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if stdout is connected to a terminal.  <br /></td></tr>
+<tr class="separator:a9fc2bd9fd25bc0a9eb2b31b1b7506204"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627" id="r_a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
 <tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ac2d7976c8bc917367e3e1e40743ddbdb" id="r_ac2d7976c8bc917367e3e1e40743ddbdb"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ac2d7976c8bc917367e3e1e40743ddbdb">RESET</a> [] = &quot;\033[0m&quot;</td></tr>
+<tr class="memdesc:ac2d7976c8bc917367e3e1e40743ddbdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">ANSI escape code for resetting terminal colors.  <br /></td></tr>
+<tr class="separator:ac2d7976c8bc917367e3e1e40743ddbdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa57286bf1ce2622547a47bb4e91aba2b" id="r_aa57286bf1ce2622547a47bb4e91aba2b"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#aa57286bf1ce2622547a47bb4e91aba2b">RED</a> [] = &quot;\033[31m&quot;</td></tr>
+<tr class="memdesc:aa57286bf1ce2622547a47bb4e91aba2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">ANSI escape code for red text color.  <br /></td></tr>
+<tr class="separator:aa57286bf1ce2622547a47bb4e91aba2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b157b2edc3c8d6c71681d0b2384373b" id="r_a6b157b2edc3c8d6c71681d0b2384373b"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a6b157b2edc3c8d6c71681d0b2384373b">GREEN</a> [] = &quot;\033[32m&quot;</td></tr>
+<tr class="memdesc:a6b157b2edc3c8d6c71681d0b2384373b"><td class="mdescLeft">&#160;</td><td class="mdescRight">ANSI escape code for green text color.  <br /></td></tr>
+<tr class="separator:a6b157b2edc3c8d6c71681d0b2384373b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a9fc2bd9fd25bc0a9eb2b31b1b7506204" name="a9fc2bd9fd25bc0a9eb2b31b1b7506204"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fc2bd9fd25bc0a9eb2b31b1b7506204">&#9670;&#160;</a></span>isTerminal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isTerminal </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if stdout is connected to a terminal. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if output is a terminal, false otherwise. </dd></dl>
+
+</div>
+</div>
 <a id="a3c04138a5bfe5d72780bb7e82a18e627" name="a3c04138a5bfe5d72780bb7e82a18e627"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3c04138a5bfe5d72780bb7e82a18e627">&#9670;&#160;</a></span>main()</h2>
 
@@ -136,6 +172,79 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a6b157b2edc3c8d6c71681d0b2384373b" name="a6b157b2edc3c8d6c71681d0b2384373b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b157b2edc3c8d6c71681d0b2384373b">&#9670;&#160;</a></span>GREEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char GREEN[] = &quot;\033[32m&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ANSI escape code for green text color. </p>
+
+</div>
+</div>
+<a id="aa57286bf1ce2622547a47bb4e91aba2b" name="aa57286bf1ce2622547a47bb4e91aba2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa57286bf1ce2622547a47bb4e91aba2b">&#9670;&#160;</a></span>RED</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char RED[] = &quot;\033[31m&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ANSI escape code for red text color. </p>
+
+</div>
+</div>
+<a id="ac2d7976c8bc917367e3e1e40743ddbdb" name="ac2d7976c8bc917367e3e1e40743ddbdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2d7976c8bc917367e3e1e40743ddbdb">&#9670;&#160;</a></span>RESET</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char RESET[] = &quot;\033[0m&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ANSI escape code for resetting terminal colors. </p>
 
 </div>
 </div>
