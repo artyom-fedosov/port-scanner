@@ -3,6 +3,7 @@ Version:        1.0.2
 Release:        1%{?dist}
 Summary:        Lightweight TCP port scanner for Linux, written in C++.
 
+BuildArch:      x86_64
 License:        MIT
 URL:            https://github.com/artyom-fedosov/port-scanner
 Source0:        %{name}-%{version}.tar.gz
@@ -17,7 +18,7 @@ Requires:       glibc
 port-scanner — Lightweight TCP port scanner for Linux, written in C++.
 
 %prep
-%autosetup
+%autosetup -n %{name}-%{version}
 
 %build
 %cmake .
@@ -33,5 +34,6 @@ port-scanner — Lightweight TCP port scanner for Linux, written in C++.
 %{_mandir}/man1/port-scanner.1.*
 
 %changelog
-* Wed Jul 11 2025 Artyom <artjomsfedosovs2@gmail.com> - 1.0.2
+* Wed Jul 11 2025 Artyom <artjomsfedosovs2@gmail.com> - 1.0.2-1
+- Code refactoring
 

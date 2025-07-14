@@ -9,9 +9,9 @@ using ipaddr_t = std::string; //!< \brief IP address type
 using port_t = uint16_t; //!< \brief Port number type
 using ports_t = std::vector<port_t>; //!< \brief Vector of ports type
 
-constexpr port_t MIN_PORT = 0; //!< \brief Minimum valid port number
-constexpr port_t MAX_PORT = 65535; //!< \brief Maximum valid port number
-constexpr int TIMEOUT_MS = 200; //!< \brief Timeout in milliseconds for socket
+port_t constexpr MIN_PORT = 0; //!< \brief Minimum valid port number
+port_t constexpr MAX_PORT = 65535; //!< \brief Maximum valid port number
+int constexpr TIMEOUT_MS = 200; //!< \brief Timeout in milliseconds for socket
                                 //!< connection attempts
 
 /*!
@@ -34,7 +34,7 @@ public:
         * \throws std::invalid_argument If the IP address or any port string is
         * invalid.
         */
-        Scanner(const ipaddr_t &ip, const std::vector<const char *> &ports);
+        Scanner(ipaddr_t const &ip, std::vector<char const *> const &ports);
 
 public:
         /*!
@@ -60,7 +60,7 @@ private:
         * \param ip The IP address string to validate.
         * \return true if the IP is а valid IPv4, false otherwise.
         */
-        [[nodiscard]] bool isIPv4(const ipaddr_t &ip) const noexcept;
+        [[nodiscard]] bool isIPv4(ipaddr_t const &ip) const noexcept;
 
         /*!
         * \brief Checks if the given IP address string is a syntactically valid
@@ -69,7 +69,7 @@ private:
         * \param ip The IP address string to validate.
         * \return true if the IP is а valid IPv6, false otherwise.
         */
-        [[nodiscard]] bool isIPv6(const ipaddr_t &ip) const noexcept;
+        [[nodiscard]] bool isIPv6(ipaddr_t const &ip) const noexcept;
 
         /*!
         * \brief Attempts to parse a C-string into a port_t. It also validates
@@ -81,7 +81,7 @@ private:
         * std::optional.
         */
         [[nodiscard]] std::optional<port_t>
-        parsePort(const char *str) const noexcept;
+        parsePort(char const *str) const noexcept;
 
         /*!
         * \brief Attempts to establish a TCP connection to the specified port.
@@ -91,5 +91,5 @@ private:
         * \return true if a connection can be established (port is accessible),
         * false otherwise.
         */
-        [[nodiscard]] bool isPortAccessible(const port_t port) const noexcept;
+        [[nodiscard]] bool isPortAccessible(port_t const port) const noexcept;
 };

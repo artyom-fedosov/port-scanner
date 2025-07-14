@@ -6,45 +6,45 @@
 #include <unistd.h>
 
 /**
- * @brief ANSI escape code for resetting terminal colors.
+ * \brief ANSI escape code for resetting terminal colors.
  */
-constexpr char RESET[] = "\033[0m";
+char constexpr RESET[] = "\033[0m";
 
 /**
- * @brief ANSI escape code for red text color.
+ * \brief ANSI escape code for red text color.
  */
-constexpr char RED[] = "\033[31m";
+char constexpr RED[] = "\033[31m";
 
 /**
- * @brief ANSI escape code for green text color.
+ * \brief ANSI escape code for green text color.
  */
-constexpr char GREEN[] = "\033[32m";
+char constexpr GREEN[] = "\033[32m";
 
 /**
- * @brief Checks if stdout is connected to a terminal.
+ * \brief Checks if stdout is connected to a terminal.
  *
- * @return true if output is a terminal, false otherwise.
+ * \return true if output is a terminal, false otherwise.
  */
 [[nodiscard]] bool isTerminal() {
         return isatty(fileno(stdout));
 }
 
-int main(int argc, char **argv) {
+int main(int argc, char *argv[]) {
         if (argc < 3) {
                 std::cerr << "Arguments count must be >= 3.\n";
                 return 1;
         }
 
-        std::vector<const char *> ports {};
+        std::vector<char const *> ports {};
         for (int i {2}; i < argc; ++i)
                 ports.push_back(argv[i]);
 
         try {
                 Scanner scanner {argv[1], ports};
                 std::vector<std::pair<port_t, bool>> results {scanner.scan()};
-                const bool isTerminalFlag {isTerminal()};
+                bool const isTerminalFlag {isTerminal()};
 
-                for (const auto &result : results) {
+                for (auto const &result : results) {
                         std::stringstream ss {};
 
                         if (isTerminalFlag)
