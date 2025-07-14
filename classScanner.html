@@ -108,27 +108,27 @@ $(document).ready(function(){initNavTree('classScanner.html',''); initResizable(
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a574fd4df0b9d200572cc944483138808" id="r_a574fd4df0b9d200572cc944483138808"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanner.html#a574fd4df0b9d200572cc944483138808">Scanner</a> (const <a class="el" href="scanner_8hpp.html#ae7690576a8d3893435294d25def55c48">ipaddr_t</a> &amp;ip, const std::vector&lt; const char * &gt; &amp;ports)</td></tr>
-<tr class="memdesc:a574fd4df0b9d200572cc944483138808"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classScanner.html">Scanner</a> with a target IP address and a list of ports to scan.  <br /></td></tr>
-<tr class="separator:a574fd4df0b9d200572cc944483138808"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acef562247c88bd0ff7cba0c3cc9c85f4" id="r_acef562247c88bd0ff7cba0c3cc9c85f4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanner.html#acef562247c88bd0ff7cba0c3cc9c85f4">Scanner</a> (<a class="el" href="scanner_8hpp.html#ae7690576a8d3893435294d25def55c48">ipaddr_t</a> const &amp;ip, std::vector&lt; char const * &gt; const &amp;ports)</td></tr>
+<tr class="memdesc:acef562247c88bd0ff7cba0c3cc9c85f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classScanner.html">Scanner</a> with a target IP address and a list of ports to scan.  <br /></td></tr>
+<tr class="separator:acef562247c88bd0ff7cba0c3cc9c85f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaff16fef05c2feb0e2d636f18b8771d7" id="r_aaff16fef05c2feb0e2d636f18b8771d7"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; <a class="el" href="scanner_8hpp.html#a74951a78c122c2c9903f64726a56aac6">port_t</a>, bool &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanner.html#aaff16fef05c2feb0e2d636f18b8771d7">scan</a> () noexcept</td></tr>
 <tr class="memdesc:aaff16fef05c2feb0e2d636f18b8771d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scans all specified ports on the target IP address.  <br /></td></tr>
 <tr class="separator:aaff16fef05c2feb0e2d636f18b8771d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:adc8d2478a271a0df423630cbb686a24e" id="r_adc8d2478a271a0df423630cbb686a24e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanner.html#adc8d2478a271a0df423630cbb686a24e">isIPv4</a> (const <a class="el" href="scanner_8hpp.html#ae7690576a8d3893435294d25def55c48">ipaddr_t</a> &amp;ip) const noexcept</td></tr>
-<tr class="memdesc:adc8d2478a271a0df423630cbb686a24e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given IP address string is a syntactically valid IPv4 address.  <br /></td></tr>
-<tr class="separator:adc8d2478a271a0df423630cbb686a24e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad09cc08b744133ff3eafff5a739cdab6" id="r_ad09cc08b744133ff3eafff5a739cdab6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanner.html#ad09cc08b744133ff3eafff5a739cdab6">isIPv6</a> (const <a class="el" href="scanner_8hpp.html#ae7690576a8d3893435294d25def55c48">ipaddr_t</a> &amp;ip) const noexcept</td></tr>
-<tr class="memdesc:ad09cc08b744133ff3eafff5a739cdab6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given IP address string is a syntactically valid IPv6 address.  <br /></td></tr>
-<tr class="separator:ad09cc08b744133ff3eafff5a739cdab6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa883b8a1a16934091a2e38cf3e0d9f0e" id="r_aa883b8a1a16934091a2e38cf3e0d9f0e"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="scanner_8hpp.html#a74951a78c122c2c9903f64726a56aac6">port_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanner.html#aa883b8a1a16934091a2e38cf3e0d9f0e">parsePort</a> (const char *str) const noexcept</td></tr>
-<tr class="memdesc:aa883b8a1a16934091a2e38cf3e0d9f0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to parse a C-string into a port_t. It also validates if the parsed number falls within the [MIN_PORT, MAX_PORT] range.  <br /></td></tr>
-<tr class="separator:aa883b8a1a16934091a2e38cf3e0d9f0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b594f0ddfc0993c3419343afc05299f" id="r_a1b594f0ddfc0993c3419343afc05299f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanner.html#a1b594f0ddfc0993c3419343afc05299f">isPortAccessible</a> (const <a class="el" href="scanner_8hpp.html#a74951a78c122c2c9903f64726a56aac6">port_t</a> port) const noexcept</td></tr>
-<tr class="memdesc:a1b594f0ddfc0993c3419343afc05299f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to establish a TCP connection to the specified port. This function incorporates a timeout (TIMEOUT_MS).  <br /></td></tr>
-<tr class="separator:a1b594f0ddfc0993c3419343afc05299f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90741dae9b58ae04679a6e5111131ab9" id="r_a90741dae9b58ae04679a6e5111131ab9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanner.html#a90741dae9b58ae04679a6e5111131ab9">isIPv4</a> (<a class="el" href="scanner_8hpp.html#ae7690576a8d3893435294d25def55c48">ipaddr_t</a> const &amp;ip) const noexcept</td></tr>
+<tr class="memdesc:a90741dae9b58ae04679a6e5111131ab9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given IP address string is a syntactically valid IPv4 address.  <br /></td></tr>
+<tr class="separator:a90741dae9b58ae04679a6e5111131ab9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c3fa32fc14afcc470e18d418770ceb1" id="r_a3c3fa32fc14afcc470e18d418770ceb1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanner.html#a3c3fa32fc14afcc470e18d418770ceb1">isIPv6</a> (<a class="el" href="scanner_8hpp.html#ae7690576a8d3893435294d25def55c48">ipaddr_t</a> const &amp;ip) const noexcept</td></tr>
+<tr class="memdesc:a3c3fa32fc14afcc470e18d418770ceb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given IP address string is a syntactically valid IPv6 address.  <br /></td></tr>
+<tr class="separator:a3c3fa32fc14afcc470e18d418770ceb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c0c87368ad65fedb1d3e83da5853666" id="r_a8c0c87368ad65fedb1d3e83da5853666"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="scanner_8hpp.html#a74951a78c122c2c9903f64726a56aac6">port_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanner.html#a8c0c87368ad65fedb1d3e83da5853666">parsePort</a> (char const *str) const noexcept</td></tr>
+<tr class="memdesc:a8c0c87368ad65fedb1d3e83da5853666"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to parse a C-string into a port_t. It also validates if the parsed number falls within the [MIN_PORT, MAX_PORT] range.  <br /></td></tr>
+<tr class="separator:a8c0c87368ad65fedb1d3e83da5853666"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1caaa5fff75e27448de72b6d6fde9a52" id="r_a1caaa5fff75e27448de72b6d6fde9a52"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanner.html#a1caaa5fff75e27448de72b6d6fde9a52">isPortAccessible</a> (<a class="el" href="scanner_8hpp.html#a74951a78c122c2c9903f64726a56aac6">port_t</a> const port) const noexcept</td></tr>
+<tr class="memdesc:a1caaa5fff75e27448de72b6d6fde9a52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to establish a TCP connection to the specified port. This function incorporates a timeout (TIMEOUT_MS).  <br /></td></tr>
+<tr class="separator:a1caaa5fff75e27448de72b6d6fde9a52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -142,8 +142,8 @@ Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="classScanner.html">Scanner</a> class is designed to perform port scanning operations on a specified IP address for a given set of ports. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a574fd4df0b9d200572cc944483138808" name="a574fd4df0b9d200572cc944483138808"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a574fd4df0b9d200572cc944483138808">&#9670;&#160;</a></span>Scanner()</h2>
+<a id="acef562247c88bd0ff7cba0c3cc9c85f4" name="acef562247c88bd0ff7cba0c3cc9c85f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acef562247c88bd0ff7cba0c3cc9c85f4">&#9670;&#160;</a></span>Scanner()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -151,13 +151,13 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">Scanner::Scanner </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="scanner_8hpp.html#ae7690576a8d3893435294d25def55c48">ipaddr_t</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="scanner_8hpp.html#ae7690576a8d3893435294d25def55c48">ipaddr_t</a> const &amp;&#160;</td>
           <td class="paramname"><em>ip</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::vector&lt; const char * &gt; &amp;&#160;</td>
+          <td class="paramtype">std::vector&lt; char const * &gt; const &amp;&#160;</td>
           <td class="paramname"><em>ports</em>&#160;</td>
         </tr>
         <tr>
@@ -187,8 +187,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="adc8d2478a271a0df423630cbb686a24e" name="adc8d2478a271a0df423630cbb686a24e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc8d2478a271a0df423630cbb686a24e">&#9670;&#160;</a></span>isIPv4()</h2>
+<a id="a90741dae9b58ae04679a6e5111131ab9" name="a90741dae9b58ae04679a6e5111131ab9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90741dae9b58ae04679a6e5111131ab9">&#9670;&#160;</a></span>isIPv4()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -199,7 +199,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">bool Scanner::isIPv4 </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="scanner_8hpp.html#ae7690576a8d3893435294d25def55c48">ipaddr_t</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="scanner_8hpp.html#ae7690576a8d3893435294d25def55c48">ipaddr_t</a> const &amp;&#160;</td>
           <td class="paramname"><em>ip</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -222,8 +222,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ad09cc08b744133ff3eafff5a739cdab6" name="ad09cc08b744133ff3eafff5a739cdab6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad09cc08b744133ff3eafff5a739cdab6">&#9670;&#160;</a></span>isIPv6()</h2>
+<a id="a3c3fa32fc14afcc470e18d418770ceb1" name="a3c3fa32fc14afcc470e18d418770ceb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c3fa32fc14afcc470e18d418770ceb1">&#9670;&#160;</a></span>isIPv6()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -234,7 +234,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">bool Scanner::isIPv6 </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="scanner_8hpp.html#ae7690576a8d3893435294d25def55c48">ipaddr_t</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="scanner_8hpp.html#ae7690576a8d3893435294d25def55c48">ipaddr_t</a> const &amp;&#160;</td>
           <td class="paramname"><em>ip</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -257,8 +257,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a1b594f0ddfc0993c3419343afc05299f" name="a1b594f0ddfc0993c3419343afc05299f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1b594f0ddfc0993c3419343afc05299f">&#9670;&#160;</a></span>isPortAccessible()</h2>
+<a id="a1caaa5fff75e27448de72b6d6fde9a52" name="a1caaa5fff75e27448de72b6d6fde9a52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1caaa5fff75e27448de72b6d6fde9a52">&#9670;&#160;</a></span>isPortAccessible()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -269,7 +269,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">bool Scanner::isPortAccessible </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="scanner_8hpp.html#a74951a78c122c2c9903f64726a56aac6">port_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="scanner_8hpp.html#a74951a78c122c2c9903f64726a56aac6">port_t</a> const&#160;</td>
           <td class="paramname"><em>port</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -292,8 +292,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="aa883b8a1a16934091a2e38cf3e0d9f0e" name="aa883b8a1a16934091a2e38cf3e0d9f0e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa883b8a1a16934091a2e38cf3e0d9f0e">&#9670;&#160;</a></span>parsePort()</h2>
+<a id="a8c0c87368ad65fedb1d3e83da5853666" name="a8c0c87368ad65fedb1d3e83da5853666"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c0c87368ad65fedb1d3e83da5853666">&#9670;&#160;</a></span>parsePort()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -304,7 +304,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">std::optional&lt; <a class="el" href="scanner_8hpp.html#a74951a78c122c2c9903f64726a56aac6">port_t</a> &gt; Scanner::parsePort </td>
           <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
+          <td class="paramtype">char const *&#160;</td>
           <td class="paramname"><em>str</em></td><td>)</td>
           <td> const</td>
         </tr>
