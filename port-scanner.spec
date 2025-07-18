@@ -1,5 +1,5 @@
 Name:           port-scanner
-Version:        1.0.2
+Version:        1.0.3
 Release:        1%{?dist}
 Summary:        Lightweight TCP port scanner for Linux, written in C++.
 
@@ -34,6 +34,6 @@ port-scanner — Lightweight TCP port scanner for Linux, written in C++.
 %{_mandir}/man1/port-scanner.1.*
 
 %changelog
-* Wed Jul 11 2025 Artyom <artjomsfedosovs2@gmail.com> - 1.0.2-1
-- Code refactoring
+* Fri Jul 18 2025 Artyom <artjomsfedosovs2@gmail.com> - 1.0.3-1
+- Update
 
