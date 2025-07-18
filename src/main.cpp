@@ -36,6 +36,7 @@ int main(int argc, char *argv[]) {
         }
 
         std::vector<char const *> ports {};
+        ports.reserve(static_cast<size_t>(argc) - 2);
         for (int i {2}; i < argc; ++i)
                 ports.push_back(argv[i]);
 
@@ -47,17 +48,21 @@ int main(int argc, char *argv[]) {
                 for (auto const &result : results) {
                         std::stringstream ss {};
 
-                        if (isTerminalFlag)
-                                ss << (result.second ? GREEN : RED);
-                        ss << result.first << "\tis" <<
-                                (result.second ? " " : " not ") << "accessible";
-                        if (isTerminalFlag)
-                                ss << RESET;
-                        ss << '\n';
+                        if (isTerminalFlag) {
+                                ss << (result.second ? GREEN : RED) <<
+                                        result.first << "\tis" <<
+                                        (result.second ? " " : " not ") <<
+                                        "accessible" << RESET << '\n';
+                        }
+                        else {
+                                ss << result.first << "\tis" <<
+                                        (result.second ? " " : " not ") <<
+                                        "accessible\n";
+                        }
 
                         std::cout << ss.rdbuf();
                 }
-        } catch(std::exception &e) {
+        } catch (std::exception &e) {
                 std::cerr << e.what() << '\n';
                 return 2;
         }
