@@ -1,33 +1,7 @@
-#include "../include/scanner.hpp"
-
 #include <iostream>
-#include <sstream>
 
-#include <unistd.h>
-
-/**
- * \brief ANSI escape code for resetting terminal colors.
- */
-char constexpr RESET[] = "\033[0m";
-
-/**
- * \brief ANSI escape code for red text color.
- */
-char constexpr RED[] = "\033[31m";
-
-/**
- * \brief ANSI escape code for green text color.
- */
-char constexpr GREEN[] = "\033[32m";
-
-/**
- * \brief Checks if stdout is connected to a terminal.
- *
- * \return true if output is a terminal, false otherwise.
- */
-[[nodiscard]] bool isTerminal() {
-        return isatty(fileno(stdout));
-}
+#include "../include/scanner.hpp"
+#include "../include/printer.hpp"
 
 int main(int argc, char *argv[]) {
         if (argc < 3) {
@@ -42,26 +16,7 @@ int main(int argc, char *argv[]) {
 
         try {
                 Scanner scanner {argv[1], ports};
-                std::vector<std::pair<port_t, bool>> results {scanner.scan()};
-                bool const isTerminalFlag {isTerminal()};
-
-                for (auto const &result : results) {
-                        std::stringstream ss {};
-
-                        if (isTerminalFlag) {
-                                ss << (result.second ? GREEN : RED) <<
-                                        result.first << "\tis" <<
-                                        (result.second ? " " : " not ") <<
-                                        "accessible" << RESET << '\n';
-                        }
-                        else {
-                                ss << result.first << "\tis" <<
-                                        (result.second ? " " : " not ") <<
-                                        "accessible\n";
-                        }
-
-                        std::cout << ss.rdbuf();
-                }
+                Printer::print(scanner.scan());
         } catch (std::exception &e) {
                 std::cerr << e.what() << '\n';
                 return 2;

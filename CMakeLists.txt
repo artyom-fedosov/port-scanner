@@ -20,6 +20,7 @@ set(CMAKE_CXX_CLANG_TIDY "clang-tidy" CACHE STRING "Enable clang-tidy")
 add_executable(port-scanner
         src/main.cpp
         src/scanner.cpp
+        src/printer.cpp
 )
 
 include(GNUInstallDirs)
