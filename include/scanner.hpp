@@ -1,21 +1,21 @@
 #pragma once
 
-#include <string>
 #include <vector>
 #include <mutex>
 #include <optional>
 
-using ipaddr_t = std::string; //!< \brief IP address type
-using port_t = uint16_t; //!< \brief Port number type
-using ports_t = std::vector<port_t>; //!< \brief Vector of ports type
+#include "types.hpp"
 
-port_t constexpr MIN_PORT = 0; //!< \brief Minimum valid port number
-port_t constexpr MAX_PORT = 65535; //!< \brief Maximum valid port number
-int constexpr TIMEOUT_MS = 200; //!< \brief Timeout in milliseconds for socket
-                                //!< connection attempts
+namespace {
+        port_t constexpr MIN_PORT = 0; //!< \brief Minimum valid port number
+        port_t constexpr MAX_PORT = 65535; //!< \brief Maximum valid port number
+        int constexpr TIMEOUT_MS = 200; //!< \brief Timeout in milliseconds for
+                                        //!< socket connection attempts
+}
 
 /*!
  * \class Scanner
+ *
  * The Scanner class is designed to perform port scanning operations on a
  * specified IP address for a given set of ports.
  */
