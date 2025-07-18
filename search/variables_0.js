@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['green_0',['GREEN',['../main_8cpp.html#a1feecb45ef77e76b829f560b6bf475de',1,'main.cpp']]]
+  ['ip_5f_0',['ip_',['../classScanner.html#a9bf6ad332fe0a322708016c90af75f43',1,'Scanner']]]
 ];

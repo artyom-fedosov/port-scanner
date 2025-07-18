@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Port Scanner: include Directory Reference</title>
+<title>Port Scanner: include/types.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('dir_d44c64559bbebec7f509842c48db8b23.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('types_8hpp_source.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -95,25 +95,28 @@ $(document).ready(function(){initNavTree('dir_d44c64559bbebec7f509842c48db8b23.h
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">include Directory Reference</div></div>
+  <div class="headertitle"><div class="title">types.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="printer_8hpp_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="printer_8hpp.html">printer.hpp</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="scanner_8hpp_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scanner_8hpp.html">scanner.hpp</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="types_8hpp_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8hpp.html">types.hpp</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-</div><!-- contents -->
+<a href="types_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="types_8hpp.html#ae7690576a8d3893435294d25def55c48">    8</a></span><span class="keyword">using </span><a class="code hl_typedef" href="types_8hpp.html#ae7690576a8d3893435294d25def55c48">ipaddr_t</a> = std::string; </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="types_8hpp.html#a74951a78c122c2c9903f64726a56aac6">    9</a></span><span class="keyword">using </span><a class="code hl_typedef" href="types_8hpp.html#a74951a78c122c2c9903f64726a56aac6">port_t</a> = uint16_t; </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="types_8hpp.html#a5a82291375f2f68b53a652f6f2ab74b1">   10</a></span><span class="keyword">using </span><a class="code hl_typedef" href="types_8hpp.html#a5a82291375f2f68b53a652f6f2ab74b1">ports_t</a> = std::vector&lt;port_t&gt;; </div>
+<div class="ttc" id="atypes_8hpp_html_a5a82291375f2f68b53a652f6f2ab74b1"><div class="ttname"><a href="types_8hpp.html#a5a82291375f2f68b53a652f6f2ab74b1">ports_t</a></div><div class="ttdeci">std::vector&lt; port_t &gt; ports_t</div><div class="ttdoc">Vector of ports type.</div><div class="ttdef"><b>Definition</b> types.hpp:10</div></div>
+<div class="ttc" id="atypes_8hpp_html_a74951a78c122c2c9903f64726a56aac6"><div class="ttname"><a href="types_8hpp.html#a74951a78c122c2c9903f64726a56aac6">port_t</a></div><div class="ttdeci">uint16_t port_t</div><div class="ttdoc">Port number type.</div><div class="ttdef"><b>Definition</b> types.hpp:9</div></div>
+<div class="ttc" id="atypes_8hpp_html_ae7690576a8d3893435294d25def55c48"><div class="ttname"><a href="types_8hpp.html#ae7690576a8d3893435294d25def55c48">ipaddr_t</a></div><div class="ttdeci">std::string ipaddr_t</div><div class="ttdoc">IP address type.</div><div class="ttdef"><b>Definition</b> types.hpp:8</div></div>
+</div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="types_8hpp.html">types.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

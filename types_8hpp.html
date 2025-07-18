@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Port Scanner: include/scanner.hpp File Reference</title>
+<title>Port Scanner: include/types.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('scanner_8hpp.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('types_8hpp.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -96,28 +96,83 @@ $(document).ready(function(){initNavTree('scanner_8hpp.html',''); initResizable(
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
-  <div class="headertitle"><div class="title">scanner.hpp File Reference</div></div>
+<a href="#typedef-members">Typedefs</a>  </div>
+  <div class="headertitle"><div class="title">types.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;vector&gt;</code><br />
-<code>#include &lt;mutex&gt;</code><br />
-<code>#include &lt;optional&gt;</code><br />
-<code>#include &quot;<a class="el" href="types_8hpp_source.html">types.hpp</a>&quot;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
 </div>
-<p><a href="scanner_8hpp_source.html">Go to the source code of this file.</a></p>
+<p><a href="types_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanner.html">Scanner</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ae7690576a8d3893435294d25def55c48" id="r_ae7690576a8d3893435294d25def55c48"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8hpp.html#ae7690576a8d3893435294d25def55c48">ipaddr_t</a> = std::string</td></tr>
+<tr class="memdesc:ae7690576a8d3893435294d25def55c48"><td class="mdescLeft">&#160;</td><td class="mdescRight">IP address type.  <br /></td></tr>
+<tr class="separator:ae7690576a8d3893435294d25def55c48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74951a78c122c2c9903f64726a56aac6" id="r_a74951a78c122c2c9903f64726a56aac6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8hpp.html#a74951a78c122c2c9903f64726a56aac6">port_t</a> = uint16_t</td></tr>
+<tr class="memdesc:a74951a78c122c2c9903f64726a56aac6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Port number type.  <br /></td></tr>
+<tr class="separator:a74951a78c122c2c9903f64726a56aac6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a82291375f2f68b53a652f6f2ab74b1" id="r_a5a82291375f2f68b53a652f6f2ab74b1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8hpp.html#a5a82291375f2f68b53a652f6f2ab74b1">ports_t</a> = std::vector&lt; <a class="el" href="types_8hpp.html#a74951a78c122c2c9903f64726a56aac6">port_t</a> &gt;</td></tr>
+<tr class="memdesc:a5a82291375f2f68b53a652f6f2ab74b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector of ports type.  <br /></td></tr>
+<tr class="separator:a5a82291375f2f68b53a652f6f2ab74b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="ae7690576a8d3893435294d25def55c48" name="ae7690576a8d3893435294d25def55c48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7690576a8d3893435294d25def55c48">&#9670;&#160;</a></span>ipaddr_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="types_8hpp.html#ae7690576a8d3893435294d25def55c48">ipaddr_t</a> =  std::string</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>IP address type. </p>
+
+</div>
+</div>
+<a id="a74951a78c122c2c9903f64726a56aac6" name="a74951a78c122c2c9903f64726a56aac6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74951a78c122c2c9903f64726a56aac6">&#9670;&#160;</a></span>port_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="types_8hpp.html#a74951a78c122c2c9903f64726a56aac6">port_t</a> =  uint16_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Port number type. </p>
+
+</div>
+</div>
+<a id="a5a82291375f2f68b53a652f6f2ab74b1" name="a5a82291375f2f68b53a652f6f2ab74b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a82291375f2f68b53a652f6f2ab74b1">&#9670;&#160;</a></span>ports_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="types_8hpp.html#a5a82291375f2f68b53a652f6f2ab74b1">ports_t</a> =  std::vector&lt;<a class="el" href="types_8hpp.html#a74951a78c122c2c9903f64726a56aac6">port_t</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Vector of ports type. </p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="scanner_8hpp.html">scanner.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="types_8hpp.html">types.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
