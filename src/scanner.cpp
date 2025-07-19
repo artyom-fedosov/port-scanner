@@ -17,6 +17,7 @@ Scanner::Scanner(ipaddr_t const &ip, std::vector<char const *> const &ports)
         if (!isIPv4(ip_) and !isIPv6(ip_))
                 throw std::invalid_argument {"IP address is not valid!"};
 
+        ports_.reserve(ports.size());
         for (auto const prt : ports) {
                 std::optional<port_t> port {parsePort(prt)};
                 if (port)
