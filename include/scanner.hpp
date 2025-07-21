@@ -48,9 +48,9 @@ public:
         [[nodiscard]] std::vector<std::pair<port_t, bool>> scan() noexcept;
 
 private:
-        ipaddr_t ip_;
-        ports_t ports_;
-        std::mutex mtx_;
+        ipaddr_t m_ip;
+        ports_t m_ports;
+        std::mutex m_mtx;
 
 private:
         /*!
