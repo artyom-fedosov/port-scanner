@@ -41,9 +41,9 @@ void test_scan_known_ports() {
         assert(results.size() == 3);
 
         for (auto const &res : results) {
-                assert(res.first == 22 || res.first == 80 ||
+                assert(res.first == 22 or res.first == 80 or
                        res.first == 65535);
-                assert(res.second == true || res.second == false);
+                assert(res.second == true or res.second == false);
         }
 }
 
