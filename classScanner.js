@@ -6,7 +6,7 @@ var classScanner =
     [ "isPortAccessible", "classScanner.html#a1caaa5fff75e27448de72b6d6fde9a52", null ],
     [ "parsePort", "classScanner.html#a8c0c87368ad65fedb1d3e83da5853666", null ],
     [ "scan", "classScanner.html#aaff16fef05c2feb0e2d636f18b8771d7", null ],
-    [ "ip_", "classScanner.html#a9bf6ad332fe0a322708016c90af75f43", null ],
-    [ "mtx_", "classScanner.html#a67c93cf068399d7c39ae5aae5b925586", null ],
-    [ "ports_", "classScanner.html#aba7fba327f3162091d3adbcffba4a274", null ]
+    [ "m_ip", "classScanner.html#af9f6c2887e61333d36bf9771a13ba67f", null ],
+    [ "m_mtx", "classScanner.html#a5747292f3b58c1806ed5ca3edc262a87", null ],
+    [ "m_ports", "classScanner.html#a17036355736d4c9d42327cf4cd75b25c", null ]
 ];

@@ -132,12 +132,12 @@ Private Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a9bf6ad332fe0a322708016c90af75f43" id="r_a9bf6ad332fe0a322708016c90af75f43"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8hpp.html#ae7690576a8d3893435294d25def55c48">ipaddr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanner.html#a9bf6ad332fe0a322708016c90af75f43">ip_</a></td></tr>
-<tr class="separator:a9bf6ad332fe0a322708016c90af75f43"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba7fba327f3162091d3adbcffba4a274" id="r_aba7fba327f3162091d3adbcffba4a274"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8hpp.html#a5a82291375f2f68b53a652f6f2ab74b1">ports_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanner.html#aba7fba327f3162091d3adbcffba4a274">ports_</a></td></tr>
-<tr class="separator:aba7fba327f3162091d3adbcffba4a274"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67c93cf068399d7c39ae5aae5b925586" id="r_a67c93cf068399d7c39ae5aae5b925586"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanner.html#a67c93cf068399d7c39ae5aae5b925586">mtx_</a></td></tr>
-<tr class="separator:a67c93cf068399d7c39ae5aae5b925586"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9f6c2887e61333d36bf9771a13ba67f" id="r_af9f6c2887e61333d36bf9771a13ba67f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8hpp.html#ae7690576a8d3893435294d25def55c48">ipaddr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanner.html#af9f6c2887e61333d36bf9771a13ba67f">m_ip</a></td></tr>
+<tr class="separator:af9f6c2887e61333d36bf9771a13ba67f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17036355736d4c9d42327cf4cd75b25c" id="r_a17036355736d4c9d42327cf4cd75b25c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8hpp.html#a5a82291375f2f68b53a652f6f2ab74b1">ports_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanner.html#a17036355736d4c9d42327cf4cd75b25c">m_ports</a></td></tr>
+<tr class="separator:a17036355736d4c9d42327cf4cd75b25c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5747292f3b58c1806ed5ca3edc262a87" id="r_a5747292f3b58c1806ed5ca3edc262a87"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanner.html#a5747292f3b58c1806ed5ca3edc262a87">m_mtx</a></td></tr>
+<tr class="separator:a5747292f3b58c1806ed5ca3edc262a87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="classScanner.html">Scanner</a> class is designed to perform port scanning operations on a specified IP address for a given set of ports. </p>
@@ -357,8 +357,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a9bf6ad332fe0a322708016c90af75f43" name="a9bf6ad332fe0a322708016c90af75f43"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9bf6ad332fe0a322708016c90af75f43">&#9670;&#160;</a></span>ip_</h2>
+<a id="af9f6c2887e61333d36bf9771a13ba67f" name="af9f6c2887e61333d36bf9771a13ba67f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9f6c2887e61333d36bf9771a13ba67f">&#9670;&#160;</a></span>m_ip</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -367,7 +367,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="types_8hpp.html#ae7690576a8d3893435294d25def55c48">ipaddr_t</a> Scanner::ip_</td>
+          <td class="memname"><a class="el" href="types_8hpp.html#ae7690576a8d3893435294d25def55c48">ipaddr_t</a> Scanner::m_ip</td>
         </tr>
       </table>
   </td>
@@ -379,8 +379,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a67c93cf068399d7c39ae5aae5b925586" name="a67c93cf068399d7c39ae5aae5b925586"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a67c93cf068399d7c39ae5aae5b925586">&#9670;&#160;</a></span>mtx_</h2>
+<a id="a5747292f3b58c1806ed5ca3edc262a87" name="a5747292f3b58c1806ed5ca3edc262a87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5747292f3b58c1806ed5ca3edc262a87">&#9670;&#160;</a></span>m_mtx</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -389,7 +389,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::mutex Scanner::mtx_</td>
+          <td class="memname">std::mutex Scanner::m_mtx</td>
         </tr>
       </table>
   </td>
@@ -401,8 +401,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="aba7fba327f3162091d3adbcffba4a274" name="aba7fba327f3162091d3adbcffba4a274"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba7fba327f3162091d3adbcffba4a274">&#9670;&#160;</a></span>ports_</h2>
+<a id="a17036355736d4c9d42327cf4cd75b25c" name="a17036355736d4c9d42327cf4cd75b25c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17036355736d4c9d42327cf4cd75b25c">&#9670;&#160;</a></span>m_ports</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -411,7 +411,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="types_8hpp.html#a5a82291375f2f68b53a652f6f2ab74b1">ports_t</a> Scanner::ports_</td>
+          <td class="memname"><a class="el" href="types_8hpp.html#a5a82291375f2f68b53a652f6f2ab74b1">ports_t</a> Scanner::m_ports</td>
         </tr>
       </table>
   </td>
