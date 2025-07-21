@@ -13,15 +13,15 @@
 #include <fcntl.h>
 
 Scanner::Scanner(ipaddr_t const &ip, std::vector<char const *> const &ports)
-                : ip_ {ip}, ports_ {}, mtx_ {} {
-        if (not isIPv4(ip_) and not isIPv6(ip_))
+                : m_ip {ip}, m_ports {}, m_mtx {} {
+        if (not isIPv4(m_ip) and not isIPv6(m_ip))
                 throw std::invalid_argument {"IP address is not valid!"};
 
-        ports_.reserve(ports.size());
+        m_ports.reserve(ports.size());
         for (auto const prt : ports) {
                 std::optional<port_t> port {parsePort(prt)};
                 if (port)
-                        ports_.push_back(port.value());
+                        m_ports.push_back(port.value());
                 else
                         throw std::invalid_argument {std::string {prt} +
                                 " is not valid port!"};
@@ -32,12 +32,12 @@ Scanner::Scanner(ipaddr_t const &ip, std::vector<char const *> const &ports)
 Scanner::scan() noexcept {
         std::vector<std::pair<port_t, bool>> result {};
         std::vector<std::thread> threads {};
-        for (auto const port : ports_) {
+        for (auto const port : m_ports) {
                 threads.push_back(std::thread {[this, port, &result]() {
                         bool const isAccessible {isPortAccessible(port)};
-                        mtx_.lock();
+                        m_mtx.lock();
                         result.push_back(std::pair {port, isAccessible});
-                        mtx_.unlock();
+                        m_mtx.unlock();
                 }});
         }
 
@@ -76,7 +76,7 @@ Scanner::parsePort(char const *str) const noexcept {
         hints.ai_socktype = SOCK_STREAM;
 
         std::string portStr = std::to_string(port);
-        if (getaddrinfo(ip_.c_str(), portStr.c_str(), &hints, &res) not_eq 0 or
+        if (getaddrinfo(m_ip.c_str(), portStr.c_str(), &hints, &res) not_eq 0 or
                         not res)
                 return false;
 
