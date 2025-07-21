@@ -14,7 +14,7 @@
 
 Scanner::Scanner(ipaddr_t const &ip, std::vector<char const *> const &ports)
                 : ip_ {ip}, ports_ {}, mtx_ {} {
-        if (!isIPv4(ip_) and !isIPv6(ip_))
+        if (not isIPv4(ip_) and not isIPv6(ip_))
                 throw std::invalid_argument {"IP address is not valid!"};
 
         ports_.reserve(ports.size());
@@ -63,8 +63,8 @@ Scanner::parsePort(char const *str) const noexcept {
         char const *strEnd = str + std::strlen(str);
         std::from_chars_result const res = std::from_chars(str, strEnd, prt);
 
-        if (res.ec != std::errc() or prt < MIN_PORT or prt > MAX_PORT or
-            res.ptr != strEnd)
+        if (res.ec not_eq std::errc() or prt < MIN_PORT or prt > MAX_PORT or
+            res.ptr not_eq strEnd)
                 return {};
 
         return {static_cast<port_t>(prt)};
@@ -76,8 +76,8 @@ Scanner::parsePort(char const *str) const noexcept {
         hints.ai_socktype = SOCK_STREAM;
 
         std::string portStr = std::to_string(port);
-        if (getaddrinfo(ip_.c_str(), portStr.c_str(), &hints, &res) != 0 ||
-                        !res)
+        if (getaddrinfo(ip_.c_str(), portStr.c_str(), &hints, &res) not_eq 0 or
+                        not res)
                 return false;
 
         int const sockfd = socket(res->ai_family, SOCK_STREAM, 0);
