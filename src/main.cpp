@@ -9,13 +9,10 @@ int main(int argc, char *argv[]) {
                 return 1;
         }
 
-        std::vector<char const *> ports {};
-        ports.reserve(static_cast<size_t>(argc) - 2);
-        for (int i {2}; i < argc; ++i)
-                ports.push_back(argv[i]);
-
+        ipaddr_t ip {argv[1]};
+        std::vector<char const *> ports (&argv[2], &argv[argc]);
         try {
-                Scanner scanner {argv[1], ports};
+                Scanner scanner {ip, ports};
                 Printer::print(scanner.scan());
         } catch (std::exception &e) {
                 std::cerr << e.what() << '\n';
