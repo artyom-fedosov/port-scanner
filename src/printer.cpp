@@ -1,6 +1,5 @@
 #include "../include/printer.hpp"
 
-#include <sstream>
 #include <iostream>
 
 #include <unistd.h>
@@ -11,21 +10,13 @@
 
 void Printer::print(const std::vector<std::pair<port_t, bool>> &ports)
                 noexcept {
+        bool const isTerm {isTerminal()};
         for (auto const &port : ports) {
-                std::stringstream ss {};
-
-                if (isTerminal()) {
-                        ss << (port.second ? GREEN : RED) <<
-                                port.first << "\tis" <<
-                                (port.second ? " " : " not ") <<
-                                "accessible" << RESET << '\n';
-                }
-                else {
-                        ss << port.first << "\tis" <<
-                                (port.second ? " " : " not ") <<
-                                "accessible\n";
-                }
-
-                std::cout << ss.rdbuf();
+                if (isTerm)
+                        std::cout << (port.second ? GREEN : RED);
+                std::cout << port.first << "\tis" <<
+                        (port.second ? " " : " not ") << "accessible";
+                if (isTerm)
+                        std::cout << RESET << '\n';
         }
 }
