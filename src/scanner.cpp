@@ -31,7 +31,9 @@ Scanner::Scanner(ipaddr_t const &ip, std::vector<char const *> const &ports)
 [[nodiscard]] std::vector<std::pair<port_t, bool>>
 Scanner::scan() noexcept {
         std::vector<std::pair<port_t, bool>> result {};
+        result.reserve(m_ports.size());
         std::vector<std::thread> threads {};
+        threads.reserve(m_ports.size());
         for (auto const port : m_ports) {
                 threads.push_back(std::thread {[this, port, &result]() {
                         bool const isAccessible {isPortAccessible(port)};
