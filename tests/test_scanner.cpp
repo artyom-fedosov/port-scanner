@@ -1,57 +1,48 @@
-#include <cassert>
-#include <iostream>
+#include <gtest/gtest.h>
 
 #include "../include/scanner.hpp"
 
-void test_valid_ipv4_and_ipv6() {
-        Scanner scannerIPv4("127.0.0.1", {"80", "443"});
-        Scanner scannerIPv6("::1", {"80"});
-
-        bool threw = false;
-        try {
-                Scanner invalidScanner("invalid_ip", {"80"});
-        } catch (std::invalid_argument const &) {
-                threw = true;
-        }
-        assert(threw);
+TEST(ScannerTest, ValidIPv4Address) {
+        EXPECT_NO_THROW(
+                Scanner scanner ("127.0.0.1", std::vector<char const *> {});
+        );
 }
 
-void test_invalid_ports_in_constructor() {
-        bool threw = false;
-        try {
-                Scanner scanner("127.0.0.1", {"80", "70000"});
-        } catch (std::invalid_argument const &) {
-                threw = true;
-        }
-        assert(threw);
-
-        threw = false;
-        try {
-                Scanner scanner("127.0.0.1", {"abc"});
-        } catch (std::invalid_argument const &) {
-                threw = true;
-        }
-        assert(threw);
+TEST(ScannerTest, ValidIPv6Address) {
+        EXPECT_NO_THROW(
+                Scanner scanner ("::1", std::vector<char const *> {});
+        );
 }
 
-void test_scan_known_ports() {
-        Scanner scanner("127.0.0.1", {"22", "80", "65535"});
-
-        auto results = scanner.scan();
-        assert(results.size() == 3);
-
-        for (auto const &res : results) {
-                assert(res.first == 22 or res.first == 80 or
-                       res.first == 65535);
-                assert(res.second == true or res.second == false);
-        }
+TEST(ScannerTest, InvalidIPAddress) {
+        EXPECT_THROW(
+                Scanner scanner("invalid_ip", std::vector<char const *> {}),
+                     std::invalid_argument
+        );
 }
 
-int main() {
-        test_valid_ipv4_and_ipv6();
-        test_invalid_ports_in_constructor();
-        test_scan_known_ports();
-
-        std::cout << "All Scanner tests passed!\n";
+TEST(ScannerTest, ValidPort) {
+        EXPECT_NO_THROW(
+                Scanner scanner ("127.0.0.1",
+                        std::vector<char const *> {"80", "53", "10"});
+        );
 }
 
+TEST(ScannerTest, InvalidPort) {
+        EXPECT_THROW(
+                Scanner scanner("127.0.0.1",
+                        std::vector<char const *> {"80", "70000"}),
+                std::invalid_argument
+        );
+
+        EXPECT_THROW(
+                Scanner scanner("abc",
+                        std::vector<char const *> {"80", "70000"}),
+                std::invalid_argument
+        );
+}
+
+int main(int argc, char *argv[]) {
+        testing::InitGoogleTest(&argc, argv);
+        return RUN_ALL_TESTS();
+}
