@@ -23,6 +23,13 @@ add_executable(port-scanner
         src/printer.cpp
 )
 
+include(FetchContent)
+FetchContent_Declare(
+  googletest
+  URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
+)
+FetchContent_MakeAvailable(googletest)
+
 include(GNUInstallDirs)
 install(TARGETS port-scanner RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
 install(FILES man/port-scanner.1 DESTINATION ${CMAKE_INSTALL_MANDIR}/man1)
@@ -60,7 +67,12 @@ add_executable(tests
         tests/test_scanner.cpp
         src/scanner.cpp
 )
-add_test(NAME ScannerTests COMMAND tests)
+
+target_link_libraries(tests GTest::gtest_main)
+
+include(GoogleTest)
+gtest_discover_tests(tests)
+
 add_test(NAME Valgrind COMMAND valgrind
                 --tool=memcheck
                 --leak-check=full
