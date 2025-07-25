@@ -29,7 +29,11 @@ sudo dnf install port-scanner
 ```bash
 git clone https://github.com/artyom-fedosov/port-scanner.git
 cd port-scanner
-./install.sh
+./scripts/install.sh
+```
+or
+```bash
+git clone https://github.com/artyom-fedosov/port-scanner.git && cd port-scanner && ./scripts/install.sh
 ```
 
 ---

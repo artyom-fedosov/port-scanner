@@ -1,13 +1,14 @@
 #!/bin/bash
 set -e
+BUILD=$(pwd)/../build
 
 echo "🔧 Configuring..."
-cmake -B build -DCMAKE_INSTALL_PREFIX=/usr
+cmake -B $BUILD -S ../ -DCMAKE_INSTALL_PREFIX=/usr
 
 echo "🔨 Building..."
-cmake --build build
+cmake --build $BUILD
 
 echo "📦 Installing..."
-sudo cmake --install build
+sudo cmake --install $BUILD
 
 echo "✅ Done. You can now use 'port-scanner'."
