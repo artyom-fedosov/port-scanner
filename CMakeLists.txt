@@ -2,22 +2,29 @@ cmake_minimum_required(VERSION 3.16)
 
 project(port-scanner LANGUAGES CXX)
 
+set(CMAKE_SYSTEM_NAME Linux)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_CXX_FLAGS_DEBUG "-Wall -Wextra -Wpedantic -Wshadow -Wconversion\
- -Wsign-conversion -Wold-style-cast -Wuseless-cast\
- -Wzero-as-null-pointer-constant -Wmisleading-indentation -Wredundant-decls\
- -Wattributes -Wempty-body -Wmissing-field-initializers -Wmaybe-uninitialized\
- -Wsuggest-attribute=const -Wsuggest-attribute=pure\
- -Wsuggest-attribute=noreturn -Wswitch-default -Wfloat-equal -Wextra-semi\
- -Wnull-dereference -Wduplicated-branches -Wlogical-op -Wparentheses\
- -Wsequence-point -Wunused-result -Wconditionally-supported\
- -Wignored-qualifiers -Wdisabled-optimization -Wunreachable-code\
- -Wformat-overflow -Wformat-truncation -Wstrict-aliasing -Wcast-align -g")
+        -Wsign-conversion -Wold-style-cast -Wuseless-cast\
+        -Wzero-as-null-pointer-constant -Wmisleading-indentation\
+        -Wredundant-decls -Wattributes -Wempty-body\
+        -Wmissing-field-initializers -Wmaybe-uninitialized\
+        -Wsuggest-attribute=const -Wsuggest-attribute=pure\
+        -Wsuggest-attribute=noreturn -Wswitch-default -Wfloat-equal\
+        -Wextra-semi -Wnull-dereference -Wduplicated-branches -Wlogical-op\
+        -Wparentheses -Wsequence-point -Wunused-result\
+        -Wconditionally-supported -Wignored-qualifiers -Wdisabled-optimization\
+        -Wunreachable-code -Wformat-overflow -Wformat-truncation\
+        -Wstrict-aliasing -Wcast-align -g")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 set(CMAKE_CXX_CLANG_TIDY "clang-tidy" CACHE STRING "Enable clang-tidy")
 
-add_executable(port-scanner
+add_executable(port-scanner)
+
+target_sources(port-scanner
+PRIVATE
         src/main.cpp
         src/scanner.cpp
         src/printer.cpp
@@ -25,8 +32,8 @@ add_executable(port-scanner
 
 include(FetchContent)
 FetchContent_Declare(
-  googletest
-  URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
+        googletest
+        URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
 )
 FetchContent_MakeAvailable(googletest)
 
@@ -74,13 +81,13 @@ include(GoogleTest)
 gtest_discover_tests(tests)
 
 add_test(NAME Valgrind COMMAND valgrind
-                --tool=memcheck
-                --leak-check=full
-                --show-leak-kinds=all
-                --track-origins=yes
-                --errors-for-leak-kinds=definite
-                --error-exitcode=1
-                --undef-value-errors=yes
-                --read-var-info=yes
-                $<TARGET_FILE:port-scanner> 192.168.8.1 80 443 1 2 3 4 5
+        --tool=memcheck
+        --leak-check=full
+        --show-leak-kinds=all
+        --track-origins=yes
+        --errors-for-leak-kinds=definite
+        --error-exitcode=1
+        --undef-value-errors=yes
+        --read-var-info=yes
+        $<TARGET_FILE:port-scanner> 192.168.8.1 80 443 1 2 3 4 5
 )
