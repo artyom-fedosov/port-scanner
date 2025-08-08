@@ -19,7 +19,7 @@ namespace {
  * The Scanner class is designed to perform port scanning operations on a
  * specified IP address for a given set of ports.
  */
-class Scanner {
+class Scanner final {
 public:
         /*!
         * \brief Constructs a Scanner with a target IP address and a list of
