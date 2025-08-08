@@ -36,6 +36,6 @@ public:
         */
         [[nodiscard]] static bool isTerminal() noexcept;
 
-        static void print(const std::vector<std::pair<port_t, bool>> &ports)
+        static void print(std::vector<std::pair<port_t, bool>> const &ports)
                 noexcept;
 };

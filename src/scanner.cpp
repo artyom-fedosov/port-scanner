@@ -62,8 +62,8 @@ Scanner::scan() {
 [[nodiscard]] std::optional<port_t>
 Scanner::parsePort(char const *str) const noexcept {
         int prt;
-        char const *strEnd = str + std::strlen(str);
-        std::from_chars_result const res = std::from_chars(str, strEnd, prt);
+        char const *strEnd {str + std::strlen(str)};
+        std::from_chars_result const res {std::from_chars(str, strEnd, prt)};
 
         if (res.ec not_eq std::errc() or prt < MIN_PORT or prt > MAX_PORT or
             res.ptr not_eq strEnd)
@@ -73,16 +73,17 @@ Scanner::parsePort(char const *str) const noexcept {
 }
 
 [[nodiscard]] bool Scanner::isPortAccessible(port_t const port) const {
-        addrinfo hints {}, *res = nullptr;
+        addrinfo hints {};
+        addrinfo *res {};
         hints.ai_family = AF_UNSPEC;
         hints.ai_socktype = SOCK_STREAM;
 
-        std::string portStr = std::to_string(port);
+        std::string const portStr {std::to_string(port)};
         if (getaddrinfo(m_ip.c_str(), portStr.c_str(), &hints, &res) not_eq 0 or
                         not res)
                 return false;
 
-        int const sockfd = socket(res->ai_family, SOCK_STREAM, 0);
+        int const sockfd {socket(res->ai_family, SOCK_STREAM, 0)};
         if (sockfd == -1) {
                 freeaddrinfo(res);
                 return false;
@@ -92,7 +93,7 @@ Scanner::parsePort(char const *str) const noexcept {
                 (TIMEOUT_MS % 1000) * 1000l};
         setsockopt(sockfd, SOL_SOCKET, SO_SNDTIMEO, &timeout, sizeof(timeout));
 
-        int const result = connect(sockfd, res->ai_addr, res->ai_addrlen);
+        int const result {connect(sockfd, res->ai_addr, res->ai_addrlen)};
         freeaddrinfo(res);
         close(sockfd);
 
