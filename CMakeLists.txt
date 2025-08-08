@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(port-scanner LANGUAGES CXX)
+project(port-scanner
+        DESCRIPTION "TCP port scanner"
+        HOMEPAGE_URL https://github.com/artyom-fedosov/port-scanner
+        LANGUAGES CXX)
 
 set(CMAKE_SYSTEM_NAME Linux)
 set(CMAKE_CXX_STANDARD 20)
@@ -41,7 +44,8 @@ include(GNUInstallDirs)
 install(TARGETS port-scanner RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
 install(FILES man/port-scanner.1 DESTINATION ${CMAKE_INSTALL_MANDIR}/man1)
 
-set(CPACK_GENERATOR "DEB;RPM")
+# ===== Packaging =====
+set(CPACK_GENERATOR RPM;DEB;TGZ)
 
 set(CPACK_PACKAGE_NAME port-scanner)
 set(CPACK_PACKAGE_DIRECTORY ${CMAKE_BINARY_DIR})
