@@ -29,7 +29,7 @@ Scanner::Scanner(ipaddr_t const &ip, std::vector<char const *> const &ports)
 }
 
 [[nodiscard]] std::vector<std::pair<port_t, bool>>
-Scanner::scan() noexcept {
+Scanner::scan() {
         std::vector<std::pair<port_t, bool>> result {};
         result.reserve(m_ports.size());
         std::vector<std::thread> threads {};
@@ -72,7 +72,7 @@ Scanner::parsePort(char const *str) const noexcept {
         return {static_cast<port_t>(prt)};
 }
 
-[[nodiscard]] bool Scanner::isPortAccessible(port_t const port) const noexcept {
+[[nodiscard]] bool Scanner::isPortAccessible(port_t const port) const {
         addrinfo hints {}, *res = nullptr;
         hints.ai_family = AF_UNSPEC;
         hints.ai_socktype = SOCK_STREAM;

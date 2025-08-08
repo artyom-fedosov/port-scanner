@@ -45,7 +45,7 @@ public:
         * @return A vector of pairs: <port number, is port accessible
         * (true/false)>.
         */
-        [[nodiscard]] std::vector<std::pair<port_t, bool>> scan() noexcept;
+        [[nodiscard]] std::vector<std::pair<port_t, bool>> scan();
 
 private:
         ipaddr_t m_ip;
@@ -91,5 +91,5 @@ private:
         * \return true if a connection can be established (port is accessible),
         * false otherwise.
         */
-        [[nodiscard]] bool isPortAccessible(port_t const port) const noexcept;
+        [[nodiscard]] bool isPortAccessible(port_t const port) const;
 };
