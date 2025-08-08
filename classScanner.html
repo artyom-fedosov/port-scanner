@@ -111,9 +111,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acef562247c88bd0ff7cba0c3cc9c85f4" id="r_acef562247c88bd0ff7cba0c3cc9c85f4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanner.html#acef562247c88bd0ff7cba0c3cc9c85f4">Scanner</a> (<a class="el" href="types_8hpp.html#ae7690576a8d3893435294d25def55c48">ipaddr_t</a> const &amp;ip, std::vector&lt; char const * &gt; const &amp;ports)</td></tr>
 <tr class="memdesc:acef562247c88bd0ff7cba0c3cc9c85f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classScanner.html">Scanner</a> with a target IP address and a list of ports to scan.  <br /></td></tr>
 <tr class="separator:acef562247c88bd0ff7cba0c3cc9c85f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaff16fef05c2feb0e2d636f18b8771d7" id="r_aaff16fef05c2feb0e2d636f18b8771d7"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; <a class="el" href="types_8hpp.html#a74951a78c122c2c9903f64726a56aac6">port_t</a>, bool &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanner.html#aaff16fef05c2feb0e2d636f18b8771d7">scan</a> () noexcept</td></tr>
-<tr class="memdesc:aaff16fef05c2feb0e2d636f18b8771d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scans all specified ports on the target IP address.  <br /></td></tr>
-<tr class="separator:aaff16fef05c2feb0e2d636f18b8771d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4029fb0ae0a5be65ef91341d2b3cddb1" id="r_a4029fb0ae0a5be65ef91341d2b3cddb1"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; <a class="el" href="types_8hpp.html#a74951a78c122c2c9903f64726a56aac6">port_t</a>, bool &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanner.html#a4029fb0ae0a5be65ef91341d2b3cddb1">scan</a> ()</td></tr>
+<tr class="memdesc:a4029fb0ae0a5be65ef91341d2b3cddb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scans all specified ports on the target IP address.  <br /></td></tr>
+<tr class="separator:a4029fb0ae0a5be65ef91341d2b3cddb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -126,9 +126,9 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a8c0c87368ad65fedb1d3e83da5853666" id="r_a8c0c87368ad65fedb1d3e83da5853666"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="types_8hpp.html#a74951a78c122c2c9903f64726a56aac6">port_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanner.html#a8c0c87368ad65fedb1d3e83da5853666">parsePort</a> (char const *str) const noexcept</td></tr>
 <tr class="memdesc:a8c0c87368ad65fedb1d3e83da5853666"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to parse a C-string into a port_t. It also validates if the parsed number falls within the [MIN_PORT, MAX_PORT] range.  <br /></td></tr>
 <tr class="separator:a8c0c87368ad65fedb1d3e83da5853666"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1caaa5fff75e27448de72b6d6fde9a52" id="r_a1caaa5fff75e27448de72b6d6fde9a52"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanner.html#a1caaa5fff75e27448de72b6d6fde9a52">isPortAccessible</a> (<a class="el" href="types_8hpp.html#a74951a78c122c2c9903f64726a56aac6">port_t</a> const port) const noexcept</td></tr>
-<tr class="memdesc:a1caaa5fff75e27448de72b6d6fde9a52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to establish a TCP connection to the specified port. This function incorporates a timeout (TIMEOUT_MS).  <br /></td></tr>
-<tr class="separator:a1caaa5fff75e27448de72b6d6fde9a52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d0f18ea208f78217945918d214f709e" id="r_a5d0f18ea208f78217945918d214f709e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanner.html#a5d0f18ea208f78217945918d214f709e">isPortAccessible</a> (<a class="el" href="types_8hpp.html#a74951a78c122c2c9903f64726a56aac6">port_t</a> const port) const</td></tr>
+<tr class="memdesc:a5d0f18ea208f78217945918d214f709e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to establish a TCP connection to the specified port. This function incorporates a timeout (TIMEOUT_MS).  <br /></td></tr>
+<tr class="separator:a5d0f18ea208f78217945918d214f709e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -257,8 +257,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a1caaa5fff75e27448de72b6d6fde9a52" name="a1caaa5fff75e27448de72b6d6fde9a52"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1caaa5fff75e27448de72b6d6fde9a52">&#9670;&#160;</a></span>isPortAccessible()</h2>
+<a id="a5d0f18ea208f78217945918d214f709e" name="a5d0f18ea208f78217945918d214f709e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d0f18ea208f78217945918d214f709e">&#9670;&#160;</a></span>isPortAccessible()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -276,7 +276,7 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -327,14 +327,11 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="aaff16fef05c2feb0e2d636f18b8771d7" name="aaff16fef05c2feb0e2d636f18b8771d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaff16fef05c2feb0e2d636f18b8771d7">&#9670;&#160;</a></span>scan()</h2>
+<a id="a4029fb0ae0a5be65ef91341d2b3cddb1" name="a4029fb0ae0a5be65ef91341d2b3cddb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4029fb0ae0a5be65ef91341d2b3cddb1">&#9670;&#160;</a></span>scan()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">std::vector&lt; std::pair&lt; <a class="el" href="types_8hpp.html#a74951a78c122c2c9903f64726a56aac6">port_t</a>, bool &gt; &gt; Scanner::scan </td>
@@ -343,11 +340,6 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Scans all specified ports on the target IP address. </p>
