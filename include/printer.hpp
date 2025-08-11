@@ -3,17 +3,17 @@
 #include "types.hpp"
 
 namespace {
-        /**
+        /*!
         * \brief ANSI escape code for resetting terminal colors.
         */
         char constexpr RESET[] {"\033[0m"};
 
-        /**
+        /*!
         * \brief ANSI escape code for red text color.
         */
         char constexpr RED[] {"\033[31m"};
 
-        /**
+        /*!
         * \brief ANSI escape code for green text color.
         */
         char constexpr GREEN[] {"\033[32m"};
@@ -29,7 +29,7 @@ namespace {
  */
 class Printer final {
 public:
-        /**
+        /*!
         * \brief Checks if stdout is connected to a terminal.
         *
         * \return true if output is a terminal, false otherwise.
