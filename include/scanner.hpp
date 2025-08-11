@@ -38,11 +38,11 @@ public:
 
 public:
         /*!
-        * @brief Scans all specified ports on the target IP address.
+        * \brief Scans all specified ports on the target IP address.
         *
         * Each port is scanned concurrently in a separate thread.
         *
-        * @return A vector of pairs: <port number, is port accessible
+        * \return A vector of pairs: <port number, is port accessible
         * (true/false)>.
         */
         [[nodiscard]] std::vector<std::pair<port_t, bool>> scan();
