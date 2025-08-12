@@ -109,7 +109,7 @@ $(document).ready(function(){initNavTree('classScanner.html',''); initResizable(
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:acef562247c88bd0ff7cba0c3cc9c85f4" id="r_acef562247c88bd0ff7cba0c3cc9c85f4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanner.html#acef562247c88bd0ff7cba0c3cc9c85f4">Scanner</a> (<a class="el" href="types_8hpp.html#ae7690576a8d3893435294d25def55c48">ipaddr_t</a> const &amp;ip, std::vector&lt; char const * &gt; const &amp;ports)</td></tr>
-<tr class="memdesc:acef562247c88bd0ff7cba0c3cc9c85f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classScanner.html">Scanner</a> with a target IP address and a list of ports to scan.  <br /></td></tr>
+<tr class="memdesc:acef562247c88bd0ff7cba0c3cc9c85f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classScanner.html">Scanner</a> with a target IP address and a vector of ports to scan.  <br /></td></tr>
 <tr class="separator:acef562247c88bd0ff7cba0c3cc9c85f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4029fb0ae0a5be65ef91341d2b3cddb1" id="r_a4029fb0ae0a5be65ef91341d2b3cddb1"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; <a class="el" href="types_8hpp.html#a74951a78c122c2c9903f64726a56aac6">port_t</a>, bool &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanner.html#a4029fb0ae0a5be65ef91341d2b3cddb1">scan</a> ()</td></tr>
 <tr class="memdesc:a4029fb0ae0a5be65ef91341d2b3cddb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scans all specified ports on the target IP address.  <br /></td></tr>
@@ -140,7 +140,7 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a5747292f3b58c1806ed5ca3edc262a87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The <a class="el" href="classScanner.html">Scanner</a> class is designed to perform port scanning operations on a specified IP address for a given set of ports. </p>
+<div class="textblock"><p>The <a class="el" href="classScanner.html">Scanner</a> class is designed to perform port scanning operations on a specified IP address for a given vector of ports. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="acef562247c88bd0ff7cba0c3cc9c85f4" name="acef562247c88bd0ff7cba0c3cc9c85f4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acef562247c88bd0ff7cba0c3cc9c85f4">&#9670;&#160;</a></span>Scanner()</h2>
@@ -168,12 +168,12 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Constructs a <a class="el" href="classScanner.html">Scanner</a> with a target IP address and a list of ports to scan. </p>
+<p>Constructs a <a class="el" href="classScanner.html">Scanner</a> with a target IP address and a vector of ports to scan. </p>
 <p>Validates the IP address and parses the port strings into numeric port values. Throws std::invalid_argument if the IP or any port is invalid.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ip</td><td>Target IP address to scan. </td></tr>
-    <tr><td class="paramname">ports</td><td>Vector of C-string port representations to be scanned.</td></tr>
+    <tr><td class="paramname">ports</td><td>A vector of null-terminated C-string port representations (e.g., "80", "443") to scan.</td></tr>
   </table>
   </dd>
 </dl>
