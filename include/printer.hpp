@@ -32,6 +32,8 @@ public:
         /*!
         * \brief Checks if stdout is connected to a terminal.
         *
+        * Exception safety: No-throw guarantee.
+        *
         * \return true if output is a terminal, false otherwise.
         */
         [[nodiscard]] static bool isTerminal() noexcept;
