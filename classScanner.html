@@ -212,6 +212,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Checks if the given IP address string is a syntactically valid IPv4 address. </p>
+<p>Exception Safety: No-throw guarantee.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ip</td><td>The IP address string to validate. </td></tr>
@@ -247,6 +248,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Checks if the given IP address string is a syntactically valid IPv6 address. </p>
+<p>Exception Safety: No-throw guarantee.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ip</td><td>The IP address string to validate. </td></tr>
@@ -282,13 +284,20 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Attempts to establish a TCP connection to the specified port. This function incorporates a timeout (TIMEOUT_MS). </p>
+<p>Exception Safety: Strong guarantee.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">port</td><td>The TCP port number to check for accessibility. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if a connection can be established (port is accessible), false otherwise. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true if a connection can be established (port is accessible), false otherwise.</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::bad_alloc</td><td>If memory allocation for internal storage fails. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -317,6 +326,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Attempts to parse a C-string into a port_t. It also validates if the parsed number falls within the [MIN_PORT, MAX_PORT] range. </p>
+<p>Exception Safety: No-throw guarantee.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>The C-string containing the potential port number. </td></tr>
