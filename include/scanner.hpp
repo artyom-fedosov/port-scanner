@@ -57,6 +57,8 @@ private:
         * \brief Checks if the given IP address string is a syntactically valid
         * IPv4 address.
         *
+        * Exception Safety: No-throw guarantee.
+        *
         * \param ip The IP address string to validate.
         * \return true if the IP is а valid IPv4, false otherwise.
         */
@@ -66,6 +68,8 @@ private:
         * \brief Checks if the given IP address string is a syntactically valid
         * IPv6 address.
         *
+        * Exception Safety: No-throw guarantee.
+        *
         * \param ip The IP address string to validate.
         * \return true if the IP is а valid IPv6, false otherwise.
         */
@@ -74,6 +78,8 @@ private:
         /*!
         * \brief Attempts to parse a C-string into a port_t. It also validates
         * if the parsed number falls within the [MIN_PORT, MAX_PORT] range.
+        *
+        * Exception Safety: No-throw guarantee.
         *
         * \param str The C-string containing the potential port number.
         * \return An std::optional<port_t> containing the valid port number if
@@ -87,9 +93,14 @@ private:
         * \brief Attempts to establish a TCP connection to the specified port.
         * This function incorporates a timeout (TIMEOUT_MS).
         *
+        * Exception Safety: Strong guarantee.
+        *
         * \param port The TCP port number to check for accessibility.
         * \return true if a connection can be established (port is accessible),
         * false otherwise.
+        *
+        * \throws std::bad_alloc If memory allocation for internal storage
+        * fails.
         */
         [[nodiscard]] bool isPortAccessible(port_t const port) const;
 };
