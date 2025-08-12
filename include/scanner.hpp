@@ -17,19 +17,20 @@ namespace {
  * \class Scanner
  *
  * The Scanner class is designed to perform port scanning operations on a
- * specified IP address for a given set of ports.
+ * specified IP address for a given vector of ports.
  */
 class Scanner final {
 public:
         /*!
-        * \brief Constructs a Scanner with a target IP address and a list of
+        * \brief Constructs a Scanner with a target IP address and a vector of
         * ports to scan.
         *
         * Validates the IP address and parses the port strings into numeric port
         * values. Throws std::invalid_argument if the IP or any port is invalid.
         *
         * \param ip Target IP address to scan.
-        * \param ports Vector of C-string port representations to be scanned.
+        * \param ports A vector of null-terminated C-string port representations
+        * (e.g., "80", "443") to scan.
         *
         * \throws std::invalid_argument If the IP address or any port string is
         * invalid.
