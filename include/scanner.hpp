@@ -49,8 +49,19 @@ public:
         [[nodiscard]] std::vector<std::pair<port_t, bool>> scan();
 
 private:
+        /*!
+        * \brief Target IP address.
+        */
         ipaddr_t m_ip;
+
+        /*!
+        * \brief Target ports.
+        */
         ports_t m_ports;
+
+        /*!
+        * \brief Mutable mutex for thread safety.
+        */
         std::mutex m_mtx;
 
 private:
