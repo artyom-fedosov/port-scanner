@@ -66,7 +66,7 @@ Scanner::parsePort(char const *str) const noexcept {
         std::from_chars_result const res {std::from_chars(str, strEnd, prt)};
 
         if (res.ec not_eq std::errc() or prt < MIN_PORT or prt > MAX_PORT or
-            res.ptr not_eq strEnd)
+            res.ptr not_eq strEnd) [[unlikely]]
                 return {};
 
         return {static_cast<port_t>(prt)};
@@ -84,7 +84,7 @@ Scanner::parsePort(char const *str) const noexcept {
                 return false;
 
         int const sockfd {socket(res->ai_family, SOCK_STREAM, 0)};
-        if (sockfd == -1) {
+        if (sockfd == -1) [[unlikely]] {
                 freeaddrinfo(res);
                 return false;
         }
