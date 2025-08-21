@@ -9,6 +9,5 @@ file(GLOB SOURCES src/*.cpp)
 add_executable(port-scanner ${SOURCES})
 
 include(GNUInstallDirs)
-install(TARGETS port-scanner
-    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-)
+install(TARGETS port-scanner RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+install(FILES man/port-scanner.1 DESTINATION ${CMAKE_INSTALL_MANDIR}/man1)
