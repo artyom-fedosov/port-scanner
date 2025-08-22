@@ -34,6 +34,28 @@ cd port-scanner
 
 ---
 
+## Requirements
+
+- Linux operating system
+- C++20 compatible compiler
+- CMake version 3.16 or higher
+
+---
+
+## Documentation
+
+Detailed API documentation is available and can be generated using Doxygen.
+
+To generate the documentation locally, run:
+
+```bash
+doxygen Doxyfile
+```
+
+The generated HTML documentation will be available in the docs/html directory.
+
+---
+
 ## Usage
 
 Run the port scanner by specifying an IP address (IPv4 or IPv6) followed by one or more ports to check:
@@ -53,14 +75,6 @@ You can also scan a range of ports using shell brace expansion (bash):
 ```bash
 $ port-scanner 192.168.8.1 {0..65535} | grep "is accessible"
 ```
-
----
-
-## Requirements
-
-- Linux operating system
-- C++20 compatible compiler
-- CMake version 3.16 or higher
 
 ---
 
