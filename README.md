@@ -34,6 +34,28 @@ cd port-scanner
 
 ---
 
+## Usage
+
+Run the port scanner by specifying an IP address (IPv4 or IPv6) followed by one or more ports to check:
+
+```bash
+$ port-scanner 192.168.8.1 22 80 443
+22  is accessible
+80  is not accessible
+443 is accessible
+```
+
+**Note**: In the terminal, accessible ports are displayed in **green**, while inaccessible ports are shown in **red** for better readability.
+The order of the port scan results may vary because the checks are performed concurrently using threads.
+
+You can also scan a range of ports using shell brace expansion (bash):
+
+```bash
+$ port-scanner 192.168.8.1 {0..65535} | grep "is accessible"
+```
+
+---
+
 ## Requirements
 
 - Linux operating system
