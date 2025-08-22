@@ -1,6 +1,6 @@
 # Port Scanner
 
-A simple TCP port scanner written in C++ to check the accessibility of ports on remote IPv4 hosts.
+A simple TCP port scanner written in C++ to check the accessibility of ports on remote IPv4 and IPv6 hosts.
 
 ---
 
