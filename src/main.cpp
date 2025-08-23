@@ -27,7 +27,7 @@ int main(int argc, char **argv) {
         }
 
         std::vector<std::thread> threads {};
-        bool isTerminalFlag {isTerminal()};
+        const bool isTerminalFlag {isTerminal()};
         for (const auto port : ports) {
                 threads.push_back(std::thread {[&ip, port, isTerminalFlag]() {
                         bool isAccessible {isPortAccessible(ip, port)};
