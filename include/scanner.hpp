@@ -56,14 +56,16 @@ constexpr int TIMEOUT_MS = 200;
 [[nodiscard]] bool isIPv6(const ipaddr_t &ip);
 
 /**
- * @brief Parses a string into a port number.
+ * @brief Parses a string into an optional port number.
  *
- * Parses the input C-string as an integer port number and checks
- * if it is within the valid range [MIN_PORT, MAX_PORT].
+ * This function attempts to parse the input C-string as an integer.
+ * If successful, it checks if the parsed number falls within the
+ * valid port range [MIN_PORT, MAX_PORT].
  *
- * @param str C-string representing the port.
- * @param[out] port Parsed port number if successful.
- * @return true if parsing succeeded and port is valid, false otherwise.
+ * @param str The C-string to parse, representing the port number.
+ * @return An `std::optional<port_t>` containing the valid port number
+ * if parsing succeeds and the number is within range;
+ * otherwise, an empty `std::optional`.
  */
 [[nodiscard]] std::optional<port_t> parsePort(const char *str);
 
