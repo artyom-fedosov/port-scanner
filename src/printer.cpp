@@ -18,5 +18,7 @@ void Printer::print(const std::vector<std::pair<port_t, bool>> &ports)
                         (port.second ? " " : " not ") << "accessible";
                 if (isTerm)
                         std::cout << RESET << '\n';
+                else
+                        std::cout << '\n';
         }
 }
