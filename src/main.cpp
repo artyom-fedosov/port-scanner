@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <thread>
+#include <sstream>
 
 int main(int argc, char **argv) {
         if (argc < 3) {
@@ -28,17 +29,20 @@ int main(int argc, char **argv) {
 
         std::vector<std::thread> threads {};
         const bool isTerminalFlag {isTerminal()};
-        for (const auto port : ports) {
-                threads.push_back(std::thread {[&ip, port, isTerminalFlag]() {
-                        bool isAccessible {isPortAccessible(ip, port)};
-                        std::lock_guard<std::mutex> lock {mtx};
+        for (const auto prt : ports) {
+                threads.push_back(std::thread {[&ip, prt, isTerminalFlag]() {
+                        bool isAccessible {isPortAccessible(ip, prt)};
+                        std::stringstream ss {};
 
                         if (isTerminalFlag)
-                                std::cout << (isAccessible ? GREEN : RED);
-                        std::cout << port << "\tis" << (isAccessible ? " " : " not ") << "accessible";
+                                ss << (isAccessible ? GREEN : RED);
+                        ss << prt << "\tis" << (isAccessible ? " " : " not ") << "accessible";
                         if (isTerminalFlag)
-                                std::cout << RESET;
-                        std::cout << '\n';
+                                ss << RESET;
+                        ss << '\n';
+
+                        std::lock_guard<std::mutex> lock {mtx};
+                        std::cout << ss.rdbuf();
                 }});
         }
 
