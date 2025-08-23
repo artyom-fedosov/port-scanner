@@ -64,5 +64,5 @@ int main() {
         test_isIPv6();
         test_parsePort();
 
-        std::cout << "All tests passed!" << std::endl;
+        std::cout << "All tests passed!\n";
 }
