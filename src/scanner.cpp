@@ -49,7 +49,7 @@ std::mutex mtx;
                 return false;
         }
 
-        constexpr timeval timeout = {TIMEOUT_MS / 1000, (TIMEOUT_MS % 1000) * 1000};
+        constexpr timeval timeout = {TIMEOUT_MS / 1000, (TIMEOUT_MS % 1000) * 1000l};
         setsockopt(sockfd, SOL_SOCKET, SO_SNDTIMEO, &timeout, sizeof(timeout));
 
         int result = connect(sockfd, res->ai_addr, res->ai_addrlen);
