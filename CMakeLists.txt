@@ -6,6 +6,7 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_FLAGS_DEBUG "-Wall -Wextra -g")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3")
+set(CMAKE_CXX_CLANG_TIDY "clang-tidy" CACHE STRING "Enable clang-tidy")
 
 add_executable(port-scanner
         src/main.cpp
