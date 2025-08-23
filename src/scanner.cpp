@@ -77,7 +77,7 @@ Scanner::parsePort(char const *str) const noexcept {
         hints.ai_family = AF_UNSPEC;
         hints.ai_socktype = SOCK_STREAM;
 
-        std::string portStr = std::to_string(port);
+        std::string const portStr {std::to_string(port)};
         if (getaddrinfo(m_ip.c_str(), portStr.c_str(), &hints, &res) not_eq 0 or
                         not res)
                 return false;
