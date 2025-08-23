@@ -31,7 +31,7 @@ set(CPACK_GENERATOR "DEB;RPM")
 
 set(CPACK_PACKAGE_NAME "port-scanner")
 set(CPACK_PACKAGE_DIRECTORY "${CMAKE_BINARY_DIR}")
-set(CPACK_PACKAGE_VERSION "0.5.0")
+set(CPACK_PACKAGE_VERSION "0.6.0")
 set(CPACK_PACKAGE_CONTACT "artjomsfedosovs2@gmail.com")
 set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Lightweight TCP port scanner for Linux, written in C++.")
 set(CPACK_PACKAGE_VENDOR "Artyom Fedosov")
