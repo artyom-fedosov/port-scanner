@@ -6,17 +6,17 @@ namespace {
         /**
         * \brief ANSI escape code for resetting terminal colors.
         */
-        static char constexpr RESET[] = "\033[0m";
+        static char constexpr RESET[] {"\033[0m"};
 
         /**
         * \brief ANSI escape code for red text color.
         */
-        static char constexpr RED[] = "\033[31m";
+        static char constexpr RED[] {"\033[31m"};
 
         /**
         * \brief ANSI escape code for green text color.
         */
-        static char constexpr GREEN[] = "\033[32m";
+        static char constexpr GREEN[] {"\033[32m"};
 }
 
 /*!
