@@ -22,16 +22,15 @@ std::mutex mtx;
         return inet_pton(AF_INET6, ip.c_str(), &address6) == 1;
 }
 
-[[nodiscard]] bool parsePort(const char *str, port_t &port) {
+[[nodiscard]] std::optional<port_t> parsePort(const char *str) {
         int prt;
         const char *strEnd = str + std::strlen(str);
         std::from_chars_result res = std::from_chars(str, strEnd, prt);
 
         if (res.ec != std::errc() or prt < MIN_PORT or prt > MAX_PORT or res.ptr != strEnd)
-                return false;
+                return {};
 
-        port = static_cast<port_t>(prt);
-        return true;
+        return {static_cast<port_t>(prt)};
 }
 
 [[nodiscard]] bool isPortAccessible(const ipaddr_t &ip, const port_t port) {

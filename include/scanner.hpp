@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include <mutex>
+#include <optional>
 
 #include <unistd.h>
 
@@ -64,7 +65,7 @@ constexpr int TIMEOUT_MS = 200;
  * @param[out] port Parsed port number if successful.
  * @return true if parsing succeeded and port is valid, false otherwise.
  */
-[[nodiscard]] bool parsePort(const char *str, port_t &port);
+[[nodiscard]] std::optional<port_t> parsePort(const char *str);
 
 /**
  * @brief Checks if a TCP port is accessible on the given IP.
