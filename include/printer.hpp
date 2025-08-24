@@ -38,5 +38,15 @@ public:
         */
         [[nodiscard]] static bool isTerminal() noexcept;
 
+        /*!
+        * \brief Prints to stdout the formated information about the ports
+        * accessibility.
+        *
+        * Exception safety: Basic guarantee.
+        *
+        * \throws std::bad_alloc If memory allocation for internal storage
+        * fails.
+        * \throws std::system_error If writing to stdout fails.
+        */
         static void print(std::vector<std::pair<port_t, bool>> const &ports);
 };
