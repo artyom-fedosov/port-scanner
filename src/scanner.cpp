@@ -13,19 +13,22 @@
 #include <fcntl.h>
 
 Scanner::Scanner(ipaddr_t const &ip, std::vector<char const *> const &ports)
-                : m_ip {ip}, m_ports {}, m_mtx {} {
-        if (not isIPv4(m_ip) and not isIPv6(m_ip))
+                : m_ip {ip} {
+        if (not isIPv4(m_ip) and not isIPv6(m_ip)) [[unlikely]]
                 throw std::invalid_argument {"IP address is not valid!"};
 
-        m_ports.reserve(ports.size());
+        ports_t tmpPorts {};
+        tmpPorts.reserve(ports.size());
         for (auto const prt : ports) {
-                std::optional<port_t> port {parsePort(prt)};
-                if (port)
-                        m_ports.push_back(port.value());
-                else
+                if (std::optional port {parsePort(prt)}) [[likely]]
+                        tmpPorts.push_back(*port);
+                else [[unlikely]]
                         throw std::invalid_argument {std::string {prt} +
-                                " is not valid port!"};
+                                " is not a valid port!"};
         }
+
+        m_ip = ip;
+        m_ports = std::move(tmpPorts);
 }
 
 [[nodiscard]] std::vector<std::pair<port_t, bool>>

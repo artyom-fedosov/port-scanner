@@ -57,12 +57,12 @@ private:
         /*!
         * \brief Target ports.
         */
-        ports_t m_ports;
+        ports_t m_ports {};
 
         /*!
         * \brief Mutable mutex for thread safety.
         */
-        std::mutex m_mtx;
+        std::mutex m_mtx {};
 
 private:
         /*!
