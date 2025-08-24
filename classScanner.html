@@ -111,9 +111,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acef562247c88bd0ff7cba0c3cc9c85f4" id="r_acef562247c88bd0ff7cba0c3cc9c85f4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanner.html#acef562247c88bd0ff7cba0c3cc9c85f4">Scanner</a> (<a class="el" href="types_8hpp.html#ae7690576a8d3893435294d25def55c48">ipaddr_t</a> const &amp;ip, std::vector&lt; char const * &gt; const &amp;ports)</td></tr>
 <tr class="memdesc:acef562247c88bd0ff7cba0c3cc9c85f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classScanner.html">Scanner</a> with a target IP address and a vector of ports to scan.  <br /></td></tr>
 <tr class="separator:acef562247c88bd0ff7cba0c3cc9c85f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4029fb0ae0a5be65ef91341d2b3cddb1" id="r_a4029fb0ae0a5be65ef91341d2b3cddb1"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; <a class="el" href="types_8hpp.html#a74951a78c122c2c9903f64726a56aac6">port_t</a>, bool &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanner.html#a4029fb0ae0a5be65ef91341d2b3cddb1">scan</a> ()</td></tr>
-<tr class="memdesc:a4029fb0ae0a5be65ef91341d2b3cddb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scans all specified ports on the target IP address.  <br /></td></tr>
-<tr class="separator:a4029fb0ae0a5be65ef91341d2b3cddb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36e8566701a74e73668ee0ea4b21f9c6" id="r_a36e8566701a74e73668ee0ea4b21f9c6"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; <a class="el" href="types_8hpp.html#a74951a78c122c2c9903f64726a56aac6">port_t</a>, bool &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanner.html#a36e8566701a74e73668ee0ea4b21f9c6">scan</a> () const</td></tr>
+<tr class="memdesc:a36e8566701a74e73668ee0ea4b21f9c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scans all specified ports on the target IP address.  <br /></td></tr>
+<tr class="separator:a36e8566701a74e73668ee0ea4b21f9c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -135,10 +135,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:af9f6c2887e61333d36bf9771a13ba67f" id="r_af9f6c2887e61333d36bf9771a13ba67f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8hpp.html#ae7690576a8d3893435294d25def55c48">ipaddr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanner.html#af9f6c2887e61333d36bf9771a13ba67f">m_ip</a></td></tr>
 <tr class="memdesc:af9f6c2887e61333d36bf9771a13ba67f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Target IP address.  <br /></td></tr>
 <tr class="separator:af9f6c2887e61333d36bf9771a13ba67f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17036355736d4c9d42327cf4cd75b25c" id="r_a17036355736d4c9d42327cf4cd75b25c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8hpp.html#a5a82291375f2f68b53a652f6f2ab74b1">ports_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanner.html#a17036355736d4c9d42327cf4cd75b25c">m_ports</a></td></tr>
+<tr class="memitem:a17036355736d4c9d42327cf4cd75b25c" id="r_a17036355736d4c9d42327cf4cd75b25c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8hpp.html#a5a82291375f2f68b53a652f6f2ab74b1">ports_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanner.html#a17036355736d4c9d42327cf4cd75b25c">m_ports</a> {}</td></tr>
 <tr class="memdesc:a17036355736d4c9d42327cf4cd75b25c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Target ports.  <br /></td></tr>
 <tr class="separator:a17036355736d4c9d42327cf4cd75b25c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5747292f3b58c1806ed5ca3edc262a87" id="r_a5747292f3b58c1806ed5ca3edc262a87"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanner.html#a5747292f3b58c1806ed5ca3edc262a87">m_mtx</a></td></tr>
+<tr class="memitem:a5747292f3b58c1806ed5ca3edc262a87" id="r_a5747292f3b58c1806ed5ca3edc262a87"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanner.html#a5747292f3b58c1806ed5ca3edc262a87">m_mtx</a> {}</td></tr>
 <tr class="memdesc:a5747292f3b58c1806ed5ca3edc262a87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutable mutex for thread safety.  <br /></td></tr>
 <tr class="separator:a5747292f3b58c1806ed5ca3edc262a87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -172,7 +172,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a <a class="el" href="classScanner.html">Scanner</a> with a target IP address and a vector of ports to scan. </p>
-<p>Validates the IP address and parses the port strings into numeric port values. Throws std::invalid_argument if the IP or any port is invalid.</p>
+<p>Exception Safety: Strong guarantee. The object is constructed only if the IP address and all port strings are valid; otherwise, no object is created.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ip</td><td>Target IP address to scan. </td></tr>
@@ -183,6 +183,8 @@ Private Attributes</h2></td></tr>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">std::invalid_argument</td><td>If the IP address or any port string is invalid. </td></tr>
+    <tr><td class="paramname">std::bad_alloc</td><td>If memory allocation for internal storage fails. </td></tr>
+    <tr><td class="paramname">std::length_error</td><td>If the requested storage size exceeds the maximum allowed size. </td></tr>
   </table>
   </dd>
 </dl>
@@ -340,8 +342,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a4029fb0ae0a5be65ef91341d2b3cddb1" name="a4029fb0ae0a5be65ef91341d2b3cddb1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4029fb0ae0a5be65ef91341d2b3cddb1">&#9670;&#160;</a></span>scan()</h2>
+<a id="a36e8566701a74e73668ee0ea4b21f9c6" name="a36e8566701a74e73668ee0ea4b21f9c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36e8566701a74e73668ee0ea4b21f9c6">&#9670;&#160;</a></span>scan()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -350,7 +352,7 @@ Private Attributes</h2></td></tr>
           <td class="memname">std::vector&lt; std::pair&lt; <a class="el" href="types_8hpp.html#a74951a78c122c2c9903f64726a56aac6">port_t</a>, bool &gt; &gt; Scanner::scan </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -396,17 +398,18 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::mutex Scanner::m_mtx</td>
+          <td class="memname">std::mutex Scanner::m_mtx {}</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Mutable mutex for thread safety. </p>
+<p>Exception safety: No-throw guarantee. </p>
 
 </div>
 </div>
@@ -420,7 +423,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="types_8hpp.html#a5a82291375f2f68b53a652f6f2ab74b1">ports_t</a> Scanner::m_ports</td>
+          <td class="memname"><a class="el" href="types_8hpp.html#a5a82291375f2f68b53a652f6f2ab74b1">ports_t</a> Scanner::m_ports {}</td>
         </tr>
       </table>
   </td>
@@ -431,6 +434,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Target ports. </p>
+<p>Exception safety: No-throw guarantee. </p>
 
 </div>
 </div>
