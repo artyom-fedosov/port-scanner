@@ -50,25 +50,25 @@ TEST(ScannerTest, ValidPort) {
 TEST(ScannerTest, InvalidPort) {
         EXPECT_THROW(
                 Scanner scanner("127.0.0.1",
-                        std::vector<char const *> {"70000"}),
+                        std::vector {"70000"}),
                 std::invalid_argument
         );
 
         EXPECT_THROW(
                 Scanner scanner("127.0.0.1",
-                                std::vector<char const *> {"-1"}),
+                                std::vector {"-1"}),
                 std::invalid_argument
         );
 
         EXPECT_THROW(
                 Scanner scanner("127.0.0.1",
-                                std::vector<char const *> {"65536"}),
+                                std::vector {"65536"}),
                 std::invalid_argument
         );
 
         EXPECT_THROW(
                 Scanner scanner("127.0.0.1",
-                                std::vector<char const *> {"-234"}),
+                                std::vector {"-234"}),
                 std::invalid_argument
         );
 }
