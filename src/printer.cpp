@@ -1,6 +1,6 @@
 #include "../include/printer.hpp"
 
-#include <iostream>
+#include <print>
 
 #include <unistd.h>
 
@@ -8,17 +8,22 @@
         return isatty(fileno(stdout));
 }
 
-void Printer::print(const std::vector<std::pair<port_t, bool>> &ports)
-                noexcept {
+void Printer::print(const std::vector<std::pair<port_t, bool>> &ports) {
         bool const isTerm {isTerminal()};
+
         for (auto const &port : ports) {
-                if (isTerm)
-                        std::cout << (port.second ? GREEN : RED);
-                std::cout << port.first << "\tis" <<
-                        (port.second ? " " : " not ") << "accessible";
-                if (isTerm)
-                        std::cout << RESET << '\n';
-                else
-                        std::cout << '\n';
+
+                if (isTerm) [[likely]] {
+                        std::println("{}{}\tis{}accessible{}",
+                                port.second ? GREEN : RED,
+                                port.first,
+                                port.second ? " " : " not ",
+                                RESET);
+                }
+                else [[unlikely]] {
+                        std::println("{}\tis{}accessible",
+                                port.first,
+                                port.second ? " " : " not ");
+                }
         }
 }
