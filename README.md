@@ -9,7 +9,7 @@ A simple TCP port scanner written in C++ to check the accessibility of ports on 
 - Check availability of one or multiple TCP ports on an IPv4/IPv6 address
 - Uses POSIX sockets and system calls
 - Works **only on Linux** systems
-- Built with CMake and C++20 standard
+- Built with CMake and C++26 standard
 
 ---
 
@@ -41,7 +41,7 @@ git clone https://github.com/artyom-fedosov/port-scanner.git && cd port-scanner 
 ## Requirements
 
 - Linux operating system
-- C++20 compatible compiler
+- C++26 compatible compiler
 - CMake version 3.16 or higher
 
 ---
