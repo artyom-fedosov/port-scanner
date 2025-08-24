@@ -25,8 +25,9 @@ public:
         * \brief Constructs a Scanner with a target IP address and a vector of
         * ports to scan.
         *
-        * Validates the IP address and parses the port strings into numeric port
-        * values. Throws std::invalid_argument if the IP or any port is invalid.
+        * Exception Safety: Strong guarantee. The object is constructed only if
+        * the IP address and all port strings are valid; otherwise, no object
+        * is created.
         *
         * \param ip Target IP address to scan.
         * \param ports A vector of null-terminated C-string port representations
@@ -34,6 +35,10 @@ public:
         *
         * \throws std::invalid_argument If the IP address or any port string is
         * invalid.
+        * \throws std::bad_alloc If memory allocation for internal storage
+        * fails.
+        * \throws std::length_error If the requested storage size exceeds the
+        * maximum allowed size.
         */
         Scanner(ipaddr_t const &ip, std::vector<char const *> const &ports);
 
@@ -56,11 +61,15 @@ private:
 
         /*!
         * \brief Target ports.
+        *
+        * Exception safety: No-throw guarantee.
         */
         ports_t m_ports {};
 
         /*!
         * \brief Mutable mutex for thread safety.
+        *
+        * Exception safety: No-throw guarantee.
         */
         std::mutex m_mtx {};
 
