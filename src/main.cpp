@@ -4,8 +4,8 @@
 #include "../include/printer.hpp"
 
 int main(int argc, char *argv[]) {
-	 if (argc < 3) [[unlikely]] {
-                std::cerr << "Arguments count must be >= 3.\n";
+        if (argc < 3) [[unlikely]] {
+                std::cerr << "Usage: " << argv[0] << " <ip> <port1> [port2]...\n";
                 return 1;
         }
 
