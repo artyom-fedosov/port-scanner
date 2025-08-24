@@ -6,7 +6,7 @@ project(port-scanner
         LANGUAGES CXX)
 
 set(CMAKE_SYSTEM_NAME Linux)
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 26)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_CXX_FLAGS_DEBUG "-Wall -Wextra -Wpedantic -Wshadow -Wconversion\
