@@ -7,8 +7,6 @@
 #include "types.hpp"
 
 namespace {
-        port_t constexpr MIN_PORT = 0; //!< \brief Minimum valid port number
-        port_t constexpr MAX_PORT = 65535; //!< \brief Maximum valid port number
         int constexpr TIMEOUT_MS = 200; //!< \brief Timeout in milliseconds for
                                         //!< socket connection attempts
 }
@@ -52,6 +50,17 @@ public:
         * (true/false)>.
         */
         [[nodiscard]] std::vector<std::pair<port_t, bool>> scan() const;
+
+public:
+        /*!
+        * \brief Minimum valid port number
+        */
+        static port_t constexpr MIN_PORT {};
+
+        /*!
+        * \brief Maximum valid port number
+        */
+        static port_t constexpr MAX_PORT {65535};
 
 private:
         /*!
