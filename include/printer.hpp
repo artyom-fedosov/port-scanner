@@ -1,22 +1,24 @@
 #pragma once
 
+#include <string_view>
+
 #include "types.hpp"
 
 namespace {
         /*!
         * \brief ANSI escape code for resetting terminal colors.
         */
-        char constexpr RESET[] {"\033[0m"};
+        std::string_view constexpr RESET {"\033[0m"};
 
         /*!
         * \brief ANSI escape code for red text color.
         */
-        char constexpr RED[] {"\033[31m"};
+        std::string_view constexpr RED {"\033[31m"};
 
         /*!
         * \brief ANSI escape code for green text color.
         */
-        char constexpr GREEN[] {"\033[32m"};
+        std::string_view constexpr GREEN {"\033[32m"};
 }
 
 /*!
