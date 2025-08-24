@@ -32,7 +32,7 @@ Scanner::Scanner(ipaddr_t const &ip, std::vector<char const *> const &ports)
 }
 
 [[nodiscard]] std::vector<std::pair<port_t, bool>>
-Scanner::scan() {
+Scanner::scan() const {
         std::vector<std::pair<port_t, bool>> result {};
         result.reserve(m_ports.size());
         std::vector<std::thread> threads {};

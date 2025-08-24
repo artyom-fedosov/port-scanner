@@ -51,7 +51,7 @@ public:
         * \return A vector of pairs: <port number, is port accessible
         * (true/false)>.
         */
-        [[nodiscard]] std::vector<std::pair<port_t, bool>> scan();
+        [[nodiscard]] std::vector<std::pair<port_t, bool>> scan() const;
 
 private:
         /*!
@@ -71,7 +71,7 @@ private:
         *
         * Exception safety: No-throw guarantee.
         */
-        std::mutex m_mtx {};
+        mutable std::mutex m_mtx {};
 
 private:
         /*!
