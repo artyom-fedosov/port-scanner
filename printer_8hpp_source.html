@@ -100,25 +100,27 @@ $(document).ready(function(){initNavTree('printer_8hpp_source.html',''); initRes
 <div class="contents">
 <a href="printer_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="types_8hpp.html">types.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;string_view&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">namespace </span>{</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        <span class="keywordtype">char</span> <span class="keyword">constexpr</span> RESET[] {<span class="stringliteral">&quot;\033[0m&quot;</span>};</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keywordtype">char</span> <span class="keyword">constexpr</span> RED[] {<span class="stringliteral">&quot;\033[31m&quot;</span>};</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordtype">char</span> <span class="keyword">constexpr</span> GREEN[] {<span class="stringliteral">&quot;\033[32m&quot;</span>};</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classPrinter.html">   30</a></span><span class="keyword">class </span><a class="code hl_class" href="classPrinter.html">Printer</a> final {</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        [[nodiscard]] <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classPrinter.html#ac310f001e2d234ce9ff3b3ffce5567ba">isTerminal</a>() <span class="keyword">noexcept</span>;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classPrinter.html#a07386ac3a06a838329a1dbb49b5add69">print</a>(std::vector&lt;std::pair&lt;port_t, bool&gt;&gt; <span class="keyword">const</span> &amp;ports);</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>};</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="types_8hpp.html">types.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span>{</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        std::string_view <span class="keyword">constexpr</span> RESET {<span class="stringliteral">&quot;\033[0m&quot;</span>};</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        std::string_view <span class="keyword">constexpr</span> RED {<span class="stringliteral">&quot;\033[31m&quot;</span>};</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        std::string_view <span class="keyword">constexpr</span> GREEN {<span class="stringliteral">&quot;\033[32m&quot;</span>};</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>}</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="};">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classPrinter.html">   32</a></span><span class="keyword">class </span><a class="code hl_class" href="classPrinter.html">Printer</a> final {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        [[nodiscard]] <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classPrinter.html#ac310f001e2d234ce9ff3b3ffce5567ba">isTerminal</a>() <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classPrinter.html#a07386ac3a06a838329a1dbb49b5add69">print</a>(std::vector&lt;std::pair&lt;port_t, bool&gt;&gt; <span class="keyword">const</span> &amp;ports);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>};</div>
 </div>
-<div class="ttc" id="aclassPrinter_html"><div class="ttname"><a href="classPrinter.html">Printer</a></div><div class="ttdoc">A utility class for printing formatted output to the terminal.</div><div class="ttdef"><b>Definition</b> printer.hpp:30</div></div>
+<div class="ttc" id="aclassPrinter_html"><div class="ttname"><a href="classPrinter.html">Printer</a></div><div class="ttdoc">A utility class for printing formatted output to the terminal.</div><div class="ttdef"><b>Definition</b> printer.hpp:32</div></div>
 <div class="ttc" id="aclassPrinter_html_a07386ac3a06a838329a1dbb49b5add69"><div class="ttname"><a href="classPrinter.html#a07386ac3a06a838329a1dbb49b5add69">Printer::print</a></div><div class="ttdeci">static void print(std::vector&lt; std::pair&lt; port_t, bool &gt; &gt; const &amp;ports)</div><div class="ttdoc">Prints to stdout the formated information about the ports accessibility.</div><div class="ttdef"><b>Definition</b> printer.cpp:11</div></div>
 <div class="ttc" id="aclassPrinter_html_ac310f001e2d234ce9ff3b3ffce5567ba"><div class="ttname"><a href="classPrinter.html#ac310f001e2d234ce9ff3b3ffce5567ba">Printer::isTerminal</a></div><div class="ttdeci">static bool isTerminal() noexcept</div><div class="ttdoc">Checks if stdout is connected to a terminal.</div><div class="ttdef"><b>Definition</b> printer.cpp:7</div></div>
 <div class="ttc" id="atypes_8hpp_html"><div class="ttname"><a href="types_8hpp.html">types.hpp</a></div></div>
