@@ -13,10 +13,14 @@ for utility in rm mkdir cmake; do
     check_utility "${utility}"
 done
 
-BUILD="$(pwd)"/../build
+readonly PROJECT="$(dirname "$(dirname "$(realpath "$BASH_SOURCE")")")"
+cd "${PROJECT}"
+
+readonly BUILD=build/
+readonly SOURCE="${PROJECT}"
 
 printf "🔧 Configuring...\n"
-cmake -B "${BUILD}" -S ../ -DCMAKE_INSTALL_PREFIX=/usr
+cmake -B "${BUILD}" -S "${SOURCE}" -DCMAKE_INSTALL_PREFIX=/usr
 
 printf "🔨 Building...\n"
 cmake --build "${BUILD}"
