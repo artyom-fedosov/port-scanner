@@ -30,4 +30,4 @@ cmake --build "${BUILD}"
 printf "📦 Installing...\n"
 sudo cmake --install "${BUILD}"
 
-printf "✅ Done. You can now use 'port-scanner'\n"
+printf "✅ Done\n"

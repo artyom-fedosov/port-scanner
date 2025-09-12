@@ -32,6 +32,4 @@ cmake --build "${BUILD}"
 printf "📦 Creating packages with CPack...\n"
 cpack --config "${BUILD}"/CPackConfig.cmake --package-directory "${BUILD}"
 
-printf "✅ Packaging complete. Generated packages:\n"
-ls -lh "${BUILD}"/*.deb "${BUILD}"/*.rpm 2>/dev/null ||
-        printf "No packages found in build directory\n"
+printf "✅ Packaging complete\n"
