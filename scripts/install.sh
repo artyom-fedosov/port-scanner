@@ -2,13 +2,13 @@
 set -e
 BUILD=$(pwd)/../build
 
-printf "🔧 Configuring..."
+printf "🔧 Configuring...\n"
 cmake -B $BUILD -S ../ -DCMAKE_INSTALL_PREFIX=/usr
 
-printf "🔨 Building..."
+printf "🔨 Building...\n"
 cmake --build $BUILD
 
-printf "📦 Installing..."
+printf "📦 Installing...\n"
 sudo cmake --install $BUILD
 
-printf "✅ Done. You can now use 'port-scanner'."
+printf "✅ Done. You can now use 'port-scanner'\n"
