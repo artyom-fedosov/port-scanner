@@ -16,6 +16,25 @@ Check if port 80 is accessible on the host 192.168.1.10.
 .TP
 .B port-scanner 192.168.1.10 80 443 8080
 Check if ports 80, 443, and 8080 are accessible on the host 192.168.1.10.
+.SH EXIT STATUS
+.TP
+1
+Not enough arguments provided
+.TP
+2
+Length error
+.TP
+3
+Memory allocation failed
+.TP
+4
+Invalid argument passed
+.TP
+5
+System error occurred
+.TP
+-1
+Unexpected error
 .SH AUTHOR
 Artyom Fedosov
 .SH LICENSE
