@@ -20,7 +20,7 @@ readonly BUILD=build/
 readonly SOURCE="${PROJECT}"
 
 printf "🧹 Cleaning previous build...\n"
-rm -rf "${BUILD}"
+rm --recursive --force "${BUILD}"
 mkdir "${BUILD}"
 
 printf "🔧 Configuring project with CMake...\n"
