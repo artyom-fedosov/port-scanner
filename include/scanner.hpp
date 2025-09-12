@@ -7,7 +7,7 @@
 #include "types.hpp"
 
 namespace {
-        int constexpr TIMEOUT_MS = 200; //!< \brief Timeout in milliseconds for
+        int constexpr TIMEOUT_MS {200}; //!< \brief Timeout in milliseconds for
                                         //!< socket connection attempts
 }
 
