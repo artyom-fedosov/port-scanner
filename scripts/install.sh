@@ -13,6 +13,8 @@ for utility in rm mkdir cmake; do
     check_utility "${utility}"
 done
 
+sudo -v
+
 readonly PROJECT="$(dirname "$(dirname "$(realpath "$BASH_SOURCE")")")"
 cd "${PROJECT}"
 
