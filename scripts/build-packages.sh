@@ -3,6 +3,7 @@
 # Create packages in the build directory
 
 set -e
+trap "printf '❌ Build failed\n'" ERR
 
 check_utility() {
     local utility="${1}"

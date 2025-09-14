@@ -3,6 +3,7 @@
 # Install port-scanner utility and its man page
 
 set -e
+trap "printf '❌ Build failed\n' >&2" ERR
 
 check_utility() {
     local utility="${1}"
