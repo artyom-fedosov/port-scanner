@@ -1,4 +1,7 @@
 #!/bin/bash
+#
+# Create packages in the build directory
+
 set -e
 
 check_utility() {

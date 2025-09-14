@@ -1,4 +1,7 @@
 #!/bin/bash
+#
+# Install port-scanner utility and its man page
+
 set -e
 
 check_utility() {
