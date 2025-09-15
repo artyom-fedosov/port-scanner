@@ -9,7 +9,7 @@ check_utility() {
     local utility="${1}"
     if ! command -v "${utility}" >/dev/null 2>&1; then
         printf "❌ %s is required!\n" "${utility}" >&2
-        false
+        exit 1
     fi
 }
 
