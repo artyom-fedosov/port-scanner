@@ -2,28 +2,12 @@
 #
 # Install port-scanner utility and its man page
 
-set -e
-trap "printf '❌ Build failed\n' >&2" ERR
+source "$(dirname "$(realpath "${BASH_SOURCE[0]}")")/common.sh"
 
-check_utility() {
-    local utility="${1}"
-    if ! command -v "${utility}" >/dev/null 2>&1; then
-        printf "❌ %s is required!\n" "${utility}" >&2
-        exit 1
-    fi
-}
-
-for utility in rm mkdir cmake; do
-    check_utility "${utility}"
-done
+readonly REQUIRED_UTILITIES=(rm mkdir cmake dirname realpath)
+check_utilities "${REQUIRED_UTILITIES[@]}"
 
 sudo -v
-
-readonly PROJECT="$(dirname "$(dirname "$(realpath "$BASH_SOURCE")")")"
-cd "${PROJECT}"
-
-readonly BUILD=build/
-readonly SOURCE="${PROJECT}"
 
 printf "🔧 Configuring...\n"
 cmake -B "${BUILD}" -S "${SOURCE}" -DCMAKE_INSTALL_PREFIX=/usr

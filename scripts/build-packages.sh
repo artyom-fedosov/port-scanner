@@ -2,26 +2,10 @@
 #
 # Create packages in the build directory
 
-set -e
-trap "printf '❌ Build failed\n'" ERR
+source "$(dirname "$(realpath "${BASH_SOURCE[0]}")")/common.sh"
 
-check_utility() {
-    local utility="${1}"
-    if ! command -v "${utility}" >/dev/null 2>&1; then
-        printf "❌ %s is required!\n" "${utility}" >&2
-        exit 1
-    fi
-}
-
-for utility in rm mkdir cmake cpack; do
-    check_utility "${utility}"
-done
-
-readonly PROJECT="$(dirname "$(dirname "$(realpath "${BASH_SOURCE[0]}")")")"
-cd "${PROJECT}"
-
-readonly BUILD=build/
-readonly SOURCE="${PROJECT}"
+readonly REQUIRED_UTILITIES=(rm mkdir cmake cpack dirname realpath)
+check_utilities "${REQUIRED_UTILITIES[@]}"
 
 printf "🧹 Cleaning previous build...\n"
 rm --recursive --force "${BUILD}"
