@@ -2,16 +2,12 @@
 
 A simple TCP port scanner written in C++ to check the accessibility of ports on remote IPv4 and IPv6 hosts.
 
----
-
 ## Features
 
 - Check availability of one or multiple TCP ports on an IPv4/IPv6 address
 - Uses POSIX sockets and system calls
 - Works **only on Linux** systems
 - Built with CMake and C++26 standard
-
----
 
 ## Installation (Fedora / RHEL-based)
 
@@ -21,8 +17,6 @@ This package is available via Fedora Copr:
 sudo dnf copr enable artjom-fedosov/port-scanner
 sudo dnf install port-scanner
 ```
-
----
 
 ## Manual Build
 
@@ -36,15 +30,11 @@ or
 git clone https://github.com/artyom-fedosov/port-scanner.git && cd port-scanner && ./scripts/install.sh
 ```
 
----
-
 ## Requirements
 
 - Linux operating system
 - C++26 compatible compiler
 - CMake version 3.16 or higher
-
----
 
 ## Documentation
 
@@ -57,8 +47,6 @@ doxygen Doxyfile
 ```
 
 The generated HTML documentation will be available in the docs/html directory.
-
----
 
 ## Usage
 
@@ -80,8 +68,6 @@ You can also scan a range of ports using shell brace expansion (bash):
 $ port-scanner 192.168.8.1 {0..65535} | grep "is accessible"
 ```
 
----
-
 ## Testing
 
 This project uses CTest for running unit tests and integrates Valgrind Memcheck to detect memory errors and leaks.
@@ -99,8 +85,6 @@ To run the tests and see detailed output of any failures:
 cd build
 ctest --output-on-failure
 ```
-
----
 
 ## License
 
