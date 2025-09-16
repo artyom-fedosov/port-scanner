@@ -18,6 +18,6 @@ printf "🔨 Building project...\n"
 cmake --build "${BUILD}"
 
 printf "📦 Creating packages with CPack...\n"
-cpack --config "${BUILD}"/CPackConfig.cmake --package-directory "${BUILD}"
+cpack --config "${BUILD}/CPackConfig.cmake" --package-directory "${BUILD}"
 
 printf "✅ Packaging complete\n"
