@@ -38,7 +38,7 @@ git clone https://github.com/artyom-fedosov/port-scanner.git && cd port-scanner 
 
 ## Documentation
 
-Detailed API documentation is available and can be generated using Doxygen.
+[Online documentation](https://artyom-fedosov.github.io/port-scanner/)
 
 To generate the documentation locally, run:
 
