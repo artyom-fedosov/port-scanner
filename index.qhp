@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QtHelpProject version="1.0">
+<namespace>org.doxygen.portscanner</namespace>
+<virtualFolder>docs</virtualFolder>
+<filterSection>
+<filterAttribute>doxygen</filterAttribute>
+<toc>
+<section title="Port Scanner" ref="index.html">
+<section title="Features" ref="index.html#autotoc_md1"/>
+<section title="Installation (Fedora / RHEL-based)" ref="index.html#autotoc_md2"/>
+<section title="Manual Build" ref="index.html#autotoc_md3"/>
+<section title="Requirements" ref="index.html#autotoc_md4"/>
+<section title="Documentation" ref="index.html#autotoc_md5"/>
+<section title="Usage" ref="index.html#autotoc_md6"/>
+<section title="Testing" ref="index.html#autotoc_md7"/>
+<section title="License" ref="index.html#autotoc_md8"/>
+<section title="Namespaces" ref="namespaces.html">
+<section title="Namespace List" ref="namespaces.html">
+<section title="anonymous_namespace{printer.hpp}" ref="namespaceanonymous__namespace_02printer_8hpp_03.html">
+<section title="GREEN" ref="namespaceanonymous__namespace_02printer_8hpp_03.html#a9549ef75431543971e79ea91e5f68130"/>
+<section title="RED" ref="namespaceanonymous__namespace_02printer_8hpp_03.html#a4b80f77ce431d4b9057292d99edb8be0"/>
+<section title="RESET" ref="namespaceanonymous__namespace_02printer_8hpp_03.html#aa4262232780e639fd9cb7fb616a0f5b8"/>
+</section>
+<section title="anonymous_namespace{scanner.hpp}" ref="namespaceanonymous__namespace_02scanner_8hpp_03.html">
+<section title="TIMEOUT_MS" ref="namespaceanonymous__namespace_02scanner_8hpp_03.html#a8f744bb386006bea6840b73769c66f62"/>
+</section>
+</section>
+<section title="Namespace Members" ref="namespacemembers.html">
+<section title="All" ref="namespacemembers.html"/>
+<section title="Variables" ref="namespacemembers_vars.html"/>
+</section>
+</section>
+<section title="Classes" ref="annotated.html">
+<section title="Class List" ref="annotated.html">
+<section title="Printer" ref="classPrinter.html">
+<section title="isTerminal" ref="classPrinter.html#ac310f001e2d234ce9ff3b3ffce5567ba"/>
+<section title="print" ref="classPrinter.html#a07386ac3a06a838329a1dbb49b5add69"/>
+</section>
+<section title="Scanner" ref="classScanner.html">
+<section title="Scanner" ref="classScanner.html#acef562247c88bd0ff7cba0c3cc9c85f4"/>
+<section title="isIPv4" ref="classScanner.html#a90741dae9b58ae04679a6e5111131ab9"/>
+<section title="isIPv6" ref="classScanner.html#a3c3fa32fc14afcc470e18d418770ceb1"/>
+<section title="isPortAccessible" ref="classScanner.html#a5d0f18ea208f78217945918d214f709e"/>
+<section title="parsePort" ref="classScanner.html#a8c0c87368ad65fedb1d3e83da5853666"/>
+<section title="scan" ref="classScanner.html#a36e8566701a74e73668ee0ea4b21f9c6"/>
+<section title="m_ip" ref="classScanner.html#af9f6c2887e61333d36bf9771a13ba67f"/>
+<section title="m_mtx" ref="classScanner.html#a5747292f3b58c1806ed5ca3edc262a87"/>
+<section title="m_ports" ref="classScanner.html#a17036355736d4c9d42327cf4cd75b25c"/>
+<section title="MAX_PORT" ref="classScanner.html#a986324c47994661217f5fbdb26b9144f"/>
+<section title="MIN_PORT" ref="classScanner.html#a55e27e0e017ecfcea24c85bf940a51a2"/>
+</section>
+</section>
+<section title="Class Index" ref="classes.html"/>
+<section title="Class Members" ref="functions.html">
+<section title="All" ref="functions.html"/>
+<section title="Functions" ref="functions_func.html"/>
+<section title="Variables" ref="functions_vars.html"/>
+</section>
+</section>
+<section title="Files" ref="files.html">
+<section title="File List" ref="files.html">
+<section title="include" ref="dir_d44c64559bbebec7f509842c48db8b23.html">
+<section title="printer.hpp" ref="printer_8hpp.html">
+<section title="Printer" ref="classPrinter.html">
+<section title="isTerminal" ref="classPrinter.html#ac310f001e2d234ce9ff3b3ffce5567ba"/>
+<section title="print" ref="classPrinter.html#a07386ac3a06a838329a1dbb49b5add69"/>
+</section>
+<section title="GREEN" ref="printer_8hpp.html#a9549ef75431543971e79ea91e5f68130"/>
+<section title="RED" ref="printer_8hpp.html#a4b80f77ce431d4b9057292d99edb8be0"/>
+<section title="RESET" ref="printer_8hpp.html#aa4262232780e639fd9cb7fb616a0f5b8"/>
+</section>
+<section title="scanner.hpp" ref="scanner_8hpp.html">
+<section title="Scanner" ref="classScanner.html">
+<section title="Scanner" ref="classScanner.html#acef562247c88bd0ff7cba0c3cc9c85f4"/>
+<section title="isIPv4" ref="classScanner.html#a90741dae9b58ae04679a6e5111131ab9"/>
+<section title="isIPv6" ref="classScanner.html#a3c3fa32fc14afcc470e18d418770ceb1"/>
+<section title="isPortAccessible" ref="classScanner.html#a5d0f18ea208f78217945918d214f709e"/>
+<section title="parsePort" ref="classScanner.html#a8c0c87368ad65fedb1d3e83da5853666"/>
+<section title="scan" ref="classScanner.html#a36e8566701a74e73668ee0ea4b21f9c6"/>
+<section title="m_ip" ref="classScanner.html#af9f6c2887e61333d36bf9771a13ba67f"/>
+<section title="m_mtx" ref="classScanner.html#a5747292f3b58c1806ed5ca3edc262a87"/>
+<section title="m_ports" ref="classScanner.html#a17036355736d4c9d42327cf4cd75b25c"/>
+<section title="MAX_PORT" ref="classScanner.html#a986324c47994661217f5fbdb26b9144f"/>
+<section title="MIN_PORT" ref="classScanner.html#a55e27e0e017ecfcea24c85bf940a51a2"/>
+</section>
+<section title="TIMEOUT_MS" ref="scanner_8hpp.html#a8f744bb386006bea6840b73769c66f62"/>
+</section>
+<section title="types.hpp" ref="types_8hpp.html">
+<section title="ipaddr_t" ref="types_8hpp.html#ae7690576a8d3893435294d25def55c48"/>
+<section title="port_t" ref="types_8hpp.html#a74951a78c122c2c9903f64726a56aac6"/>
+<section title="ports_t" ref="types_8hpp.html#a5a82291375f2f68b53a652f6f2ab74b1"/>
+</section>
+</section>
+<section title="src" ref="dir_68267d1309a1af8e8297ef4c3efbcdba.html">
+<section title="main.cpp" ref="main_8cpp.html">
+<section title="main" ref="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97"/>
+</section>
+<section title="printer.cpp" ref="printer_8cpp.html"/>
+<section title="scanner.cpp" ref="scanner_8cpp.html"/>
+</section>
+</section>
+<section title="File Members" ref="globals.html">
+<section title="All" ref="globals.html"/>
+<section title="Functions" ref="globals_func.html"/>
+<section title="Typedefs" ref="globals_type.html"/>
+</section>
+</section>
+</section>
+</toc>
+<keywords>
+<keyword name="Printer" id="Printer_" ref="classPrinter.html"/>
+<keyword name="Scanner" id="Scanner_" ref="classScanner.html"/>
+<keyword name="anonymous_namespace{printer.hpp}" id="anonymous_namespace{printer.hpp}_" ref="namespaceanonymous__namespace_02printer_8hpp_03.html"/>
+<keyword name="anonymous_namespace{scanner.hpp}" id="anonymous_namespace{scanner.hpp}_" ref="namespaceanonymous__namespace_02scanner_8hpp_03.html"/>
+<keyword name="isIPv4(ipaddr_t const &amp;ip) const noexcept" id="Scanner::isIPv4_a90741dae9b58ae04679a6e5111131ab9" ref="classScanner.html#a90741dae9b58ae04679a6e5111131ab9"/>
+<keyword name="isIPv6(ipaddr_t const &amp;ip) const noexcept" id="Scanner::isIPv6_a3c3fa32fc14afcc470e18d418770ceb1" ref="classScanner.html#a3c3fa32fc14afcc470e18d418770ceb1"/>
+<keyword name="isPortAccessible(port_t const port) const" id="Scanner::isPortAccessible_a5d0f18ea208f78217945918d214f709e" ref="classScanner.html#a5d0f18ea208f78217945918d214f709e"/>
+<keyword name="isTerminal() noexcept" id="Printer::isTerminal_ac310f001e2d234ce9ff3b3ffce5567ba" ref="classPrinter.html#ac310f001e2d234ce9ff3b3ffce5567ba"/>
+<keyword name="m_ip" id="Scanner::m_ip_af9f6c2887e61333d36bf9771a13ba67f" ref="classScanner.html#af9f6c2887e61333d36bf9771a13ba67f"/>
+<keyword name="m_mtx" id="Scanner::m_mtx_a5747292f3b58c1806ed5ca3edc262a87" ref="classScanner.html#a5747292f3b58c1806ed5ca3edc262a87"/>
+<keyword name="m_ports" id="Scanner::m_ports_a17036355736d4c9d42327cf4cd75b25c" ref="classScanner.html#a17036355736d4c9d42327cf4cd75b25c"/>
+<keyword name="MAX_PORT" id="Scanner::MAX_PORT_a986324c47994661217f5fbdb26b9144f" ref="classScanner.html#a986324c47994661217f5fbdb26b9144f"/>
+<keyword name="MIN_PORT" id="Scanner::MIN_PORT_a55e27e0e017ecfcea24c85bf940a51a2" ref="classScanner.html#a55e27e0e017ecfcea24c85bf940a51a2"/>
+<keyword name="parsePort(char const *str) const noexcept" id="Scanner::parsePort_a8c0c87368ad65fedb1d3e83da5853666" ref="classScanner.html#a8c0c87368ad65fedb1d3e83da5853666"/>
+<keyword name="print(std::vector&lt; std::pair&lt; port_t, bool &gt; &gt; const &amp;ports)" id="Printer::print_a07386ac3a06a838329a1dbb49b5add69" ref="classPrinter.html#a07386ac3a06a838329a1dbb49b5add69"/>
+<keyword name="scan() const" id="Scanner::scan_a36e8566701a74e73668ee0ea4b21f9c6" ref="classScanner.html#a36e8566701a74e73668ee0ea4b21f9c6"/>
+<keyword name="Scanner(ipaddr_t const &amp;ip, std::vector&lt; char const * &gt; const &amp;ports)" id="Scanner::Scanner_acef562247c88bd0ff7cba0c3cc9c85f4" ref="classScanner.html#acef562247c88bd0ff7cba0c3cc9c85f4"/>
+<keyword name="GREEN" id="anonymous_namespace{printer.hpp}::GREEN_a9549ef75431543971e79ea91e5f68130" ref="namespaceanonymous__namespace_02printer_8hpp_03.html#a9549ef75431543971e79ea91e5f68130"/>
+<keyword name="ipaddr_t" id="types.hpp::ipaddr_t_ae7690576a8d3893435294d25def55c48" ref="types_8hpp.html#ae7690576a8d3893435294d25def55c48"/>
+<keyword name="main(int argc, char *argv[])" id="main.cpp::main_a0ddf1224851353fc92bfbff6f499fa97" ref="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97"/>
+<keyword name="port_t" id="types.hpp::port_t_a74951a78c122c2c9903f64726a56aac6" ref="types_8hpp.html#a74951a78c122c2c9903f64726a56aac6"/>
+<keyword name="ports_t" id="types.hpp::ports_t_a5a82291375f2f68b53a652f6f2ab74b1" ref="types_8hpp.html#a5a82291375f2f68b53a652f6f2ab74b1"/>
+<keyword name="RED" id="anonymous_namespace{printer.hpp}::RED_a4b80f77ce431d4b9057292d99edb8be0" ref="namespaceanonymous__namespace_02printer_8hpp_03.html#a4b80f77ce431d4b9057292d99edb8be0"/>
+<keyword name="RESET" id="anonymous_namespace{printer.hpp}::RESET_aa4262232780e639fd9cb7fb616a0f5b8" ref="namespaceanonymous__namespace_02printer_8hpp_03.html#aa4262232780e639fd9cb7fb616a0f5b8"/>
+<keyword name="TIMEOUT_MS" id="anonymous_namespace{scanner.hpp}::TIMEOUT_MS_a8f744bb386006bea6840b73769c66f62" ref="namespaceanonymous__namespace_02scanner_8hpp_03.html#a8f744bb386006bea6840b73769c66f62"/>
+</keywords>
+<files>
+<file>README_8md.html</file>
+<file>annotated.html</file>
+<file>bc_s.png</file>
+<file>bc_sd.png</file>
+<file>classPrinter-members.html</file>
+<file>classPrinter.html</file>
+<file>classPrinter__coll__graph.png</file>
+<file>classPrinter_a07386ac3a06a838329a1dbb49b5add69_cgraph.png</file>
+<file>classPrinter_a07386ac3a06a838329a1dbb49b5add69_icgraph.png</file>
+<file>classPrinter_ac310f001e2d234ce9ff3b3ffce5567ba_icgraph.png</file>
+<file>classScanner-members.html</file>
+<file>classScanner.html</file>
+<file>classScanner__coll__graph.png</file>
+<file>classScanner_a36e8566701a74e73668ee0ea4b21f9c6_cgraph.png</file>
+<file>classScanner_a3c3fa32fc14afcc470e18d418770ceb1_icgraph.png</file>
+<file>classScanner_a5d0f18ea208f78217945918d214f709e_icgraph.png</file>
+<file>classScanner_a8c0c87368ad65fedb1d3e83da5853666_icgraph.png</file>
+<file>classScanner_a90741dae9b58ae04679a6e5111131ab9_icgraph.png</file>
+<file>classScanner_acef562247c88bd0ff7cba0c3cc9c85f4_cgraph.png</file>
+<file>classes.html</file>
+<file>closed.png</file>
+<file>dir_000001_000000.html</file>
+<file>dir_68267d1309a1af8e8297ef4c3efbcdba.html</file>
+<file>dir_68267d1309a1af8e8297ef4c3efbcdba_dep.png</file>
+<file>dir_d44c64559bbebec7f509842c48db8b23.html</file>
+<file>doxygen.css</file>
+<file>doxygen.svg</file>
+<file>dynsections.js</file>
+<file>files.html</file>
+<file>functions.html</file>
+<file>functions_func.html</file>
+<file>functions_vars.html</file>
+<file>globals.html</file>
+<file>globals_func.html</file>
+<file>globals_type.html</file>
+<file>graph_legend.html</file>
+<file>graph_legend.png</file>
+<file>index.html</file>
+<file>jquery.js</file>
+<file>main_8cpp.html</file>
+<file>main_8cpp__incl.png</file>
+<file>main_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph.png</file>
+<file>main_8cpp_source.html</file>
+<file>menu.js</file>
+<file>menudata.js</file>
+<file>namespaceanonymous__namespace_02printer_8hpp_03.html</file>
+<file>namespaceanonymous__namespace_02scanner_8hpp_03.html</file>
+<file>namespacemembers.html</file>
+<file>namespacemembers_vars.html</file>
+<file>namespaces.html</file>
+<file>nav_f.png</file>
+<file>nav_fd.png</file>
+<file>nav_g.png</file>
+<file>nav_h.png</file>
+<file>nav_hd.png</file>
+<file>open.png</file>
+<file>printer_8cpp.html</file>
+<file>printer_8cpp__incl.png</file>
+<file>printer_8cpp_source.html</file>
+<file>printer_8hpp.html</file>
+<file>printer_8hpp__dep__incl.png</file>
+<file>printer_8hpp__incl.png</file>
+<file>printer_8hpp_source.html</file>
+<file>scanner_8cpp.html</file>
+<file>scanner_8cpp__incl.png</file>
+<file>scanner_8cpp_source.html</file>
+<file>scanner_8hpp.html</file>
+<file>scanner_8hpp__dep__incl.png</file>
+<file>scanner_8hpp__incl.png</file>
+<file>scanner_8hpp_source.html</file>
+<file>search/all_0.js</file>
+<file>search/all_1.js</file>
+<file>search/all_2.js</file>
+<file>search/all_3.js</file>
+<file>search/all_4.js</file>
+<file>search/all_5.js</file>
+<file>search/all_6.js</file>
+<file>search/all_7.js</file>
+<file>search/all_8.js</file>
+<file>search/all_9.js</file>
+<file>search/all_a.js</file>
+<file>search/all_b.js</file>
+<file>search/all_c.js</file>
+<file>search/classes_0.js</file>
+<file>search/classes_1.js</file>
+<file>search/close.svg</file>
+<file>search/files_0.js</file>
+<file>search/files_1.js</file>
+<file>search/files_2.js</file>
+<file>search/files_3.js</file>
+<file>search/files_4.js</file>
+<file>search/functions_0.js</file>
+<file>search/functions_1.js</file>
+<file>search/functions_2.js</file>
+<file>search/functions_3.js</file>
+<file>search/mag.svg</file>
+<file>search/mag_d.svg</file>
+<file>search/mag_sel.svg</file>
+<file>search/mag_seld.svg</file>
+<file>search/namespaces_0.js</file>
+<file>search/pages_0.js</file>
+<file>search/pages_1.js</file>
+<file>search/search.css</file>
+<file>search/search.js</file>
+<file>search/searchdata.js</file>
+<file>search/typedefs_0.js</file>
+<file>search/typedefs_1.js</file>
+<file>search/variables_0.js</file>
+<file>search/variables_1.js</file>
+<file>search/variables_2.js</file>
+<file>search/variables_3.js</file>
+<file>splitbar.png</file>
+<file>splitbard.png</file>
+<file>sync_off.png</file>
+<file>sync_on.png</file>
+<file>tab_a.png</file>
+<file>tab_ad.png</file>
+<file>tab_b.png</file>
+<file>tab_bd.png</file>
+<file>tab_h.png</file>
+<file>tab_hd.png</file>
+<file>tab_s.png</file>
+<file>tab_sd.png</file>
+<file>tabs.css</file>
+<file>types_8hpp.html</file>
+<file>types_8hpp__dep__incl.png</file>
+<file>types_8hpp__incl.png</file>
+<file>types_8hpp_source.html</file>
+</files>
+</filterSection>
+</QtHelpProject>

@@ -1,0 +1,5 @@
+<map id="Printer::print" name="Printer::print">
+<area shape="rect" id="Node000001" title="Prints to stdout the formated information about the ports accessibility." alt="" coords="5,5,108,31"/>
+<area shape="rect" id="Node000002" href="$classPrinter.html#ac310f001e2d234ce9ff3b3ffce5567ba" title="Checks if stdout is connected to a terminal." alt="" coords="156,5,296,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,15,142,15,142,21,108,21"/>
+</map>

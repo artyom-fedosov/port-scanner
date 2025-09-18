@@ -5,22 +5,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Port Scanner: Main Page</title>
+<title>Port Scanner: Port Scanner</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -32,19 +23,8 @@
   <td id="projectalign">
    <div id="projectname">Port Scanner
    </div>
+   <div id="projectbrief">Lightweight TCP port scanner for Linux</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -56,23 +36,18 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('index.html',''); initResizable(); });
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
 /* @license-end */
 </script>
-<div id="doc-content">
+<div id="main-nav"></div>
+</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -94,28 +69,70 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">Port Scanner Documentation</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">Port <a class="el" href="classScanner.html">Scanner</a> </div></div>
 </div><!--header-->
 <div class="contents">
-<ul><li><a href="index.html"><span>Main&#160;Page</span></a>
-</li><li><a href="annotated.html"><span>Classes</span></a>
-<ul><li><a href="annotated.html"><span>Class&#160;List</span></a>
-</li><li><a href="classes.html"><span>Class&#160;Index</span></a>
-</li><li><a href="functions.html"><span>Class&#160;Members</span></a>
-</li></ul>
-</li><li><a href="files.html"><span>Files</span></a>
-<ul><li><a href="files.html"><span>File&#160;List</span></a>
-</li><li><a href="globals.html"><span>File&#160;Members</span></a>
-</li></ul>
-</li></ul>
+<div class="textblock"><p><a class="anchor" id="md_README"></a> A simple TCP port scanner written in C++ to check the accessibility of ports on remote IPv4 and IPv6 hosts.</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Features</h1>
+<ul>
+<li>Check availability of one or multiple TCP ports on an IPv4/IPv6 address</li>
+<li>Uses POSIX sockets and system calls</li>
+<li>Works <b>only on Linux</b> systems</li>
+<li>Built with CMake and C++26 standard</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Installation (Fedora / RHEL-based)</h1>
+<p>This package is available via Fedora Copr:</p>
+<div class="fragment"><div class="line">sudo dnf copr enable artjom-fedosov/port-scanner</div>
+<div class="line">sudo dnf install port-scanner</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md3"></a>
+Manual Build</h1>
+<div class="fragment"><div class="line">git clone https://github.com/artyom-fedosov/port-scanner.git</div>
+<div class="line">cd port-scanner</div>
+<div class="line">./scripts/install.sh</div>
+</div><!-- fragment --><p> or </p><div class="fragment"><div class="line">git clone https://github.com/artyom-fedosov/port-scanner.git &amp;&amp; cd port-scanner &amp;&amp; ./scripts/install.sh</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md4"></a>
+Requirements</h1>
+<ul>
+<li>Linux operating system</li>
+<li>C++26 compatible compiler</li>
+<li>CMake version 3.16 or higher</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md5"></a>
+Documentation</h1>
+<p><a href="https://artyom-fedosov.github.io/port-scanner/">Online documentation</a></p>
+<p>To generate the documentation locally, run:</p>
+<div class="fragment"><div class="line">doxygen Doxyfile</div>
+</div><!-- fragment --><p>The generated HTML documentation will be available in the docs/html directory.</p>
+<h1><a class="anchor" id="autotoc_md6"></a>
+Usage</h1>
+<p>Run the port scanner by specifying an IP address (IPv4 or IPv6) followed by one or more ports to check:</p>
+<div class="fragment"><div class="line">$ port-scanner 192.168.8.1 22 80 443</div>
+<div class="line">22  is accessible</div>
+<div class="line">80  is not accessible</div>
+<div class="line">443 is accessible</div>
+</div><!-- fragment --><p><b>Note</b>: In the terminal, accessible ports are displayed in <b>green</b>, while inaccessible ports are shown in <b>red</b> for better readability. The order of the port scan results may vary because the checks are performed concurrently using threads.</p>
+<p>You can also scan a range of ports using shell brace expansion (bash):</p>
+<div class="fragment"><div class="line">$ port-scanner 192.168.8.1 {0..65535} | grep &quot;is accessible&quot;</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md7"></a>
+Testing</h1>
+<p>This project uses CTest for running unit tests and integrates Valgrind Memcheck to detect memory errors and leaks.</p>
+<p>To run the tests, use:</p>
+<div class="fragment"><div class="line">cd build</div>
+<div class="line">ctest</div>
+</div><!-- fragment --><p>To run the tests and see detailed output of any failures:</p>
+<div class="fragment"><div class="line">cd build</div>
+<div class="line">ctest --output-on-failure</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md8"></a>
+License</h1>
+<p>This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. </p>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Sep 18 2025 12:07:37 for Port Scanner by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
 </body>
 </html>

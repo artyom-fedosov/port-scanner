@@ -9,18 +9,9 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -32,19 +23,8 @@
   <td id="projectalign">
    <div id="projectname">Port Scanner
    </div>
+   <div id="projectbrief">Lightweight TCP port scanner for Linux</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -56,23 +36,22 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('types_8hpp_source.html',''); initResizable(); });
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
 /* @license-end */
 </script>
-<div id="doc-content">
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -94,6 +73,11 @@ $(document).ready(function(){initNavTree('types_8hpp_source.html',''); initResiz
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">types.hpp</div></div>
 </div><!--header-->
@@ -108,17 +92,13 @@ $(document).ready(function(){initNavTree('types_8hpp_source.html',''); initResiz
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="types_8hpp.html#ae7690576a8d3893435294d25def55c48">    8</a></span><span class="keyword">using </span><a class="code hl_typedef" href="types_8hpp.html#ae7690576a8d3893435294d25def55c48">ipaddr_t</a> = std::string;        </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="types_8hpp.html#a74951a78c122c2c9903f64726a56aac6">    9</a></span><span class="keyword">using </span><a class="code hl_typedef" href="types_8hpp.html#a74951a78c122c2c9903f64726a56aac6">port_t</a> = uint16_t;             </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="types_8hpp.html#a5a82291375f2f68b53a652f6f2ab74b1">   10</a></span><span class="keyword">using </span><a class="code hl_typedef" href="types_8hpp.html#a5a82291375f2f68b53a652f6f2ab74b1">ports_t</a> = std::vector&lt;port_t&gt;; </div>
-<div class="ttc" id="atypes_8hpp_html_a5a82291375f2f68b53a652f6f2ab74b1"><div class="ttname"><a href="types_8hpp.html#a5a82291375f2f68b53a652f6f2ab74b1">ports_t</a></div><div class="ttdeci">std::vector&lt; port_t &gt; ports_t</div><div class="ttdoc">Vector of ports type.</div><div class="ttdef"><b>Definition</b> types.hpp:10</div></div>
-<div class="ttc" id="atypes_8hpp_html_a74951a78c122c2c9903f64726a56aac6"><div class="ttname"><a href="types_8hpp.html#a74951a78c122c2c9903f64726a56aac6">port_t</a></div><div class="ttdeci">uint16_t port_t</div><div class="ttdoc">Port number type.</div><div class="ttdef"><b>Definition</b> types.hpp:9</div></div>
-<div class="ttc" id="atypes_8hpp_html_ae7690576a8d3893435294d25def55c48"><div class="ttname"><a href="types_8hpp.html#ae7690576a8d3893435294d25def55c48">ipaddr_t</a></div><div class="ttdeci">std::string ipaddr_t</div><div class="ttdoc">IP address type.</div><div class="ttdef"><b>Definition</b> types.hpp:8</div></div>
+<div class="ttc" id="atypes_8hpp_html_a5a82291375f2f68b53a652f6f2ab74b1"><div class="ttname"><a href="types_8hpp.html#a5a82291375f2f68b53a652f6f2ab74b1">ports_t</a></div><div class="ttdeci">std::vector&lt; port_t &gt; ports_t</div><div class="ttdoc">Vector of ports type.</div><div class="ttdef"><b>Definition</b> <a href="types_8hpp_source.html#l00010">types.hpp:10</a></div></div>
+<div class="ttc" id="atypes_8hpp_html_a74951a78c122c2c9903f64726a56aac6"><div class="ttname"><a href="types_8hpp.html#a74951a78c122c2c9903f64726a56aac6">port_t</a></div><div class="ttdeci">uint16_t port_t</div><div class="ttdoc">Port number type.</div><div class="ttdef"><b>Definition</b> <a href="types_8hpp_source.html#l00009">types.hpp:9</a></div></div>
+<div class="ttc" id="atypes_8hpp_html_ae7690576a8d3893435294d25def55c48"><div class="ttname"><a href="types_8hpp.html#ae7690576a8d3893435294d25def55c48">ipaddr_t</a></div><div class="ttdeci">std::string ipaddr_t</div><div class="ttdoc">IP address type.</div><div class="ttdef"><b>Definition</b> <a href="types_8hpp_source.html#l00008">types.hpp:8</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="types_8hpp.html">types.hpp</a></li>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Sep 18 2025 12:07:37 for Port Scanner by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
 </body>
 </html>

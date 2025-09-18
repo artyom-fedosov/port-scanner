@@ -1,0 +1,9 @@
+<map id="Scanner::Scanner" name="Scanner::Scanner">
+<area shape="rect" id="Node000001" title="Constructs a Scanner with a target IP address and a vector of ports to scan." alt="" coords="5,55,140,80"/>
+<area shape="rect" id="Node000002" href="$classScanner.html#a90741dae9b58ae04679a6e5111131ab9" title="Checks if the given IP address string is a syntactically valid IPv4 address." alt="" coords="199,5,321,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,52,197,32,198,37,122,57"/>
+<area shape="rect" id="Node000003" href="$classScanner.html#a3c3fa32fc14afcc470e18d418770ceb1" title="Checks if the given IP address string is a syntactically valid IPv6 address." alt="" coords="199,55,321,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="140,65,186,65,186,70,140,70"/>
+<area shape="rect" id="Node000004" href="$classScanner.html#a8c0c87368ad65fedb1d3e83da5853666" title="Attempts to parse a C&#45;string into a port_t. It also validates if the parsed number falls within the [..." alt="" coords="188,104,332,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="122,77,198,98,197,103,121,83"/>
+</map>

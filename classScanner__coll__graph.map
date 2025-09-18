@@ -1,0 +1,15 @@
+<map id="Scanner" name="Scanner">
+<area shape="rect" id="Node000001" title=" " alt="" coords="145,404,290,589"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="37,276,115,341"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,340,140,389,135,392,98,343"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,133,136,213"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="75,227,77,276,72,276,70,227"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="142,276,293,341"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="220,341,220,388,215,388,215,341"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="161,141,282,206"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="223,220,221,276,216,276,217,220"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="210,5,233,71"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="224,71,224,124,219,124,219,71"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="317,276,401,341"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="337,343,299,392,295,389,333,340"/>
+</map>

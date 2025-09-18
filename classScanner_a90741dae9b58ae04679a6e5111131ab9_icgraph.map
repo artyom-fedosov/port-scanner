@@ -1,0 +1,5 @@
+<map id="Scanner::isIPv4" name="Scanner::isIPv4">
+<area shape="rect" id="Node000001" title="Checks if the given IP address string is a syntactically valid IPv4 address." alt="" coords="188,5,309,31"/>
+<area shape="rect" id="Node000002" href="$classScanner.html#acef562247c88bd0ff7cba0c3cc9c85f4" title="Constructs a Scanner with a target IP address and a vector of ports to scan." alt="" coords="5,5,140,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="174,21,140,21,140,15,174,15"/>
+</map>

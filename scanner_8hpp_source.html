@@ -9,18 +9,9 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -32,19 +23,8 @@
   <td id="projectalign">
    <div id="projectname">Port Scanner
    </div>
+   <div id="projectbrief">Lightweight TCP port scanner for Linux</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -56,23 +36,22 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('scanner_8hpp_source.html',''); initResizable(); });
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
 /* @license-end */
 </script>
-<div id="doc-content">
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -94,6 +73,11 @@ $(document).ready(function(){initNavTree('scanner_8hpp_source.html',''); initRes
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">scanner.hpp</div></div>
 </div><!--header-->
@@ -106,9 +90,11 @@ $(document).ready(function(){initNavTree('scanner_8hpp_source.html',''); initRes
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="types_8hpp.html">types.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span>{</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keywordtype">int</span> <span class="keyword">constexpr</span> TIMEOUT_MS{200}; </div>
+<div class="foldopen" id="foldopen00009" data-start="{" data-end="}">
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="namespaceanonymous__namespace_02scanner_8hpp_03.html">    9</a></span><span class="keyword">namespace </span>{</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="namespaceanonymous__namespace_02scanner_8hpp_03.html#a8f744bb386006bea6840b73769c66f62">   10</a></span><span class="keywordtype">int</span> <span class="keyword">constexpr</span> <a class="code hl_variable" href="namespaceanonymous__namespace_02scanner_8hpp_03.html#a8f744bb386006bea6840b73769c66f62">TIMEOUT_MS</a>{200}; </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>}</div>
+</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classScanner.html">   19</a></span><span class="keyword">class </span><a class="code hl_class" href="classScanner.html">Scanner</a> final {</div>
@@ -140,29 +126,26 @@ $(document).ready(function(){initNavTree('scanner_8hpp_source.html',''); initRes
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    [[nodiscard]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classScanner.html#a5d0f18ea208f78217945918d214f709e">isPortAccessible</a>(<a class="code hl_typedef" href="types_8hpp.html#a74951a78c122c2c9903f64726a56aac6">port_t</a> <span class="keyword">const</span> port) <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>};</div>
 </div>
-<div class="ttc" id="aclassScanner_html"><div class="ttname"><a href="classScanner.html">Scanner</a></div><div class="ttdef"><b>Definition</b> scanner.hpp:19</div></div>
-<div class="ttc" id="aclassScanner_html_a17036355736d4c9d42327cf4cd75b25c"><div class="ttname"><a href="classScanner.html#a17036355736d4c9d42327cf4cd75b25c">Scanner::m_ports</a></div><div class="ttdeci">ports_t m_ports</div><div class="ttdoc">Target ports.</div><div class="ttdef"><b>Definition</b> scanner.hpp:60</div></div>
-<div class="ttc" id="aclassScanner_html_a36e8566701a74e73668ee0ea4b21f9c6"><div class="ttname"><a href="classScanner.html#a36e8566701a74e73668ee0ea4b21f9c6">Scanner::scan</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; port_t, bool &gt; &gt; scan() const</div><div class="ttdoc">Scans all specified ports on the target IP address.</div><div class="ttdef"><b>Definition</b> scanner.cpp:31</div></div>
-<div class="ttc" id="aclassScanner_html_a3c3fa32fc14afcc470e18d418770ceb1"><div class="ttname"><a href="classScanner.html#a3c3fa32fc14afcc470e18d418770ceb1">Scanner::isIPv6</a></div><div class="ttdeci">bool isIPv6(ipaddr_t const &amp;ip) const noexcept</div><div class="ttdoc">Checks if the given IP address string is a syntactically valid IPv6 address.</div><div class="ttdef"><b>Definition</b> scanner.cpp:56</div></div>
-<div class="ttc" id="aclassScanner_html_a55e27e0e017ecfcea24c85bf940a51a2"><div class="ttname"><a href="classScanner.html#a55e27e0e017ecfcea24c85bf940a51a2">Scanner::MIN_PORT</a></div><div class="ttdeci">static port_t constexpr MIN_PORT</div><div class="ttdoc">Minimum valid port number.</div><div class="ttdef"><b>Definition</b> scanner.hpp:48</div></div>
-<div class="ttc" id="aclassScanner_html_a5747292f3b58c1806ed5ca3edc262a87"><div class="ttname"><a href="classScanner.html#a5747292f3b58c1806ed5ca3edc262a87">Scanner::m_mtx</a></div><div class="ttdeci">std::mutex m_mtx</div><div class="ttdoc">Mutable mutex for thread safety.</div><div class="ttdef"><b>Definition</b> scanner.hpp:67</div></div>
-<div class="ttc" id="aclassScanner_html_a5d0f18ea208f78217945918d214f709e"><div class="ttname"><a href="classScanner.html#a5d0f18ea208f78217945918d214f709e">Scanner::isPortAccessible</a></div><div class="ttdeci">bool isPortAccessible(port_t const port) const</div><div class="ttdoc">Attempts to establish a TCP connection to the specified port. This function incorporates a timeout (T...</div><div class="ttdef"><b>Definition</b> scanner.cpp:73</div></div>
-<div class="ttc" id="aclassScanner_html_a8c0c87368ad65fedb1d3e83da5853666"><div class="ttname"><a href="classScanner.html#a8c0c87368ad65fedb1d3e83da5853666">Scanner::parsePort</a></div><div class="ttdeci">std::optional&lt; port_t &gt; parsePort(char const *str) const noexcept</div><div class="ttdoc">Attempts to parse a C-string into a port_t. It also validates if the parsed number falls within the [...</div><div class="ttdef"><b>Definition</b> scanner.cpp:61</div></div>
-<div class="ttc" id="aclassScanner_html_a90741dae9b58ae04679a6e5111131ab9"><div class="ttname"><a href="classScanner.html#a90741dae9b58ae04679a6e5111131ab9">Scanner::isIPv4</a></div><div class="ttdeci">bool isIPv4(ipaddr_t const &amp;ip) const noexcept</div><div class="ttdoc">Checks if the given IP address string is a syntactically valid IPv4 address.</div><div class="ttdef"><b>Definition</b> scanner.cpp:51</div></div>
-<div class="ttc" id="aclassScanner_html_a986324c47994661217f5fbdb26b9144f"><div class="ttname"><a href="classScanner.html#a986324c47994661217f5fbdb26b9144f">Scanner::MAX_PORT</a></div><div class="ttdeci">static port_t constexpr MAX_PORT</div><div class="ttdoc">Maximum valid port number.</div><div class="ttdef"><b>Definition</b> scanner.hpp:50</div></div>
-<div class="ttc" id="aclassScanner_html_af9f6c2887e61333d36bf9771a13ba67f"><div class="ttname"><a href="classScanner.html#af9f6c2887e61333d36bf9771a13ba67f">Scanner::m_ip</a></div><div class="ttdeci">ipaddr_t m_ip</div><div class="ttdoc">Target IP address.</div><div class="ttdef"><b>Definition</b> scanner.hpp:53</div></div>
+<div class="ttc" id="aclassScanner_html"><div class="ttname"><a href="classScanner.html">Scanner</a></div><div class="ttdef"><b>Definition</b> <a href="scanner_8hpp_source.html#l00019">scanner.hpp:19</a></div></div>
+<div class="ttc" id="aclassScanner_html_a17036355736d4c9d42327cf4cd75b25c"><div class="ttname"><a href="classScanner.html#a17036355736d4c9d42327cf4cd75b25c">Scanner::m_ports</a></div><div class="ttdeci">ports_t m_ports</div><div class="ttdoc">Target ports.</div><div class="ttdef"><b>Definition</b> <a href="scanner_8hpp_source.html#l00060">scanner.hpp:60</a></div></div>
+<div class="ttc" id="aclassScanner_html_a36e8566701a74e73668ee0ea4b21f9c6"><div class="ttname"><a href="classScanner.html#a36e8566701a74e73668ee0ea4b21f9c6">Scanner::scan</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; port_t, bool &gt; &gt; scan() const</div><div class="ttdoc">Scans all specified ports on the target IP address.</div><div class="ttdef"><b>Definition</b> <a href="scanner_8cpp_source.html#l00031">scanner.cpp:31</a></div></div>
+<div class="ttc" id="aclassScanner_html_a3c3fa32fc14afcc470e18d418770ceb1"><div class="ttname"><a href="classScanner.html#a3c3fa32fc14afcc470e18d418770ceb1">Scanner::isIPv6</a></div><div class="ttdeci">bool isIPv6(ipaddr_t const &amp;ip) const noexcept</div><div class="ttdoc">Checks if the given IP address string is a syntactically valid IPv6 address.</div><div class="ttdef"><b>Definition</b> <a href="scanner_8cpp_source.html#l00056">scanner.cpp:56</a></div></div>
+<div class="ttc" id="aclassScanner_html_a55e27e0e017ecfcea24c85bf940a51a2"><div class="ttname"><a href="classScanner.html#a55e27e0e017ecfcea24c85bf940a51a2">Scanner::MIN_PORT</a></div><div class="ttdeci">static port_t constexpr MIN_PORT</div><div class="ttdoc">Minimum valid port number.</div><div class="ttdef"><b>Definition</b> <a href="scanner_8hpp_source.html#l00048">scanner.hpp:48</a></div></div>
+<div class="ttc" id="aclassScanner_html_a5747292f3b58c1806ed5ca3edc262a87"><div class="ttname"><a href="classScanner.html#a5747292f3b58c1806ed5ca3edc262a87">Scanner::m_mtx</a></div><div class="ttdeci">std::mutex m_mtx</div><div class="ttdoc">Mutable mutex for thread safety.</div><div class="ttdef"><b>Definition</b> <a href="scanner_8hpp_source.html#l00067">scanner.hpp:67</a></div></div>
+<div class="ttc" id="aclassScanner_html_a5d0f18ea208f78217945918d214f709e"><div class="ttname"><a href="classScanner.html#a5d0f18ea208f78217945918d214f709e">Scanner::isPortAccessible</a></div><div class="ttdeci">bool isPortAccessible(port_t const port) const</div><div class="ttdoc">Attempts to establish a TCP connection to the specified port. This function incorporates a timeout (T...</div><div class="ttdef"><b>Definition</b> <a href="scanner_8cpp_source.html#l00073">scanner.cpp:73</a></div></div>
+<div class="ttc" id="aclassScanner_html_a8c0c87368ad65fedb1d3e83da5853666"><div class="ttname"><a href="classScanner.html#a8c0c87368ad65fedb1d3e83da5853666">Scanner::parsePort</a></div><div class="ttdeci">std::optional&lt; port_t &gt; parsePort(char const *str) const noexcept</div><div class="ttdoc">Attempts to parse a C-string into a port_t. It also validates if the parsed number falls within the [...</div><div class="ttdef"><b>Definition</b> <a href="scanner_8cpp_source.html#l00061">scanner.cpp:61</a></div></div>
+<div class="ttc" id="aclassScanner_html_a90741dae9b58ae04679a6e5111131ab9"><div class="ttname"><a href="classScanner.html#a90741dae9b58ae04679a6e5111131ab9">Scanner::isIPv4</a></div><div class="ttdeci">bool isIPv4(ipaddr_t const &amp;ip) const noexcept</div><div class="ttdoc">Checks if the given IP address string is a syntactically valid IPv4 address.</div><div class="ttdef"><b>Definition</b> <a href="scanner_8cpp_source.html#l00051">scanner.cpp:51</a></div></div>
+<div class="ttc" id="aclassScanner_html_a986324c47994661217f5fbdb26b9144f"><div class="ttname"><a href="classScanner.html#a986324c47994661217f5fbdb26b9144f">Scanner::MAX_PORT</a></div><div class="ttdeci">static port_t constexpr MAX_PORT</div><div class="ttdoc">Maximum valid port number.</div><div class="ttdef"><b>Definition</b> <a href="scanner_8hpp_source.html#l00050">scanner.hpp:50</a></div></div>
+<div class="ttc" id="aclassScanner_html_af9f6c2887e61333d36bf9771a13ba67f"><div class="ttname"><a href="classScanner.html#af9f6c2887e61333d36bf9771a13ba67f">Scanner::m_ip</a></div><div class="ttdeci">ipaddr_t m_ip</div><div class="ttdoc">Target IP address.</div><div class="ttdef"><b>Definition</b> <a href="scanner_8hpp_source.html#l00053">scanner.hpp:53</a></div></div>
+<div class="ttc" id="anamespaceanonymous__namespace_02scanner_8hpp_03_html_a8f744bb386006bea6840b73769c66f62"><div class="ttname"><a href="namespaceanonymous__namespace_02scanner_8hpp_03.html#a8f744bb386006bea6840b73769c66f62">anonymous_namespace{scanner.hpp}::TIMEOUT_MS</a></div><div class="ttdeci">int constexpr TIMEOUT_MS</div><div class="ttdoc">Timeout in milliseconds for socket connection attempts.</div><div class="ttdef"><b>Definition</b> <a href="scanner_8hpp_source.html#l00010">scanner.hpp:10</a></div></div>
 <div class="ttc" id="atypes_8hpp_html"><div class="ttname"><a href="types_8hpp.html">types.hpp</a></div></div>
-<div class="ttc" id="atypes_8hpp_html_a5a82291375f2f68b53a652f6f2ab74b1"><div class="ttname"><a href="types_8hpp.html#a5a82291375f2f68b53a652f6f2ab74b1">ports_t</a></div><div class="ttdeci">std::vector&lt; port_t &gt; ports_t</div><div class="ttdoc">Vector of ports type.</div><div class="ttdef"><b>Definition</b> types.hpp:10</div></div>
-<div class="ttc" id="atypes_8hpp_html_a74951a78c122c2c9903f64726a56aac6"><div class="ttname"><a href="types_8hpp.html#a74951a78c122c2c9903f64726a56aac6">port_t</a></div><div class="ttdeci">uint16_t port_t</div><div class="ttdoc">Port number type.</div><div class="ttdef"><b>Definition</b> types.hpp:9</div></div>
-<div class="ttc" id="atypes_8hpp_html_ae7690576a8d3893435294d25def55c48"><div class="ttname"><a href="types_8hpp.html#ae7690576a8d3893435294d25def55c48">ipaddr_t</a></div><div class="ttdeci">std::string ipaddr_t</div><div class="ttdoc">IP address type.</div><div class="ttdef"><b>Definition</b> types.hpp:8</div></div>
+<div class="ttc" id="atypes_8hpp_html_a5a82291375f2f68b53a652f6f2ab74b1"><div class="ttname"><a href="types_8hpp.html#a5a82291375f2f68b53a652f6f2ab74b1">ports_t</a></div><div class="ttdeci">std::vector&lt; port_t &gt; ports_t</div><div class="ttdoc">Vector of ports type.</div><div class="ttdef"><b>Definition</b> <a href="types_8hpp_source.html#l00010">types.hpp:10</a></div></div>
+<div class="ttc" id="atypes_8hpp_html_a74951a78c122c2c9903f64726a56aac6"><div class="ttname"><a href="types_8hpp.html#a74951a78c122c2c9903f64726a56aac6">port_t</a></div><div class="ttdeci">uint16_t port_t</div><div class="ttdoc">Port number type.</div><div class="ttdef"><b>Definition</b> <a href="types_8hpp_source.html#l00009">types.hpp:9</a></div></div>
+<div class="ttc" id="atypes_8hpp_html_ae7690576a8d3893435294d25def55c48"><div class="ttname"><a href="types_8hpp.html#ae7690576a8d3893435294d25def55c48">ipaddr_t</a></div><div class="ttdeci">std::string ipaddr_t</div><div class="ttdoc">IP address type.</div><div class="ttdef"><b>Definition</b> <a href="types_8hpp_source.html#l00008">types.hpp:8</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="scanner_8hpp.html">scanner.hpp</a></li>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Thu Sep 18 2025 12:07:37 for Port Scanner by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
 </body>
 </html>
