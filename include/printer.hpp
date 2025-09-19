@@ -28,6 +28,8 @@ std::string_view constexpr GREEN{"\033[32m"};
  *
  * The Printer class provides static methods to check if the output is a terminal and to print port
  * status information with ANSI color formatting.
+ *
+ * \example printer.cpp
  */
 class Printer final {
   public:

@@ -15,6 +15,8 @@ int constexpr TIMEOUT_MS{200}; //!< \brief Timeout in milliseconds for socket co
  *
  * The Scanner class is designed to perform port scanning operations on a specified IP address for a
  * given vector of ports.
+ *
+ * \example scanner.cpp
  */
 class Scanner final {
   public:
