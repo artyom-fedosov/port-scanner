@@ -105,6 +105,10 @@
 <section title="Typedefs" ref="globals_type.html"/>
 </section>
 </section>
+<section title="Examples" ref="examples.html">
+<section title="printer.cpp" ref="printer_8cpp-example.html"/>
+<section title="scanner.cpp" ref="scanner_8cpp-example.html"/>
+</section>
 </section>
 </toc>
 <keywords>
@@ -163,6 +167,7 @@
 <file>doxygen.css</file>
 <file>doxygen.svg</file>
 <file>dynsections.js</file>
+<file>examples.html</file>
 <file>files.html</file>
 <file>functions.html</file>
 <file>functions_func.html</file>
@@ -191,6 +196,7 @@
 <file>nav_h.png</file>
 <file>nav_hd.png</file>
 <file>open.png</file>
+<file>printer_8cpp-example.html</file>
 <file>printer_8cpp.html</file>
 <file>printer_8cpp__incl.png</file>
 <file>printer_8cpp_source.html</file>
@@ -198,6 +204,7 @@
 <file>printer_8hpp__dep__incl.png</file>
 <file>printer_8hpp__incl.png</file>
 <file>printer_8hpp_source.html</file>
+<file>scanner_8cpp-example.html</file>
 <file>scanner_8cpp.html</file>
 <file>scanner_8cpp__incl.png</file>
 <file>scanner_8cpp_source.html</file>
