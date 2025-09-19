@@ -57,8 +57,7 @@ CMakeLists.txt.user
 *.tmp
 
 # ---- Doxygen ----
-docs/html/
-docs/latex/
+docs/
 
 # ---- Logs ----
 *.log
