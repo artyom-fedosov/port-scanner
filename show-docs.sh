@@ -4,9 +4,8 @@
 
 set -e          # exit on error
 set -u          # error on unset variables
-set -o pipefail # fail on pipe errors
 
-OUTPUT_DIR="$(grep -E '^OUTPUT_DIRECTORY[[:space:]]*=' Doxyfile | awk '{print $3}')"
+OUTPUT_DIR="$(awk '/^OUTPUT_DIRECTORY[[:space:]]*=/ {print $3}' Doxyfile)"
 OUTPUT_DIR="${OUTPUT_DIR:-.}"
 INDEX_FILE_PATH="${OUTPUT_DIR}/html/index.html"
 
@@ -14,7 +13,7 @@ doxygen Doxyfile
 
 if [[ ! -f "${INDEX_FILE_PATH}" ]]; then
     printf "Error: ${INDEX_FILE_PATH} not found.\n"
-    false
+    exit 1
 fi
 
 if command -v xdg-open >/dev/null; then
@@ -22,4 +21,3 @@ if command -v xdg-open >/dev/null; then
 else
     printf "Please open ${INDEX_FILE_PATH} manually.\n"
 fi
-
