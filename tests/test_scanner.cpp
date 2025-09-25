@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "../include/scanner.hpp"
+#include "scanner.hpp"
 
 TEST(ScannerTest, ValidIPv4Address) {
     std::array<ipaddr_t, 5> arr{"127.0.0.1", "192.168.8.10", "132.89.0.12", "90.67.12.123",

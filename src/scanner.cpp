@@ -1,4 +1,4 @@
-#include "../include/scanner.hpp"
+#include "scanner.hpp"
 
 #include <charconv>
 #include <stdexcept>

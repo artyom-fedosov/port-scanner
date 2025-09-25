@@ -1,7 +1,7 @@
 #include <iostream>
 
-#include "../include/printer.hpp"
-#include "../include/scanner.hpp"
+#include "printer.hpp"
+#include "scanner.hpp"
 
 int main(int argc, char *argv[]) {
     if (argc < 3) [[unlikely]] {

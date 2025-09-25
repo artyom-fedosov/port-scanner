@@ -1,4 +1,4 @@
-#include "../include/printer.hpp"
+#include "printer.hpp"
 
 #include <print>
 

@@ -33,6 +33,14 @@ PRIVATE
         src/printer.cpp
 )
 
+set_target_properties(port-scanner PROPERTIES
+        CXX_CLANG_TIDY "clang-tidy"
+)
+
+target_include_directories(port-scanner
+        PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
+
 include(FetchContent)
 FetchContent_Declare(
         googletest
@@ -77,6 +85,10 @@ enable_testing()
 add_executable(tests
         tests/test_scanner.cpp
         src/scanner.cpp
+)
+
+target_include_directories(tests
+        PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
 target_link_libraries(tests GTest::gtest_main)
