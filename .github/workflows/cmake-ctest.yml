@@ -16,6 +16,15 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - name: Update GCC version
+      run: |
+        sudo apt purge -y g++-13 gcc-13
+        sudo update-alternatives --remove-all gcc || true
+        sudo update-alternatives --remove-all g++ || true
+        sudo apt install -y g++-14 gcc-14
+        sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-14 10
+        sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-14 10
+
     - name: Configure CMake
       run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
