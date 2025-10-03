@@ -18,6 +18,8 @@ jobs:
     
     - name: Lint Action
       uses: wearerequired/lint-action@v2.3.0
+      with:
+        clang_format: true
 
     - name: Update GCC version
       run: |
