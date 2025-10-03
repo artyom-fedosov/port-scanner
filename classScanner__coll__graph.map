@@ -1,5 +1,5 @@
 <map id="Scanner" name="Scanner">
-<area shape="rect" id="Node000001" title=" " alt="" coords="145,404,290,589"/>
+<area shape="rect" id="Node000001" title="A class performs port scanning operations on a specified IP address for a given vector of ports." alt="" coords="145,404,290,589"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="37,276,115,341"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,340,140,389,135,392,98,343"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="5,133,136,213"/>
