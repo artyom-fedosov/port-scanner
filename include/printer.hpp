@@ -19,7 +19,7 @@ std::string_view constexpr RED{"\033[31m"};
  * \brief ANSI escape code for green text color.
  */
 std::string_view constexpr GREEN{"\033[32m"};
-}
+} // namespace
 
 /*!
  * \class Printer
