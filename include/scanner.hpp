@@ -1,3 +1,7 @@
+/*!
+ * \file scanner.hpp
+ */
+
 #pragma once
 
 #include <mutex>
@@ -13,8 +17,14 @@ int constexpr TIMEOUT_MS{200}; //!< \brief Timeout in milliseconds for socket co
 /*!
  * \class Scanner
  *
+ * \brief A class performs port scanning operations on a specified IP address for a given vector of
+ * ports.
+ *
  * The Scanner class is designed to perform port scanning operations on a specified IP address for a
- * given vector of ports.
+ * given vector of ports. Every port is being scanned in separate thread for better performance.
+ *
+ * \invariant Valid IP address.
+ * \invariant Valid ports.
  *
  * \example scanner.cpp
  */
@@ -75,6 +85,7 @@ class Scanner final {
      * Exception Safety: No-throw guarantee.
      *
      * \param ip The IP address string to validate.
+     *
      * \return true if the IP is а valid IPv4, false otherwise.
      */
     [[nodiscard]] bool isIPv4(ipaddr_t const &ip) const noexcept;
@@ -85,6 +96,7 @@ class Scanner final {
      * Exception Safety: No-throw guarantee.
      *
      * \param ip The IP address string to validate.
+     *
      * \return true if the IP is а valid IPv6, false otherwise.
      */
     [[nodiscard]] bool isIPv6(ipaddr_t const &ip) const noexcept;
@@ -96,6 +108,7 @@ class Scanner final {
      * Exception Safety: No-throw guarantee.
      *
      * \param str The C-string containing the potential port number.
+     *
      * \return An std::optional<port_t> containing the valid port number if parsing is successful
      * and the number is in range; otherwise, an empty std::optional.
      */
@@ -108,6 +121,7 @@ class Scanner final {
      * Exception Safety: Strong guarantee.
      *
      * \param port The TCP port number to check for accessibility.
+     *
      * \return true if a connection can be established (port is accessible), false otherwise.
      *
      * \throws std::bad_alloc If memory allocation for internal storage fails.
